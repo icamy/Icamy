@@ -2,30 +2,30 @@ package br.com.icamy.beans;
 
 import java.util.List;
 
-public class Cliente {
+public class Prestador {
   private int codigo;
-  private Bairro bairro;
   private String nome;
   private int cpf;
   private String dataDeNascimento;
   private List<String> emails;
   private List<Integer> telefones;
-  private List<Portfolio> portfolios;
+  private List<Bairro> bairrosAtendidos;
+  private List<Oferta> ofertas;
 
-  public Cliente(int codigo, Bairro bairro, String nome, int cpf, String dataDeNascimento, List<String> emails,
-      List<Integer> telefones, List<Portfolio> portfolios) {
+  public Prestador(int codigo, String nome, int cpf, String dataDeNascimento, List<String> emails,
+      List<Integer> telefones, List<Bairro> bairrosAtendidos, List<Oferta> ofertas) {
     super();
     this.codigo = codigo;
-    this.bairro = bairro;
     this.nome = nome;
     this.cpf = cpf;
     this.dataDeNascimento = dataDeNascimento;
     this.emails = emails;
     this.telefones = telefones;
-    this.portfolios = portfolios;
+    this.bairrosAtendidos = bairrosAtendidos;
+    this.ofertas = ofertas;
   }
 
-  public Cliente() {
+  public Prestador() {
     super();
     // TODO Auto-generated constructor stub
   }
@@ -36,14 +36,6 @@ public class Cliente {
 
   public void setCodigo(int codigo) {
     this.codigo = codigo;
-  }
-
-  public Bairro getBairro() {
-    return bairro;
-  }
-
-  public void setBairro(Bairro bairro) {
-    this.bairro = bairro;
   }
 
   public String getNome() {
@@ -86,11 +78,19 @@ public class Cliente {
     this.telefones = telefones;
   }
 
-  public List<Portfolio> getPortfolios() {
-    return portfolios;
+  public List<Bairro> getBairrosAtendidos() {
+    return bairrosAtendidos;
   }
 
-  public void setPortfolios(List<Portfolio> portfolios) {
-    this.portfolios = portfolios;
+  public void setBairrosAtendidos(List<Bairro> bairrosAtendidos) {
+    this.bairrosAtendidos = bairrosAtendidos;
+  }
+
+  public List<Oferta> getOfertas() {
+    return ofertas;
+  }
+
+  public void setOfertas(List<Oferta> ofertas) {
+    this.ofertas = ofertas;
   }
 }
