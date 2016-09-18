@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+  <title>Hello world!</title>
+  <link rel="stylesheet" href="styles/basic.css">
 </head>
 <body>
-  <div class="container"></div>
+  <div class="container">
+    <p></p>
+    <p><button class="btn btn-primary" type="button">Ver mais</button></p>
+  </div>
 </body>
 </html>
