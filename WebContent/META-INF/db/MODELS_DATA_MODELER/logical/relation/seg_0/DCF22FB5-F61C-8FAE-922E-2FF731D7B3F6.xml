@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="redigirv1" directorySegmentName="seg_0" id="DCF22FB5-F61C-8FAE-922E-2FF731D7B3F6">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-12 22:53:07 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<sourcePk>FF3A6C06-FF10-D54C-979F-A9A389428394</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>76AAB329-83DB-27EB-A6C4-449D5184793F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2AB7CDF6-27C2-0559-EB30-AA8ECBDB694B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
