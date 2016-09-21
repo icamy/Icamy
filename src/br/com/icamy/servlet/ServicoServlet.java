@@ -27,7 +27,7 @@ public class ServicoServlet extends HttpServlet {
             out.println("<p>Descrição: " + servico.getNome() + "</p>");
             out.println("<p>Status: " + servico.getStatus() + "</p>");
         } catch(Exception e) {
-            out.println("Deu ruim: " + e.getMessage() + "<br>");
+            out.println("Deu ruim: " + e.getMessage());
             System.out.println("Erro: " + e.getMessage() + "\n");
             e.printStackTrace();
         }
