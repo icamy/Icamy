@@ -3,10 +3,10 @@ package br.com.icamy.beans;
 public class Servico {
   private int codigo;
   private String nome;
-  private char status;
+  private boolean status;
   private String descricao;
 
-  public Servico(int codigo, String nome, char status, String descricao) {
+  public Servico(int codigo, String nome, boolean status, String descricao) {
     super();
     this.codigo = codigo;
     this.nome = nome;
@@ -16,7 +16,6 @@ public class Servico {
 
   public Servico() {
     super();
-    // TODO Auto-generated constructor stub
   }
 
   public int getCodigo() {
@@ -35,11 +34,11 @@ public class Servico {
     this.nome = nome;
   }
 
-  public char getStatus() {
+  public boolean getStatus() {
     return status;
   }
 
-  public void setStatus(char status) {
+  public void setStatus(boolean status) {
     this.status = status;
   }
 
