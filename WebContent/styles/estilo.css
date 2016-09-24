@@ -6,6 +6,14 @@
 	text-align: left;
 }
 
-.personas{
-	
+.hero nav{
+
+}
+
+.hero nav ul{
+	text-align: right;
+}
+
+.hero nav ul li{
+	display: inline;
 }
