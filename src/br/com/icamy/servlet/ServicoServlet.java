@@ -20,7 +20,7 @@ public class ServicoServlet extends HttpServlet {
         try {
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = servicoBO.get(Integer.parseInt(request.getParameter("codigo")));
-            
+
             out.println("Servico");
             out.println("Código: " + servico.getCodigo());
             out.println("Nome: " + servico.getNome());
