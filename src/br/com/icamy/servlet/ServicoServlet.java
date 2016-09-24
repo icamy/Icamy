@@ -21,13 +21,13 @@ public class ServicoServlet extends HttpServlet {
             ServicoBO servicoBO = new ServicoBO();
             Servico servico = servicoBO.get(Integer.parseInt(request.getParameter("codigo")));
             
-            out.println("<h1>Servico</h1>");
-            out.println("<p>Código: " + servico.getCodigo() + "</p>");
-            out.println("<p>Nome: " + servico.getNome() + "</p>");
-            out.println("<p>Descrição: " + servico.getNome() + "</p>");
-            out.println("<p>Status: " + servico.getStatus() + "</p>");
+            out.println("Servico");
+            out.println("Código: " + servico.getCodigo());
+            out.println("Nome: " + servico.getNome());
+            out.println("Descrição: " + servico.getNome());
+            out.println("Status: " + servico.getStatus());
         } catch(Exception e) {
-            out.println("Deu ruim: " + e.getMessage());
+            out.println(e.getMessage());
             System.out.println("Erro: " + e.getMessage() + "\n");
             e.printStackTrace();
         }

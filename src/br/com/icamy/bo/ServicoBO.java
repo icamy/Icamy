@@ -8,13 +8,13 @@ public class ServicoBO {
     private ServicoDAO servicoDAO;
     
     public ServicoBO() throws Exception {
-        servicoDAO = new ServicoDAO();
+    	servicoDAO = new ServicoDAO();
     }
     
     public Servico get(int codigo) throws Exception {
         if (codigo <= 0)
-            throw new CodigoNuloException();
-        
+            throw new CodigoNuloException("O código fornecido é inválido");
+
         return servicoDAO.get(codigo);
     }
 
