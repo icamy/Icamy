@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FFE06100-16AD-E8F1-43BB-9842E29AD677" name="T_ICM_SERVICO">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:05:12 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_servico" id="1CF82719-53DA-986F-58CE-FB13566B20D9">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:05:26 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_categoria" id="2A33B854-FE59-F26F-BA21-BEAA3C5082FE">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:32:05 UTC</createdTime>
+<generatorID>4A916B53-4185-D8C8-F76B-2306F6ABE7FB</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>5E08C91E-C074-DCF4-FE8D-7ED3B2755AAF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_servico" id="62C9D95E-3B8A-E23D-241F-A924629EC010">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:05:36 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="st_servico" id="87FFEFD4-E58F-DD84-3542-77A1325ADAB8">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:05:56 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_servico" id="C1CD580F-58D0-2D96-BEED-A68564187F07">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:05:45 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A7DD3B96-5CA4-BE09-3050-92247C10A1ED" name="T_ICM_SERVICO PK">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:05:35 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>1CF82719-53DA-986F-58CE-FB13566B20D9,4A916B53-4185-D8C8-F76B-2306F6ABE7FB</newElementsIDs>
+<usedAttributes>
+<attributeRef>1CF82719-53DA-986F-58CE-FB13566B20D9</attributeRef>
+<attributeRef>2A33B854-FE59-F26F-BA21-BEAA3C5082FE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

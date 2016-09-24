@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E82A7994-A333-5CAF-ED8D-61D2318AAE58" name="T_CATEGORIA_SERVICO">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:30:49 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_categoria" id="5E08C91E-C074-DCF4-FE8D-7ED3B2755AAF">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:31:08 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_categoria" id="22D05BD9-3F2A-34AB-6DA9-A903A80042A6">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:31:24 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A33B0B48-A516-045F-19B6-6890D61B1810" name="T_CATEGORIA_SERVICO PK">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:31:22 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5E08C91E-C074-DCF4-FE8D-7ED3B2755AAF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

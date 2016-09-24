@@ -1,0 +1,172 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8160505E-793C-AE39-071F-0E40E193CBC8" name="T_ICM_CONTRATACAO">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 14:22:31 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_contratacao" id="F48C12EC-B1EE-A5D1-56E4-6F11200CBFB8">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 17:45:39 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_oferta" id="CBFCE5E5-F40E-F6B0-7130-567C9912CD7A">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 00:39:37 UTC</createdTime>
+<generatorID>7B2157B2-8814-5659-A0E2-AE62A940B5F7</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>8F162CF8-F6CC-FFA4-BA7A-B68B83206608</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_servico" id="3A566AB0-7202-4439-7FD0-F2411CE4401E">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 00:39:37 UTC</createdTime>
+<generatorID>7B2157B2-8814-5659-A0E2-AE62A940B5F7</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>D51E505C-5581-B04F-9825-C4330F74971F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_categoria" id="F97D7E56-9713-9CCF-6760-9F4E8E429226">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:32:05 UTC</createdTime>
+<generatorID>7B2157B2-8814-5659-A0E2-AE62A940B5F7</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>C54D683A-BFD4-512E-3BB6-6BFEE00D2A53</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_prestador" id="60218708-C5F1-0C49-064F-9EA04DB98A28">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 01:36:51 UTC</createdTime>
+<generatorID>7B2157B2-8814-5659-A0E2-AE62A940B5F7</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>4D294C09-CA81-887A-7DDE-B77AE02D4E8E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_cliente" id="B0A34B5B-27C6-F773-75C3-E2BADA68F4B0">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 00:40:00 UTC</createdTime>
+<generatorID>62FEE618-752B-C7DB-42A5-3AA6F70D2E8A</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>77984DA6-7C53-9582-D312-0E1802E16CBF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_contratacao" id="0BEEEC6C-346E-71CB-C599-865E92B51740">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 14:25:35 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_contratacao" id="DAEB2B3C-3B69-DFAA-6419-ABFE905B0CB9">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 14:23:04 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>10</dataTypeScale>
+<ownDataTypeParameters>,2,10</ownDataTypeParameters>
+</Attribute>
+<Attribute name="st_contratacao" id="E8C0D222-54AC-A5AD-F834-90C8BA0F6D58">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-12 23:53:58 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_execucao" id="4AD3FFBE-8C69-4F14-05CD-D75F8B2816E1">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 14:25:58 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A07E57B3-9DCF-C022-5491-BB3AAB029939" name="T_ICM_SERVICO_CONTRATADO PK">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 14:23:18 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F48C12EC-B1EE-A5D1-56E4-6F11200CBFB8</attributeRef>
+<attributeRef>CBFCE5E5-F40E-F6B0-7130-567C9912CD7A</attributeRef>
+<attributeRef>3A566AB0-7202-4439-7FD0-F2411CE4401E</attributeRef>
+<attributeRef>60218708-C5F1-0C49-064F-9EA04DB98A28</attributeRef>
+<attributeRef>B0A34B5B-27C6-F773-75C3-E2BADA68F4B0</attributeRef>
+<attributeRef>F97D7E56-9713-9CCF-6760-9F4E8E429226</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
