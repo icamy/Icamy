@@ -1,18 +1,16 @@
 package br.com.icamy.beans;
 
-import java.util.List;
-
 public class Prestador {
   private int codigo;
   private String nome;
-  private int cpf;
+  private long cpf;
   private String dataDeNascimento;
   private List<String> emails;
   private List<Integer> telefones;
   private List<Bairro> bairrosAtendidos;
   private List<Oferta> ofertas;
 
-  public Prestador(int codigo, String nome, int cpf, String dataDeNascimento, List<String> emails,
+  public Prestador(int codigo, String nome, long cpf, String dataDeNascimento, List<String> emails,
       List<Integer> telefones, List<Bairro> bairrosAtendidos, List<Oferta> ofertas) {
     super();
     this.codigo = codigo;

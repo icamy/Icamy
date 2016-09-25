@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B74B7B61-E5D8-21C4-272A-E37FB4128AA4" name="T_ICM_OFERTA">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:08:53 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_oferta" id="8F162CF8-F6CC-FFA4-BA7A-B68B83206608">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 00:38:22 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_servico" id="D51E505C-5581-B04F-9825-C4330F74971F">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 17:22:15 UTC</createdTime>
+<generatorID>957E0B9B-0431-1B30-A159-ACA8D57B4773</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>1CF82719-53DA-986F-58CE-FB13566B20D9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_categoria" id="C54D683A-BFD4-512E-3BB6-6BFEE00D2A53">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 15:32:05 UTC</createdTime>
+<generatorID>957E0B9B-0431-1B30-A159-ACA8D57B4773</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>2A33B854-FE59-F26F-BA21-BEAA3C5082FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_prestador" id="4D294C09-CA81-887A-7DDE-B77AE02D4E8E">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 01:36:51 UTC</createdTime>
+<generatorID>03FB68C9-2B11-D223-8767-7D1F348AC1D6</generatorID>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<referedAttribute>D5133524-2192-015C-9010-DB51B99BD95B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vl_oferta" id="13964D50-621E-D3A7-BE25-0118C0B2B019">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:09:13 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>10</dataTypeScale>
+<ownDataTypeParameters>,2,10</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_prazo" id="AEA5F789-05C0-B36A-B788-559B09323ADD">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-12 23:27:33 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tx_oferta" id="BBEACD78-0453-F887-5E4A-55A9696237EF">
+<createdBy>renef</createdBy>
+<createdTime>2016-09-24 01:21:17 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6E9887E1-9C1B-0D6D-7972-72E4BC663A8F" name="T_ICM_PRESTADOR_SERVICO PK">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 14:21:16 UTC</createdTime>
+<ownerDesignName>MODEL_DATA_MODELER_V3</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8F162CF8-F6CC-FFA4-BA7A-B68B83206608</attributeRef>
+<attributeRef>D51E505C-5581-B04F-9825-C4330F74971F</attributeRef>
+<attributeRef>4D294C09-CA81-887A-7DDE-B77AE02D4E8E</attributeRef>
+<attributeRef>C54D683A-BFD4-512E-3BB6-6BFEE00D2A53</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
