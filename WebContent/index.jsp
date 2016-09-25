@@ -1,3 +1,4 @@
+<%@ page import="br.com.icamy.dao.*" %>
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8"/>
@@ -8,12 +9,13 @@
 <body>
 
 	<div id="container">
+
+
 		<div class="hero">
 			<nav class="header">
 				<!--Logo-->
-				<div id="logo"><img src="img/logo.png" width="200" height="100"></div>
+				<div class="logo"><img src="img/logo.png" width="200" height="100"></div>
 				<!--Fim_Logo-->
-
 				<!--Cabeçalho-->
 				<ul>
 					<li>Sobre</li>
@@ -36,15 +38,17 @@
 				</div>
 			</div>
 		</div>
-		
+
+
 
 		<!-- container busca -->
 		<div class="search">
+
 			<!-- container formulario -->
 			<div class="search-bar">
 
 				<!-- formulário -->
-				<form class="" action="" method="">
+				<form class="" action="" method="get">
 					<!-- caixa de seleção de categorias -->
 					<select name="cars">
 						<option value="volvo">Volvo</option>
@@ -52,16 +56,16 @@
 						<option value="fiat">Fiat</option>
 						<option value="audi">Audi</option>
 					</select>
-					<!-- fim caixa de seleção de categorias -->
+					<!-- fim caixa de sele��o de categorias -->
 					<input type="text" />
 					<input type="submit" name="name" value="enviar">
 				</form>
 				<!-- fim formulário -->
 			</div>
-			
-			<div class="search-results">
 
+			<div class="search-results">
 				<div class="results">
+					<%-- Resultado modelo --%>
 					<div class="result">
 						<img src="">
 						<h2>Nome do Fornecedor</h2>
@@ -70,14 +74,14 @@
 							<span>Categoria1</span>
 						</div>
 						<div class="address">
-							<span><img src="img/ic_position.png"></span>
+							<img src="img/ic_position.png">
 							<p>Endereço</p>
 						</div>
 						<div>
-							<span></span>
+							<span>ícone-rating</span>
 							<p>8.7/10</p>
 						</div>
-					</div>					
+					</div>
 				</div>
 				<div class="button-ver-mais">
 					<button>Ver mais</button>
@@ -85,13 +89,26 @@
 			</div>
 		</div>
 		<!-- fim container busca -->
-
 		<!--Inicio Footer-->
 		<div class="footer">
-			<div class="footer-container"></div>
-			<div class="footer-container"></div>
+			<div class="footer-container">
+				<h2>Mapa do Site</h2>
+				<ul>
+					<li>Busca</li>
+					<li>Sobre</li>
+					<li>Login Cliente</li>
+					<li>Login Profissional</li>
+				</ul>
+			</div>
+			<div class="footer-container">
+				<h2>Institucional</h2>
+				<li>Como funciona</li>
+				<li>Contato</li>
+				<li>Trabalhe conosco</li>
+				<li>Termos de uso</li>
+			</div>
 			<div class="footer-logo"></div>
-			<div class="footer-icons">
+			<div class="footer-social-media">
 				<ul>
 					<li><img src="img/glyphicons-social-31-facebook.png"></li>
 					<li><img src="img/glyphicons-social-32-twitter.png"></li>
@@ -100,14 +117,9 @@
 				</ul>
 			</div>
 		</div>
-		<!--Fim Footer-->
-
-
+		<!-- Fim Footer -->
 	</div>
+	<!-- Fim -->
 
-
-
-	<!--Fim-->
-	</div>
 </body>
 </html>

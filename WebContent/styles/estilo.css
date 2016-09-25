@@ -1,19 +1,40 @@
-#logo{
-	max-width: 200px;
-	max-height: 100px;
-	width: auto;
-	height: auto;
-	text-align: left;
+html, body {
+	margin: 0;
+	padding: 0;
 }
 
-.hero nav{
-
+.container {
 }
 
-.hero nav ul{
-	text-align: right;
+.hero {
+	background: pink;
+}
+.logo {
+	top: 0;
+	bottom: 0;
+	display: inline-block;
+}
+.header {
+	height: 90px;
+}
+.header ul {
+	list-style: none;
+	display: inline-block;
+	float: right;
+}
+.header ul li {
+	display: inline-block;
+	padding: 0px 10px;
 }
 
-.hero nav ul li{
-	display: inline;
+.search {
+	background: green;
+}
+
+.footer {
+	background: orange;
+}
+
+.footer h2 {
+	margin-top: 0;
 }
