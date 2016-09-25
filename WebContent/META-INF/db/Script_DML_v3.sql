@@ -1,3 +1,18 @@
+-- NAC 2: SCRIPTS DML (MASSA DE DADOS PARA TESTE)
+-- INTEGRANTES DO GRUPO:
+-- 76007 - BIANCA CESAR TURCO
+-- 77329 - LUCAS TAVARES DA ROCHA
+-- 74426 - MAXWELL MARTINS LIMA
+-- 76190 - RENÊ FERNANDES BARBOSA
+-- 77150 - THIAGO TADEU BETTIOL FRATINI
+
+
+-- -----------------------------------------------------
+-- Schema icamydb
+-- -----------------------------------------------------
+USE `icamydb` ;
+
+
 -- -----------------------------------------------------
 -- Table `icamydb`.`T_ICM_PRESTADOR`
 -- -----------------------------------------------------
@@ -29,13 +44,30 @@ VALUES
 	('Patrícia Henriques da Costa', 18936740248, 11983085736, 'patricia@teste.net', 'abc', DATE_FORMAT('1974-03-12', '%Y-%m-%d'), 'F'),
 	('Maria Paula Reuther', 10098365912, 11920374500, 'maria@teste.net', 'abc', DATE_FORMAT('1975-10-15', '%Y-%m-%d'), 'F'),
 	('Beatriz Fernandes Branco', 22747867990, 119883999115, 'beatriz@teste.net', 'abc', DATE_FORMAT('1994-08-31', '%Y-%m-%d'), 'F'),
-	('Willian Santana de Barros', 300988475511, 11924240577, 'willian@teste.net', 'abc', DATE_FORMAT('1997-02-24', '%Y-%m-%d'), 'M');
+	('Sofia Santana de Barros', 300988475511, 11924240577, 'sofia@teste.net', 'abc', DATE_FORMAT('1997-02-24', '%Y-%m-%d'), 'F');
 
 
 -- -----------------------------------------------------
 -- Table `icamydb`.`T_ICM_PORTFOLIO`
 -- -----------------------------------------------------
--- FALTA INSERIR
+-- FALTA INSERIR ARQUIVOS PARA VALIDAR URL'S
+INSERT INTO T_ICM_PORTFOLIO (cd_prestador, ds_url, nm_arquivo)
+VALUES
+	(1, 'https://www.instagram.com/p/BKxtnlrDg6y/', 'Sobrancelha'),
+    (1, 'https://www.instagram.com/p/BKxjjvehabM/', 'Cílios'),
+    (1, 'https://www.instagram.com/p/BKvye9kAlwN/', 'roxo esfumaçado'),
+    (2, 'https://www.instagram.com/p/BKyq8mkAmFG/', 'serviço'),
+    (2, 'https://www.instagram.com/p/BKyqEWJAT_J/', 'em_casa'),
+    (2, 'https://www.instagram.com/p/BKyqGEmB5S5/', 'olhar'),
+    (3, 'https://www.instagram.com/p/BKyocA4BxWc/', 'make'),
+    (3, 'https://www.instagram.com/p/BKyoOGCA_zi/', 'peeling'),
+    (3, 'https://www.instagram.com/p/BKynyUND08H/', 'promoção'),
+    (4, 'https://www.instagram.com/p/BKynxmIgPom/', 'design de sobrancelhas'),
+    (4, 'https://www.instagram.com/p/BKymjg-hLir/', 'unhas'),
+    (4, 'https://www.instagram.com/p/BKymkgjAf94/', 'taller facial'),
+    (5, 'https://www.instagram.com/p/BKyme_1DTsO/', 'makeover'),
+    (5, 'https://www.instagram.com/p/BKymAQHBkpn/', 'pés perfeitos'),
+    (5, 'https://www.instagram.com/p/BKylSF1ghkP/', 'cachos');
 
 
 
@@ -178,17 +210,18 @@ VALUES
 -- -----------------------------------------------------
 INSERT INTO T_ICM_OFERTA (cd_servico, cd_prestador, ds_titulo, vl_oferta, ds_prazo, tx_oferta)
 VALUES
-	(1, 1, 'Manicure Express', 20.00, '7 dias', 'lorem'),
-    (2, 2, 'Gel top gloss', 37.00, '7 dias', 'lorem'),
-    (3, 2, 'Pedicure com base gel', 130.00, '7 dias', 'lorem'),
-    (4, 5, 'Corte feminino', 69.00, '3 dias', 'lorem'),
-    (4, 3, 'Corte feminino', 45.00, '3 dias', 'lorem'),
-    (5, 3, 'Escova cabelo curto', 30.00, '5 dias', 'lorem'),
-    (5, 3, 'Escova cabelo comprido', 45.00, '5 dias', 'lorem'),
-    (5, 5, 'Escova modeladora', 60.00, '7 dias', 'lorem'),
-    (5, 5, 'Escova modeladora com hidratação', 90.00, '7 dias', 'lorem'),
-    (7, 4, 'Design de sobrancelhas', 35.00, '7 dias', 'lorem'),
-    (9, 4, 'Design + Coloração de Sobrancelhas', 100.00, '7 dias', 'lorem');
+	(1, 1, 'Manicure Express', 20.00, '7 dias', 'Cutilagem e esmaltação.'),
+    (2, 2, 'Gel top gloss', 37.00, '7 dias', 'Unhas lindas e mais fortes.'),
+    (3, 2, 'Pedicure com base gel', 130.00, '7 dias', 'Esmaltação em gel'),
+    (4, 5, 'Corte feminino', 69.00, '3 dias', 'Promoção para o mês de novembro. Não percam!!!'),
+    (4, 3, 'Corte feminino', 45.00, '3 dias', 'Serviço de corte de cabelo em camadas, franjas em diagonal, degradês, cortes retos, curtos, médios ou longos.
+ Valor sujeito a alteração após avaliação do comprimento dos fios.'),
+    (5, 3, 'Escova cabelo curto', 30.00, '5 dias', 'Secagem com escova para alisar o cabelo.'),
+    (5, 3, 'Escova cabelo comprido', 45.00, '5 dias', 'Secagem com escova para alisar o cabelo.'),
+    (5, 5, 'Escova modeladora', 60.00, '7 dias', 'A escova modelada, ao contrário da tradicional, deixa o cabelo com ondas naturais. Fica entre um babyliss bem cacheado e uma escova lisa. As raízes baixas e as pontas com volume deixam os fios com uma aparência bem natural e é um ótimo look para o dia a dia ou festas durante a noite.'),
+    (5, 5, 'Escova modeladora com hidratação', 90.00, '7 dias', 'Você mais #diva!'),
+    (7, 4, 'Design de sobrancelhas', 35.00, '7 dias', 'Depilação personalizada das sobrancelhas para deixá-las com um desenho que valorize o rosto.'),
+    (9, 4, 'Design + Coloração de Sobrancelhas', 100.00, '7 dias', 'Promoção imperdível');
 
 
 -- -----------------------------------------------------
@@ -234,21 +267,67 @@ VALUES
 -- -----------------------------------------------------
 -- Table `icamydb`.`T_ICM_AVALIACAO`
 -- -----------------------------------------------------
-
+INSERT INTO T_ICM_AVALIACAO (cd_contratacao, ds_parte_avaliada, vl_nota, tx_comentario)
+VALUES
+	(1, 'P', 4, 'Gostei muito do serviço da OnceBeauty, só me incomodou um pouco a falta de pontualidade do profissional que me atendeu.'),
+    (2, 'P', 4, 'Preço justo, serviço ok. E ser atendida em casa é maravilhoso!!!'),
+    (3, 'P', 2, 'Express só no nome... Demora pra agendar, demora durante o serviço. Se soubesse, teria ido na manicure da minha rua mesmo...'),
+    (4, 'P', 3, 'Esperava um acabamento melhor do esmalte, mas ele dura mesmo! Daqui pra frente, só uso gel'),
+    (5, 'P', 5, 'Gente, a Bárbara, da Luri, sabe mesmo o que faz. Recomendo muito o serviço dela e espero recebê-la muitas outras vezes na minha casa.'),
+    (6, 'P', 5, 'Tive um problema de saúde na família e não tinha condições de ir em salão. Amei a facilidade oferecida pela Icamy de levar o profissional até a minha residência. Foi minha primeira contratação e fiquei bastante satisfeita, o serviço foi muito bem realizado!'),
+    (7, 'P', 2, 'Demorou muito pra confirmar meu agendamento e chegou na minha casa com quase UMA HORA de atraso!!! Já tive experiências com outros serviços daqui da Icamy, todos muito bem executados, mas com a Luri a coisa não foi muito bem.'),
+    (8, 'P', 4, 'Muito bom!!!'),
+    (9, 'P', 5, 'Espera em salão de beleza? Horas caçando estacionamento? Nunca mais, agora só marco com o Paschoal na minha casa. Quem conhece, sabe que é um dos melhores profissionais da cidade'),
+    (10, 'P', 5, 'Cortar com o Paschoal na minha própria casa: NÃO TEM PREÇO!'),
+    (11, 'P', 1, 'Profissional impaciente, se acha estrela demais... Se eu quisesse ser maltratada, teria gasto meu tempo em qualquer salão de quinta. Decepção.'),
+    (12, 'P', 5, 'Olha, confesso que na hora achei que a Regina tinha errado a mão e tirado demais no corte. Mas no dia seguinte me senti linda!'),
+    (13, 'P', 5, 'Já conhecia a Regina antes da Icamy, sempre trabalhou muito bem! Recomendo muito!'),
+    (14, 'P', 5, 'Amei meu novo visual, a mulher é uma artista das tesouras!'),
+    (15, 'P', 4, 'Pelo preço, o serviço é excelente!'),
+    (21, 'P', 2, 'Não vi diferença no visual'),
+    (23, 'P', 5, 'Meu namorado disse que meu olhar ficou muito mais sensual!!! Muito obrigado, Neli!');
+    
 
 
 -- -----------------------------------------------------
 -- Table `icamydb`.`T_ICM_PROPOSTA_AGENDAMENTO`
 -- -----------------------------------------------------
-
+INSERT INTO T_ICM_PROPOSTA_AGENDAMENTO (cd_contratacao, ds_parte_proponente, dt_sugerida, tx_mensagem, st_proposta)
+VALUES
+	(1, 'C', '2016-09-25 14:30:00', 'Olá! Você tem disponibilidade para esse horário? Tenho uma certa urgência no serviço.', 0),
+    (1, 'P', '2016-09-25 14:30:00', 'Claro! Tudo certo então pro dia 25/09, devo chegar com 10 minutos de antecedência, ok?', 1),
+    (5, 'C', '2016-09-29 19:30:00', 'Boa tarde! Aguardo confirmação do agendamento', 0),
+    (5, 'P', '2016-09-30 18:30:00', 'Boa tarde, querida! Infelizmente, não tenho agenda para o dia 29. Pode ser no dia 30?', 1),
+    (10, 'C', '2016-10-13 10:00:00', 'Como funciona isso? É só colocar o horário que já tá agendado?', 0),
+    (10, 'P', '2016-10-13 10:00:00', 'Muito bom dia, Priscila! A data informada é uma solicitação de agendamento. Estou confirmando o dia/horário solicitados. nos vemos no dia 13/10 às 10 da manhã! Você tem um cômodo bem iluminado em sua casa?', 1),
+    (15, 'C', '2016-10-08 18:00:00', 'Regina, minha tia já cortou com você e disse que dava pra marcar nesse horário. Como faz?', 0),
+    (15, 'P', '2016-10-08 18:30:00', 'Infelizmente acabaram de marcar comigo nesse mesmo horário. Não podemos deixar pras 18:30?', 1),
+    (20, 'C', '2016-10-19 13:00:00', 'Preciso deste serviço neste horário, é meu horário de almoço e só terei esse intervalo durante a semana.', 0),
+    (20, 'P', '2016-10-25 13:00:00', 'Pode deixar querida! Tudo combinado!', 1),
+    (21, 'C', '2016-10-04 14:30:00', 'Você chega muito tempo antes do horário?', 0);
 
 
 -- -----------------------------------------------------
 -- Table `icamydb`.`T_ICM_PAGAMENTO`
 -- -----------------------------------------------------
-
-
+INSERT INTO T_ICM_PAGAMENTO (cd_contratacao, cd_modalidade, vl_operacao, st_pagamento, cd_identificador)
+VALUES
+	(1, 3, 20.00, 1, 'a76924e13ba68bb54e294bea07acd3f13ce5adab'),
+    (5, 3, 37.00, 1, 'fad9a0a6f25df623a055091fe7e403534c7e9536'),
+    (10, 3, 69.00, 1, '10c25665e49274c39b8e8f7ad6e2a3d0b0bc5052'),
+    (15, 3, 30.00, 1, 'f23d94b2a735b6193d3882ae31308d2e41e8282b'),
+    (20, 3, 90.00, 1, '0706025b2bbcec1ed8d64822f4eccd96314938d0'),
+    (21, 3, 35.00, 1, '2a69ed80e5dfa142aa29c01680eb65649b12b9b6');
 
 -- -----------------------------------------------------
 -- Table `icamydb`.`T_ICM_REPASSE`
 -- -----------------------------------------------------
+INSERT INTO T_ICM_REPASSE (cd_pagamento, vl_repasse, st_repasse)
+VALUES
+	(1, (20.00*0.85), 1),
+    (2, (37.00*0.85), 1),
+    (3, (69.00*0.85), 1),
+    (4, (30.00*0.85), 1),
+    (5, (90.00*0.85), 1),
+    (6, (35.00*0.85), 1);
+
