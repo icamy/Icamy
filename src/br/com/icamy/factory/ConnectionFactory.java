@@ -10,8 +10,8 @@ public class ConnectionFactory {
             throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/icamy", "root",
-                "root");
+        Connection conexao = DriverManager.getConnection("jdbc:mysql://icamydb.mysql.uhserver.com/icamydb", "icamydbuser",
+                "icamy@2016");
         return conexao;
     }
 }

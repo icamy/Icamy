@@ -11,6 +11,8 @@ public class ServicoBO {
     	servicoDAO = new ServicoDAO();
     }
     
+    
+    
     public Servico get(int codigo) throws Exception {
         if (codigo <= 0)
             throw new CodigoNuloException("O código fornecido é inválido");
