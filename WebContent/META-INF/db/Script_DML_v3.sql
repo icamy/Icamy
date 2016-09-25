@@ -150,27 +150,27 @@ VALUES
 -- -----------------------------------------------------
 INSERT INTO T_ICM_SERVICO (cd_categoria, nm_servico, st_servico, ds_servico)
 VALUES
-	(1, 'Esmaltação Comum', 'A', 'zzz'),
-    (1, 'Esmaltação em Gel', 'A', 'zzz'),
-    (1, 'Podologia', 'A', 'zzz'),
-    (2, 'Corte', 'A', 'zzz'),
-    (2, 'Escova', 'A', 'zzz'),
-    (2, 'Hidratação Capilar', 'A', 'zzz'),
-    (3, 'Design de Sobrancelha', 'A', 'zzz'),
-    (3, 'Limpeza de Sobrancelha', 'A', 'zzz'),
-    (3, 'Coloração de Sobrancelha', 'A', 'zzz'),
-    (4, 'Limpeza de Pele', 'A', 'zzz'),
-    (4, 'Drenagem Linfática', 'A', 'zzz'),
-    (4, 'Tratamento Anticelulite', 'A', 'zzz'),
-    (5, 'Depilação de Pernas', 'A', 'zzz'),
-    (5, 'Depilação de Axilas', 'A', 'zzz'),
-    (5, 'Depilação de Virilha', 'A', 'zzz'),
-    (6, 'Maquiagem Simples', 'A', 'zzz'),
-    (6, 'Maquiagem para Festa', 'A', 'zzz'),
-    (6, 'Dermopigmentação', 'A', 'zzz'),
-    (7, 'Massagem Relaxante', 'A', 'zzz'),
-    (7, 'Massagem Redutora', 'A', 'zzz'),
-    (7, 'Acupuntura', 'A', 'zzz');
+	(1, 'Esmaltação Comum', 1, 'Serviço de manicure/pedicure com aplicação de esmalte comum'),
+    (1, 'Esmaltação em Gel', 1, 'Serviço de manicure/pedicure com aplicação de esmalte gel'),
+    (1, 'Podologia', 1, 'zzz'),
+    (2, 'Corte', 1, 'zzz'),
+    (2, 'Escova', 1, 'zzz'),
+    (2, 'Hidratação Capilar', 1, 'zzz'),
+    (3, 'Design de Sobrancelha', 1, 'zzz'),
+    (3, 'Limpeza de Sobrancelha', 1, 'zzz'),
+    (3, 'Coloração de Sobrancelha', 1, 'zzz'),
+    (4, 'Limpeza de Pele', 1, 'zzz'),
+    (4, 'Drenagem Linfática', 1, 'zzz'),
+    (4, 'Tratamento Anticelulite', 1, 'zzz'),
+    (5, 'Depilação de Pernas', 1, 'zzz'),
+    (5, 'Depilação de Axilas', 1, 'zzz'),
+    (5, 'Depilação de Virilha', 1, 'zzz'),
+    (6, 'Maquiagem Simples', 1, 'zzz'),
+    (6, 'Maquiagem para Festa', 1, 'zzz'),
+    (6, 'Dermopigmentação', 1, 'zzz'),
+    (7, 'Massagem Relaxante', 1, 'zzz'),
+    (7, 'Massagem Redutora', 1, 'zzz'),
+    (7, 'Acupuntura', 1, 'zzz');
     
 
 -- -----------------------------------------------------
