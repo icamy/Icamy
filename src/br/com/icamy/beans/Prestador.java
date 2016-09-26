@@ -1,5 +1,7 @@
 package br.com.icamy.beans;
 
+import java.util.List;
+
 public class Prestador {
   private int codigo;
   private String nome;
@@ -44,11 +46,11 @@ public class Prestador {
     this.nome = nome;
   }
 
-  public int getCpf() {
+  public long getCpf() {
     return cpf;
   }
 
-  public void setCpf(int cpf) {
+  public void setCpf(long cpf) {
     this.cpf = cpf;
   }
 

@@ -2,13 +2,15 @@ package br.com.icamy.beans;
 
 public class Servico {
     private int codigo;
+    private Categoria categoria;
     private String nome;
     private boolean status;
     private String descricao;
 
-    public Servico(int codigo, String nome, boolean status, String descricao) {
+    public Servico(int codigo, Categoria categoria, String nome, boolean status, String descricao) {
         super();
         this.codigo = codigo;
+        this.categoria = categoria;
         this.nome = nome;
         this.status = status;
         this.descricao = descricao;
@@ -24,6 +26,14 @@ public class Servico {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+    
+    public Categoria getCategoria() {
+    	return categoria;
+    }
+    
+    public void setCategoria(Categoria categoria) {
+    	this.categoria = categoria;
     }
 
     public String getNome() {

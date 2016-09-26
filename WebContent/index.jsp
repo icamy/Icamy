@@ -8,9 +8,13 @@
   <link rel="stylesheet" href="styles/basic.css" />
 </head>
 <body>
-  <div class="container">
-    <p></p>
-    <p><button class="btn btn-primary" type="button">Ver mais</button></p>
-  </div>
+	<form method="get" action="http://localhost:8080/Icamy/Servico">
+		<fieldset>
+			<legend>Pegar servico</legend>
+			<label for="codigoServico">Código </label>
+			<input id="codigoServico" type="number" name="codigo" placeholder="Digite o código do servico (deixe em branco para listar todos)" /><br />
+			<input type="submit" value="Buscar" />
+		</fieldset>
+	</form>
 </body>
 </html>
