@@ -11,7 +11,7 @@ public class ConnectionFactory {
 
         Class.forName("com.mysql.jdbc.Driver");
         Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/icamydb", "root",
-                "root");
+                "fiap");
         return conexao;
     }
 }
