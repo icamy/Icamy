@@ -15,7 +15,7 @@ import br.com.icamy.factory.ConnectionFactory;
 
 public class ServicoDAO {
 	private Connection connection;
-
+	
 	public ServicoDAO() throws Exception {
 		try {
 			connection = new ConnectionFactory().getConnection();
@@ -23,7 +23,7 @@ public class ServicoDAO {
 			throw new Exception(e);
 		}
 	}
-
+	
 	public int insert(Servico servico) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
@@ -40,7 +40,7 @@ public class ServicoDAO {
 			if (result.next())
 				return result.getInt(1);
 			else
-				throw new Exception();
+				throw new Exception("Erro ao retornar o registro gerado.");
 		} catch (SQLException e) {
 			throw new Exception(e);
 		} finally {
