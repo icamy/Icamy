@@ -21,10 +21,10 @@
 					<!-- fim_Logo -->
 					<!-- menu -->
 					<ul>
-						<li><a href="">Sobre</a></li>
-						<li><a href="">Contato</a></li>
-						<li><a href="">Busca</a></li>
-						<li><a href="">Login</a></li>
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Contato</a></li>
+						<li><a href="#">Busca</a></li>
+						<li><a href="#">Login</a></li>
 					</ul>
 					<!-- fim menu -->
 				</nav>
