@@ -88,9 +88,12 @@ button:focus {
 .header ul li {
 	display: inline-block;
 	text-align: center;
+	border-radius: 4px;
+	padding: 5px;
+	transition: background 0.2s ease-in-out;
 }
 .header ul li:hover {
-	border: 1px solid white;
+	background: rgba(255, 255, 255,0.4);
 }
 .header ul li a {
 	text-decoration: none;
