@@ -13,22 +13,20 @@
 	
 	
 	<div class="container">
-			<div class="section-container">
 				<nav class="header">
-		<!-- logo -->
-					<div class="logo-nav">
-						<img src="styles/img/logo-white.svg" alt="logo"/>
+					<div class="nav-container">
+						<div class="logo-nav">
+							<img src="styles/img/logo-white.svg" alt="logo"/>
+						</div>
+			<!-- menu -->
+						<ul>
+							<li><a href="#">Sobre</a></li>
+							<li><a href="#">Contato</a></li>
+							<li><a href="#">Busca</a></li>
+							<li><a href="#">Login</a></li>
+						</ul>
 					</div>
-		<!-- fim_Logo -->
-		<!-- menu -->
-					<ul>
-						<li><a href="#">Sobre</a></li>
-						<li><a href="#">Contato</a></li>
-						<li><a href="#">Busca</a></li>
-						<li><a href="#">Login</a></li>
-					</ul>
 				</nav>
-			</div>
 		<!-- fim menu -->
 
 

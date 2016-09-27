@@ -32,12 +32,14 @@ button:focus {
 
 .header {
     height: 100px;
-    display: flex;
-    flex-direction: row;
+    background: black;
 }
-
-.section-container .header {
-	background: black;
+.nav-container {
+	width: 960px;
+	display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .header ul {
