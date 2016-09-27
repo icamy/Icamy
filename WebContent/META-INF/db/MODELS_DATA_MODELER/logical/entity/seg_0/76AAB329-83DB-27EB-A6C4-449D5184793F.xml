@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="76AAB329-83DB-27EB-A6C4-449D5184793F" name="T_ICM_CLIENTE">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 21:59:36 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="cd_cliente" id="77984DA6-7C53-9582-D312-0E1802E16CBF">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:00:02 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cd_bairro" id="8A0C3B4D-1521-DEE3-CF20-63DFFE3E4601">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 17:07:01 UTC</createdTime>
+<generatorID>F56E9FBF-3630-3D8D-F7E1-09C5A7F0769D</generatorID>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>2A492B3F-9A8B-A122-0F4F-742C2E47891C</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nm_cliente" id="14B19477-5369-E5B7-8F26-C8C7CC89D057">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:00:11 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_cpf" id="930C9AB6-DFBB-3D5B-3BA4-91124703008D">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-07 17:53:29 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_telefone1" id="053E503F-037D-490E-0746-A69BD7DE79CB">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:02:58 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_email1" id="8525FDC6-8749-1B7A-2752-D7B0D49F8063">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:00:47 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_senha" id="9D97B76A-6EFB-4CED-248D-5F9F51B50EBB">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-12 18:47:41 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dt_nascimento" id="F78CB791-5876-A862-6605-153211EFEACE">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:00:38 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_telefone2" id="2D2E0DBA-7E83-DE68-0E80-196790247CDC">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:03:18 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ds_email2" id="B6B3A331-032F-8077-54A4-D8536E21F73F">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:00:56 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FF3A6C06-FF10-D54C-979F-A9A389428394" name="T_ICM_CLIENTE PK">
+<createdBy>Renê</createdBy>
+<createdTime>2016-05-06 22:00:09 UTC</createdTime>
+<ownerDesignName>MODELS_DATA_MODELER</ownerDesignName>
+<engineerTo>
+<item key="46217B59-ECD2-A1D9-C11F-2E403E2A6C01" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>77984DA6-7C53-9582-D312-0E1802E16CBF</newElementsIDs>
+<usedAttributes>
+<attributeRef>77984DA6-7C53-9582-D312-0E1802E16CBF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
