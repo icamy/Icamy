@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Work Sans', sans-serif;
+	font-weight: 200;
 }
 hr {
     color: #d3d3d3;
@@ -23,12 +24,52 @@ button:focus {
 	max-width: 980px;
 	margin: 0px auto;
 }
+/************************************* Header *************************************/
 
+.hero {
+	color: white;
+}
 
-/************************************* Profile *************************************/
+.header {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+}
 
+.section-container .header {
+	background: black;
+}
 
-
+.header ul {
+    width: 300px;
+    list-style: none;
+    align-self: center; 
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+.header ul li {
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    transition: background 0.2s ease-in-out;
+}
+.header ul li:hover {
+    background: rgba(255, 255, 255,0.4);
+}
+.header ul li a {
+    text-decoration: none;
+    color: white;
+}
+.logo-nav {
+    flex-grow: 1;
+    align-self: center;
+}
+.logo-nav img {
+    height: 60px;
+}
 
 /************************************* results *************************************/
 
@@ -70,109 +111,12 @@ button:focus {
 	border: 1px solid #b1b1b1;
 }
 
-.btn-ver-mais {
-	margin: 30px auto;
-	text-align: center;
-}
-.btn-ver-mais span {
-	border: 0px;
-	border-radius: 0px;
-	font-size: 23px;
-	font-weight: 200;
-	color: white;
-	padding: 8px 30px;
-	background: #d62a5a; /* Old browsers */
-	background: -moz-linear-gradient(top, #d62a5a 0%, #9c2241 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #d62a5a 0%,#9c2241 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #d62a5a 0%,#9c2241 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62a5a', endColorstr='#9c2241',GradientType=0 ); /* IE6-9 */	
-	text-align: center;
-	cursor: pointer;
-	transition: box-shadow 0.2s ease-in-out;
-}
-.btn-ver-mais span:hover {
-	box-shadow: 0px 1px 8px rgba(0,0,0,0.8);
-}
-
 
 /************************************* Protifolio *************************************/
 
-.portifolio{
-    width: 100%;
-    margin-top: 50px;
-    margin-left: 57px;
-    border: solid;
-    margin-top: 78px;
-}
-
-.portifolio-itens{
-
-}
-
-.portifolio-item{
-
-}
-
-
-/************************************* Header *************************************/
-
-.hero {
-	color: white;
-	height: 50em;
-}
-
-.header {
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.header ul {
-    width: 300px;
-    list-style: none;
-    align-self: center; 
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-}
-.header ul li {
-    display: inline-block;
-    text-align: center;
-    border-radius: 4px;
-    padding: 5px;
-    transition: background 0.2s ease-in-out;
-}
-.header ul li:hover {
-    background: rgba(255, 255, 255,0.4);
-}
-.header ul li a {
-    text-decoration: none;
-    color: white;
-}
-.logo-nav {
-    flex-grow: 1;
-    align-self: center;
-}
-.logo-nav img {
-    height: 90px;
-}
-
-.section-container {
-    margin: 0px auto;
-    background-color: #6d162e;
-    height: 150px;
-}
-
-.logo-nav{
-    margin-top: 62px;
-    margin-left: 30px;
-}
 
 
 /************************************* Footer *************************************/
-
 
 .footer {
     background: #6D162E;

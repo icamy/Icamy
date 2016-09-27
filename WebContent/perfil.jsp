@@ -13,7 +13,6 @@
 	
 	
 	<div class="container">
-		
 			<div class="section-container">
 				<nav class="header">
 		<!-- logo -->
