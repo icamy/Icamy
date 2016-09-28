@@ -17,4 +17,9 @@
 		</fieldset>
 	</form>
 </body>
+<script>
+	window.onload = function() {
+		
+	}
+</script>
 </html>
