@@ -1,8 +1,8 @@
-html, body {
+html, body, h2{
     margin: 0;
     padding: 0;
     font-family: 'Work Sans', sans-serif;
-	font-weight: 500;
+	font-weight: 400;
 }
 hr {
     color: #d3d3d3;
@@ -50,6 +50,7 @@ button:focus {
     display: flex;
     flex-direction: row;
     padding: 0;
+    margin: -470px;
 }
 .header ul li {
     display: inline-block;
@@ -71,6 +72,10 @@ button:focus {
 }
 .logo-nav img {
     height: 60px;
+    align-self: flex-end;
+    float: left;
+    padding-top: 30px;
+    margin-left: 51px;
 }
 
 /************************************* results *************************************/
@@ -89,6 +94,7 @@ button:focus {
 .result h2 {
 	font-weight: 500;
 	color: #3F3F3F;
+    margin-top: 45px;
 }
 .result p, .result span {
 	color: #727272;	
@@ -117,14 +123,38 @@ button:focus {
 /************************************* Protifolio *************************************/
 
 
+.portifolio-itens{
+    width: 27%;
+    height: 307px;
+}
+
+.portifolio-item1{
+    width: 34%;
+}
+
+.portifolio-item2{
+    width: 100%;
+    margin-top: -304px;
+    margin-left: 360px;
+}
+
+.portifolio-item3{
+    width: 95%;
+    margin-top: -304px;
+    margin-left: 714px;
+}
+
+
+.portifolio h2{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
 
 .servicos{
     height: 150px;
     width: 430px;
-}
-
-.servicos-categoria{
- 
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
 }
 
 .servicos-icone{
@@ -134,6 +164,7 @@ button:focus {
     background-color: #a32044;
     height: 100px;
     margin-top: 30px
+
 }
 
 .servicos-icone img {
@@ -149,7 +180,7 @@ button:focus {
 } 
 
 .servicos-categoria h2{
-    margin-top: -102px;
+    margin-top: -95px;
     margin-left: 105px;
 } 
 
@@ -167,7 +198,8 @@ button:focus {
 
 .servicos-icone-tempo img{
     margin-left: 108px;
-    width: 17px;
+    width: 16px;
+    margin-top: 10px;
 }
 
 .servicos-icone-tempo p{
@@ -180,11 +212,12 @@ button:focus {
 .servicos-icone-rating img{
     margin-left: 247px;
     width: 20px;
+    margin-top: 9px;
 }
 
 .servicos-icone-rating p{
     margin-left: 271px;
-    margin-top: -19px;
+    margin-top: -21px;
     width: 18px;
 }
 
@@ -252,6 +285,7 @@ button:focus {
 .footer .section-container {
     display: flex;
     flex-direction: row;
+
 }
 
 .footer-container1 {

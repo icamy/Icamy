@@ -59,7 +59,6 @@
 							</div>
 						</div>
 					</div>
-					<hr />
 				</div>
 			</div>
 		</section>
@@ -72,9 +71,9 @@
 					<h2>Portifólio</h2>
 					<hr>
 					<div class="portifolio-itens">
-						<div class="portifolio-item"><img src="styles/img/ombre-hair-tumblr-brown-to-blonde-with-brown-to-blonde-ombre-hair-tumblr.jpg" height="300" width="300"></div>						
-						<div class="portifolio-item"><img src="styles/img/avilrla.jpg" height="300" width="300"></div>						
-						<div class="portifolio-item"><img src="styles/img/Relaxamento-capilar-para-cabelos-cacheados.jpg" height="300" width="300"></div>						
+						<div class="portifolio-item1"><img src="styles/img/ombre-hair-tumblr-brown-to-blonde-with-brown-to-blonde-ombre-hair-tumblr.jpg" height="300" width="250"></div>						
+						<div class="portifolio-item2"><img src="styles/img/avilrla.jpg" height="300" width="250"></div>						
+						<div class="portifolio-item3"><img src="styles/img/Relaxamento-capilar-para-cabelos-cacheados.jpg" height="300" width="250"></div>						
 					</div>
 				</div>
 			</div>			
