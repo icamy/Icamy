@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Work Sans', sans-serif;
-	font-weight: 200;
+	font-weight: 500;
 }
 hr {
     color: #d3d3d3;
@@ -32,7 +32,7 @@ button:focus {
 
 .header {
     height: 100px;
-    background: black;
+    background: #6d162e;
 }
 .nav-container {
 	width: 960px;
@@ -115,6 +115,119 @@ button:focus {
 
 
 /************************************* Protifolio *************************************/
+
+
+
+.servicos{
+    height: 150px;
+    width: 430px;
+}
+
+.servicos-categoria{
+ 
+}
+
+.servicos-icone{
+    border-radius: 60px;
+    width: 100px;
+    border: solid 1px #72727a;
+    background-color: #a32044;
+    height: 100px;
+    margin-top: 30px
+}
+
+.servicos-icone img {
+    width: 70px;
+    background: #a32044;
+    margin-top: 15px;
+    margin-left: 14px;
+}
+
+.servicos-categoria p{
+    margin-left: 110px;
+    margin-top: -5px;
+} 
+
+.servicos-categoria h2{
+    margin-top: -102px;
+    margin-left: 105px;
+} 
+
+.servicos-categoria h2{
+    margin-top: -102px;
+    margin-left: 105px;
+} 
+
+
+.servicos-icone-tempo{
+    height: 0px;
+    width: 26%;
+
+}
+
+.servicos-icone-tempo img{
+    margin-left: 108px;
+    width: 17px;
+}
+
+.servicos-icone-tempo p{
+    margin-left: 130px;
+    margin-top: -19px;
+    width: 100%;
+}
+
+
+.servicos-icone-rating img{
+    margin-left: 247px;
+    width: 20px;
+}
+
+.servicos-icone-rating p{
+    margin-left: 271px;
+    margin-top: -19px;
+    width: 18px;
+}
+
+.servicoes-icone-carrinho button{
+    background-color: #a32044;
+    cursor: pointer;
+    float: left;
+    margin-left: 334px;
+    margin-top: -110px;
+}
+
+.servicoes-icone-carrinho img{
+    margin-top: 6px;
+}
+
+.servicoes-icone-carrinho:hover{
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+
+.servicoes-icone-visao button{
+    float: left;
+    margin-left: 333px;
+    margin-top: -52px;
+    background-color: #a32044;
+    height: 37px;
+    width: 45px;
+    cursor: pointer;
+}
+
+.servicoes-icone-visao img{
+    margin-top: 4px;
+}
+
+.servicoes-icone-visao:hover{
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+
 
 
 
