@@ -25,6 +25,7 @@ button:focus {
 .section-container {
 	max-width: 980px;
 	margin: 0px auto;
+	padding: 0px 10px;
 }
 .hero {
 	background-image: url("img/bghero.jpg");
@@ -77,6 +78,7 @@ button:focus {
 	height: 100px;
 	display: flex;
 	flex-direction: row;
+	border-bottom: 1px solid white;	
 }
 
 .header ul {
@@ -121,11 +123,10 @@ button:focus {
 .result {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	max-width: 960px;	
+	align-items: center;	
 }
 .result h2 {
-	font-weight: 500;
+	font-weight: 400;
 	color: #3F3F3F;
 }
 .result p, .result span {
@@ -133,6 +134,7 @@ button:focus {
 }
 .result-img {
 	margin-right: 20px;
+    text-align: center;
 }
 .result-body {
 }
@@ -157,8 +159,9 @@ button:focus {
 }
 
 .btn-ver-mais {
-	margin: 30px auto;
+	margin: 30px 0px auto;
 	text-align: center;
+	padding-bottom: 30px;
 }
 .btn-ver-mais span {
 	border: 0px;
@@ -189,7 +192,7 @@ button:focus {
 	height: auto;
 }
 .search-bar {
-	margin-top: 10px;
+	padding-top: 10px;
 }
 .search-form {
 	margin: 0;
@@ -237,7 +240,7 @@ button:focus {
 	border: 1px solid gray;
 }
 .search-submit {
-	border: 1px solid #C4C4C4;
+	border: 0;
 	border-radius: 0px;
 	position: absolute;
 	margin-left: 910px;
@@ -254,60 +257,63 @@ button:focus {
 .search-results {
 	padding-top: 60px;	
 }
+/************************************* Footer *************************************/
 .footer {
-	background: #6D162E;
-	padding: 10px 0px;
-	height: 190px;
+    background: #6D162E;
+    padding: 10px 10px;
+    height: auto;
 }
 .footer h2 {
-	color: white;
-	font-size: 20px;
+    color: white;
+    font-size: 20px;
 }
 .footer ul {
-	list-style: none;
-	line-height: 27px;
-	color: white;
-	padding: 0;
+    list-style: none;
+    line-height: 27px;
+    color: white;
+    padding: 0;
 }
 .footer .section-container {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .footer-container1 {
 	flex-grow: 1;
-	align-self: flex-start;
-}
-.footer-container2 {
-	flex-grow: 1;
-	align-self: flex-start;
-}
-.footer-container3 {
-	flex-grow: 2;
-	align-self: center;
 	display: flex;
 	flex-direction: column;
-	
 }
-.footer-logo {
-	align-self: flex-end;
+.footer-container2 {
+    flex-grow: 2;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.footer-social-media {
-	align-self: flex-end;
-
+.footer-logo { 
+	text-align: center;	
 }
 .footer-social-media span {
-	padding: 0px 13px;
+    padding: 0px 5px;
 }
-
-.footer h2 {
-}
+/************************************* Responsivo *************************************/
 @media (max-width: 960px) {
-	.header ul { }
-	.search { padding: 0px 10px; margin: 0; }
-	.search-select { display: block; width: 100%; margin:0; position: relative }
-	.search-input { display: block; width: 100%; margin:0; position: relative; padding-right: 0 }
-	.search-submit { display: block; width: 100%; margin:0; position: relative; background-position: center }
-	.result { display: block; text-align: justify; padding: 0px 10px; }
-	
+	.header ul { display: none; }
+    .section-container { width: auto; margin: 0; }
+    .search { padding: 0px 10px; margin: 0; }
+    .search-select { display: block; width: 100%; margin:0; position: relative }
+	.search-input { display: block; width: 100%; margin:0; position: relative; padding-right: 0; }
+	.search-submit { display: block; width: 100%; margin:0; position: relative; }
+    .result { margin: 0; display: block; padding: 10px 10px; justify-content: center; align-items: center; }
+    .result p { text-align: justify; }
+    .result-img { margin: 0; }
+    .portifolio { padding: 10px 10px; }
+    .servicos { padding: 10px 10px; }
+    .portifolio-itens { justify-content: center; }
+    .folio-2, .folio-3 { display: none; }
+    .footer { height: auto; }
+    .footer-logo img { width: 50%; }
+    .footer .section-container { flex-direction: column; }
+    .footer-container1 { text-align: center; }
 }

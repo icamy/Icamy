@@ -15,7 +15,7 @@
 				<nav class="header">
 					<div class="nav-container">
 						<div class="logo-nav">
-							<img src="styles/img/logo-white.svg" alt="logo"/>
+							<a href="/Icamy/"><img src="styles/img/logo-white.svg" alt="logo"/></a>
 						</div>
 			<!-- menu -->
 						<ul>
@@ -111,7 +111,8 @@
 						<li>Login Profissional</li>
 					</ul>
 				</div>
-				<div class="footer-container2">
+				<hr/>
+				<div class="footer-container1">
 					<h2>Institucional</h2>
 					<ul>
 						<li>Como funciona</li>
@@ -120,8 +121,9 @@
 						<li>Termos de uso</li>
 					</ul>
 				</div>
-				<div class="footer-container3">
-					<span class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></span>
+				<hr/>
+				<div class="footer-container2">
+					<div class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></div>
 					<div class="footer-social-media">
 						<span><img src="styles/img/facebook.svg"></span>
 						<span><img src="styles/img/twitter.svg"></span>

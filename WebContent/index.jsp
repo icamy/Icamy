@@ -15,7 +15,7 @@
 				<nav class="header">
 					<!-- logo -->
 					<div class="logo-nav">
-						<img src="styles/img/logo-white.svg" alt="logo"/>
+						<a href="/Icamy/"><img src="styles/img/logo-white.svg" alt="logo"/></a>
 					</div>
 					<!-- fim_Logo -->
 					<!-- menu -->
@@ -48,7 +48,7 @@
 				<!-- container formulario -->
 				<div class="search-bar">
 					<!-- formulário -->
-					<form class="" action="" method="get">
+					<form action="" method="get">
 						<!-- caixa de seleção de categorias -->
 						<select class="search-select" name="cars">
 							<option value="categoria" selected="selected">Categoria</option>
@@ -109,7 +109,8 @@
 						<li>Login Profissional</li>
 					</ul>
 				</div>
-				<div class="footer-container2">
+				<hr/>
+				<div class="footer-container1">
 					<h2>Institucional</h2>
 					<ul>
 						<li>Como funciona</li>
@@ -118,8 +119,9 @@
 						<li>Termos de uso</li>
 					</ul>
 				</div>
-				<div class="footer-container3">
-					<span class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></span>
+				<hr/>
+				<div class="footer-container2">
+					<div class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></div>
 					<div class="footer-social-media">
 						<span><img src="styles/img/facebook.svg"></span>
 						<span><img src="styles/img/twitter.svg"></span>

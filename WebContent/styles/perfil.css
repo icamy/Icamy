@@ -1,3 +1,4 @@
+/************************************* Globais *************************************/
 html, body {
     margin: 0;
     padding: 0;
@@ -10,7 +11,6 @@ h1 {
 	font-size: 30px;
 	font-weight: 400;
 }
-
 h2 {
 	font-weight: 400;
 	color: #888888;
@@ -21,19 +21,16 @@ hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3)
 }
-
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
     outline: none;
 }
-
+/************************************* Blocos *************************************/
 .container {
     position: relative;
-
 }
-
 .section-container {
 	max-width: 980px;
 	margin: 0px auto;
@@ -43,7 +40,6 @@ button:focus {
 .hero {
 	color: white;
 }
-
 .header {
     height: 100px;
     background: #6d162e;
@@ -53,9 +49,10 @@ button:focus {
     justify-content: center;
     position: fixed;
     width: 100%;
+    border-bottom: 1px solid white;
 }
 .nav-container {
-	width: 960px;
+	width: 980px;
 	display: flex;
     flex-direction: row;
     justify-content: center;
@@ -109,18 +106,16 @@ button:focus {
 	align-items: center;
 	justify-content: center;	
 }
+.result-img {
+	text-align: center;
+	margin-right: 20px;
+}
 .result h2 {
-	font-weight: 500;
 	color: #3F3F3F;
     margin-top: 45px;
 }
 .result p, .result span {
 	color: #727272;	
-}
-.result-img {
-	margin-right: 20px;
-}
-.result-body {
 }
 .result .detalhes {
 	margin-right: 30px;
@@ -142,8 +137,6 @@ button:focus {
 
 
 /************************************* Protifolio *************************************/
-
-
 .portifolio-itens{
 	display: flex;
 	flex-direction: row;
@@ -167,19 +160,16 @@ button:focus {
 .folio-3 {
 	background: url("img/Relaxamento-capilar-para-cabelos-cacheados.jpg") no-repeat;
 	background-size: cover;
-	
 }
 /************************************* Serviços *************************************/
 .servicos {
 	height: auto;
 }
-
 /************************************* Footer *************************************/
-
 .footer {
     background: #6D162E;
     padding: 10px 10px;
-    height: 190px;
+    height: auto;
 }
 .footer h2 {
     color: white;
@@ -194,42 +184,41 @@ button:focus {
 .footer .section-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .footer-container1 {
-    flex-grow: 1;
-    align-self: flex-start;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
 }
 .footer-container2 {
-    flex-grow: 1;
-    align-self: flex-start;
-}
-.footer-container3 {
     flex-grow: 2;
     align-self: center;
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
 }
-.footer-logo {
-    align-self: flex-end;
-}
-.footer-social-media {
-    align-self: flex-end;
-
+.footer-logo { 
+	text-align: center;	
 }
 .footer-social-media span {
-    padding: 0px 13px;
+    padding: 0px 5px;
 }
-
+/************************************* Responsivo *************************************/
 @media (max-width: 960px) {
-    .header ul { }
-    .section-container { width: auto; }
+    .header ul { display: none; }
+    .section-container { width: auto; margin: 0; }
     .search { padding: 0px 10px; margin: 0; }
-    .result { display: block; text-align: justify; padding: 10px 10px; justify-content: center; align-items: center; }
+    .result { margin: 0; display: block; padding: 10px 10px; justify-content: center; align-items: center; }
+    .result p { text-align: justify; }
+    .result-img { margin: 0; }
     .portifolio { padding: 10px 10px; }
     .servicos { padding: 10px 10px; }
     .portifolio-itens { justify-content: center; }
     .folio-2, .folio-3 { display: none; }
-    .footer 
+    .footer { height: auto; }
+    .footer-logo img { width: 50%; }
+    .footer .section-container { flex-direction: column; }
+    .footer-container1 { text-align: center; }
 }
