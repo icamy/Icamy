@@ -47,14 +47,14 @@
 									<span class="categoria">Categoria2</span>
 									<span class="categoria">Categoria3</span>
 								</div>
-								<span class="detalhes">
-									<img src="styles/img/ic_position.png" width="13px">
+								<div class="detalhes">
+									<img src="styles/img/location.svg" width="15px">
 									<span>Endereço</span>
-								</span>
-								<span class="detalhes">
-									<span>ícone-rating</span>
+								</div>
+								<div class="detalhes">
+									<img src="styles/img/rating.svg" width="15px">
 									<span>8.7/10</span>
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>
