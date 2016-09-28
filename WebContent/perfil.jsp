@@ -40,7 +40,7 @@
 								<img src="styles/img/kravitz.jpg" width="200">
 							</div>
 							<div class="result-body">
-								<h2>Nome do Fornecedor</h2>
+								<h1>Nome do Fornecedor</h1>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								<div class="categorias">
 									<span class="categoria">Categoria1</span>
@@ -58,7 +58,6 @@
 							</div>
 						</div>
 					</div>
-					<hr />
 				</div>
 			</div>
 		</section>
@@ -71,9 +70,9 @@
 					<h2>Portifólio</h2>
 					<hr>
 					<div class="portifolio-itens">
-						<div class="portifolio-item"><img src="styles/img/ombre-hair-tumblr-brown-to-blonde-with-brown-to-blonde-ombre-hair-tumblr.jpg" width="300" ></div>						
-						<div class="portifolio-item"><img src="styles/img/avilrla.jpg" width="300"></div>						
-						<div class="portifolio-item"><img src="styles/img/Relaxamento-capilar-para-cabelos-cacheados.jpg" width="300"></div>						
+						<div class="portifolio-item folio-1"></div>						
+						<div class="portifolio-item folio-2"></div>						
+						<div class="portifolio-item folio-3"></div>						
 					</div>
 				</div>
 			</div>			
@@ -82,11 +81,11 @@
 			<!--Inicio Servico-->
 			
 			<div class="section-container">			
-				<h2>Serviços</h2>
-				<hr>
 				<div class="servicos">
+					<h2>Serviços</h2>
+					<hr/>
 					<div class="servicos-categoria">
-						<span class="servicos-icone"><img src="styles/img/hair-cut-tool.png"></span>
+						<span class="servicos-icone">ICONE TESOURA</span>
 						<h2>Corte de Cabelo</h2>
 						<span class="servicos-icone-tempo"><img src="styles/img/glyphicons-46-calendar.png"></span>
 						<p>Até 1 semana</p>

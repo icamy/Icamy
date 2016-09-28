@@ -5,11 +5,21 @@ html, body {
 	font-weight: 200;
 }
 
-h2 {
+h1 {
+	color: #434343;
+	font-size: 30px;
 	font-weight: 400;
 }
+
+h2 {
+	font-weight: 400;
+	color: #888888;
+}
 hr {
-    color: #d3d3d3;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
 }
 
 input:focus,
@@ -37,24 +47,38 @@ button:focus {
 .header {
     height: 100px;
     background: #6d162e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
 }
 .nav-container {
 	width: 960px;
 	display: flex;
     flex-direction: row;
-    text-align: center;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
 }
-
+.logo-nav {
+    flex-grow: 3;
+    align-self: center;
+    padding-top: 10px;
+}
+.logo-nav img {
+    height: 60px;
+    align-self: center;
+}
 .header ul {
-    width: 300px;
     list-style: none;
     align-self: center; 
     justify-content: space-around;
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
     padding: 0;
-    margin: -470px;
 }
 .header ul li {
     display: inline-block;
@@ -70,21 +94,10 @@ button:focus {
     text-decoration: none;
     color: white;
 }
-.logo-nav {
-    flex-grow: 1;
-    align-self: center;
-}
-.logo-nav img {
-    height: 60px;
-    align-self: flex-end;
-    float: left;
-    padding-top: 30px;
-    margin-left: 51px;
-}
-
 /************************************* results *************************************/
 
 .results {
+	padding-top: 100px;
 	display: flex;
 	flex-direction: column;
 }
@@ -92,8 +105,7 @@ button:focus {
 .result {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	max-width: 960px;	
+	align-items: center;	
 }
 .result h2 {
 	font-weight: 500;
@@ -131,18 +143,25 @@ button:focus {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .portifolio-item {
-	display: inline-block;
+	height: 300px;
+	width: 300px;
+	max-width: 300px;
 }
 .folio-1 {
-	
+	background: url("img/ombre-hair-tumblr-brown-to-blonde-with-brown-to-blonde-ombre-hair-tumblr.jpg") no-repeat;
+	background-size: cover;	
 }
 .folio-2 {
-	
+	background: url("img/avilrla.jpg") no-repeat;
+	background-size: cover;	
 }
 .folio-3 {
+	background: url("img/Relaxamento-capilar-para-cabelos-cacheados.jpg") no-repeat;
+	background-size: cover;
 	
 }
 /************************************* Serviços *************************************/
@@ -154,7 +173,7 @@ button:focus {
 
 .footer {
     background: #6D162E;
-    padding: 10px 0px;
+    padding: 10px 10px;
     height: 190px;
 }
 .footer h2 {
@@ -203,10 +222,13 @@ button:focus {
 }
 @media (max-width: 960px) {
     .header ul { }
+    .section-container { width: auto; }
     .search { padding: 0px 10px; margin: 0; }
-    .search-select { display: block; width: 100%; margin:0; position: relative }
-    .search-input { display: block; width: 100%; margin:0; position: relative; padding-right: 0 }
-    .search-submit { display: block; width: 100%; margin:0; position: relative; background-position: center }
-    .result { display: block; text-align: justify; padding: 0px 10px; }
+    .result { display: block; text-align: justify; padding: 10px 10px; justify-content: center; align-items: center; }
+    .portifolio { padding: 10px 10px; }
+    .servicos { padding: 10px 10px; }
+    .portifolio-itens { justify-content: center; }
+    .folio-2, .folio-3 { display: none; }
+    
     
 }
