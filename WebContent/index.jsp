@@ -10,7 +10,6 @@
 <body>
 
 	<div id="container">
-
 		<section class="hero">
 			<div class="section-container">
 				<nav class="header">
@@ -42,9 +41,7 @@
 				</div>
 			</div>
 		</section>
-
-
-
+		
 		<!-- container busca -->
 		<section class="search">
 			<div class="section-container">
@@ -54,10 +51,10 @@
 					<form class="" action="" method="get">
 						<!-- caixa de seleção de categorias -->
 						<select class="search-select" name="cars">
-							<option value="volvo" selected="selected">Categoria</option>
-							<option value="saab">1</option>
-							<option value="fiat">2</option>
-							<option value="audi">3</option>
+							<option value="categoria" selected="selected">Categoria</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
 						</select>
 						<!-- fim caixa de seleção de categorias -->
 						<input class="search-input" type="text" placeholder="Onde deseja ser atendido(a)?" />

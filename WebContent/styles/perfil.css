@@ -1,7 +1,11 @@
-html, body, h2{
+html, body {
     margin: 0;
     padding: 0;
     font-family: 'Work Sans', sans-serif;
+	font-weight: 200;
+}
+
+h2 {
 	font-weight: 400;
 }
 hr {
@@ -124,145 +128,27 @@ button:focus {
 
 
 .portifolio-itens{
-    width: 27%;
-    height: 307px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-.portifolio-item1{
-    width: 34%;
+.portifolio-item {
+	display: inline-block;
 }
-
-.portifolio-item2{
-    width: 100%;
-    margin-top: -304px;
-    margin-left: 360px;
+.folio-1 {
+	
 }
-
-.portifolio-item3{
-    width: 95%;
-    margin-top: -304px;
-    margin-left: 714px;
+.folio-2 {
+	
 }
-
-
-.portifolio h2{
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
+.folio-3 {
+	
 }
-
-.servicos{
-    height: 150px;
-    width: 430px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
+/************************************* Serviços *************************************/
+.servicos {
+	height: auto;
 }
-
-.servicos-icone{
-    border-radius: 60px;
-    width: 100px;
-    border: solid 1px #72727a;
-    background-color: #a32044;
-    height: 100px;
-    margin-top: 30px
-
-}
-
-.servicos-icone img {
-    width: 70px;
-    background: #a32044;
-    margin-top: 15px;
-    margin-left: 14px;
-}
-
-.servicos-categoria p{
-    margin-left: 110px;
-    margin-top: -5px;
-} 
-
-.servicos-categoria h2{
-    margin-top: -95px;
-    margin-left: 105px;
-} 
-
-.servicos-categoria h2{
-    margin-top: -102px;
-    margin-left: 105px;
-} 
-
-
-.servicos-icone-tempo{
-    height: 0px;
-    width: 26%;
-
-}
-
-.servicos-icone-tempo img{
-    margin-left: 108px;
-    width: 16px;
-    margin-top: 10px;
-}
-
-.servicos-icone-tempo p{
-    margin-left: 130px;
-    margin-top: -19px;
-    width: 100%;
-}
-
-
-.servicos-icone-rating img{
-    margin-left: 247px;
-    width: 20px;
-    margin-top: 9px;
-}
-
-.servicos-icone-rating p{
-    margin-left: 271px;
-    margin-top: -21px;
-    width: 18px;
-}
-
-.servicoes-icone-carrinho button{
-    background-color: #a32044;
-    cursor: pointer;
-    float: left;
-    margin-left: 334px;
-    margin-top: -110px;
-}
-
-.servicoes-icone-carrinho img{
-    margin-top: 6px;
-}
-
-.servicoes-icone-carrinho:hover{
-    opacity: 0.8;
-    transition: opacity 0.2s ease-in-out;
-}
-
-
-
-.servicoes-icone-visao button{
-    float: left;
-    margin-left: 333px;
-    margin-top: -52px;
-    background-color: #a32044;
-    height: 37px;
-    width: 45px;
-    cursor: pointer;
-}
-
-.servicoes-icone-visao img{
-    margin-top: 4px;
-}
-
-.servicoes-icone-visao:hover{
-    opacity: 0.8;
-    transition: opacity 0.2s ease-in-out;
-}
-
-
-
-
-
 
 /************************************* Footer *************************************/
 
@@ -313,7 +199,6 @@ button:focus {
 .footer-social-media span {
     padding: 0px 13px;
 }
-
 .footer h2 {
 }
 @media (max-width: 960px) {

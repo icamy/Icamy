@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head>
 <html lang="pt">
+<head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/perfil.css">
@@ -50,15 +49,16 @@
 								</div>
 								<span class="detalhes">
 									<img src="styles/img/ic_position.png" width="13px">
-									<span>EndereÃ§o</span>
+									<span>Endereço</span>
 								</span>
 								<span class="detalhes">
-									<span>Ã­Â­cone-rating</span>
+									<span>ícone-rating</span>
 									<span>8.7/10</span>
 								</span>
 							</div>
 						</div>
 					</div>
+					<hr />
 				</div>
 			</div>
 		</section>
@@ -68,32 +68,33 @@
 			<!--Inicio PortifÃ³lio-->			
 			<div class="section-container">
 				<div class="portifolio">
-					<h2>PortifÃ³lio</h2>
+					<h2>Portifólio</h2>
 					<hr>
 					<div class="portifolio-itens">
-						<div class="portifolio-item1"><img src="styles/img/ombre-hair-tumblr-brown-to-blonde-with-brown-to-blonde-ombre-hair-tumblr.jpg" height="300" width="250"></div>						
-						<div class="portifolio-item2"><img src="styles/img/avilrla.jpg" height="300" width="250"></div>						
-						<div class="portifolio-item3"><img src="styles/img/Relaxamento-capilar-para-cabelos-cacheados.jpg" height="300" width="250"></div>						
+						<div class="portifolio-item"><img src="styles/img/ombre-hair-tumblr-brown-to-blonde-with-brown-to-blonde-ombre-hair-tumblr.jpg" width="300" ></div>						
+						<div class="portifolio-item"><img src="styles/img/avilrla.jpg" width="300"></div>						
+						<div class="portifolio-item"><img src="styles/img/Relaxamento-capilar-para-cabelos-cacheados.jpg" width="300"></div>						
 					</div>
 				</div>
 			</div>			
 			<!--Fim PortifÃ³lio-->
 
 			<!--Inicio Servico-->
+			
 			<div class="section-container">			
-				<h2>ServiÃ§os</h2>
+				<h2>Serviços</h2>
 				<hr>
 				<div class="servicos">
 					<div class="servicos-categoria">
-						<div class="servicos-icone"><img src="styles/img/hair-cut-tool.png"></div>
+						<span class="servicos-icone"><img src="styles/img/hair-cut-tool.png"></span>
 						<h2>Corte de Cabelo</h2>
-						<div class="servicos-icone-tempo"><img src="styles/img/glyphicons-46-calendar.png">
-						<p>AtÃ© 1 semana</p></div>
-						<div class="servicos-icone-rating"><img src="styles/img/glyphicons-49-star-empty.png">
-						<p>9.2/10</p></div>
+						<span class="servicos-icone-tempo"><img src="styles/img/glyphicons-46-calendar.png"></span>
+						<p>Até 1 semana</p>
+						<span class="servicos-icone-rating"><img src="styles/img/glyphicons-49-star-empty.png"></span>
+						<p>9.2/10</p>
 						<p>R$70,00</p>
-						<div class="servicoes-icone-carrinho"><button><img src="styles/img/glyphicons-203-shopping-cart.png"></button></div>
-						<div class="servicoes-icone-visao"><button><img src="styles/img/glyphicons-52-eye-open.png"></button></div>
+						<span class="img/servicoes-icone-carrinho"><img src="styles/img/glyphicons-203-shopping-cart.png"></span>
+						<span class="servicoes-icone-visao"><img src="styles/img/glyphicons-52-eye-open.png"></span	>
 					</div>
 				</div>
 			</div>	
