@@ -1,19 +1,15 @@
 package br.com.icamy.beans;
 
-public class Categoria {
+public class ModalidadePgto {
 	private int codigo;
 	private String nome;
-
-	public Categoria(int codigo, String nome) {
-		super();
+	
+	public ModalidadePgto(int codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
-
-	public Categoria() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+	public ModalidadePgto() {}
 
 	public int getCodigo() {
 		return codigo;
@@ -30,5 +26,6 @@ public class Categoria {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 
 }

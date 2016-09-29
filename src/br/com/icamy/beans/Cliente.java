@@ -1,96 +1,44 @@
 package br.com.icamy.beans;
 
-import java.util.List;
+public class Cliente extends Usuario {
+	private long cpf;
+	private char sexo;
+	private List<Endereco> listaEnderecos;
+	
+	public Cliente(int codigo, String nome, long telefone, String email, String senha, String nascimento, long cpf,
+			char sexo, List<Endereco> listaEnderecos) {
+		super(codigo, nome, telefone, email, senha, nascimento);
+		this.cpf = cpf;
+		this.sexo = sexo;
+		this.listaEnderecos = listaEnderecos;
+	}
 
-public class Cliente {
-  private int codigo;
-  private Bairro bairro;
-  private String nome;
-  private int cpf;
-  private String dataDeNascimento;
-  private List<String> emails;
-  private List<Integer> telefones;
-  private List<Portfolio> portfolios;
+	public Cliente() {
+		super();
+	}
 
-  public Cliente(int codigo, Bairro bairro, String nome, int cpf, String dataDeNascimento, List<String> emails,
-      List<Integer> telefones, List<Portfolio> portfolios) {
-    super();
-    this.codigo = codigo;
-    this.bairro = bairro;
-    this.nome = nome;
-    this.cpf = cpf;
-    this.dataDeNascimento = dataDeNascimento;
-    this.emails = emails;
-    this.telefones = telefones;
-    this.portfolios = portfolios;
-  }
+	public long getCpf() {
+		return cpf;
+	}
 
-  public Cliente() {
-    super();
-    // TODO Auto-generated constructor stub
-  }
+	public void setCpf(long cpf) {
+		this.cpf = cpf;
+	}
 
-  public int getCodigo() {
-    return codigo;
-  }
+	public char getSexo() {
+		return sexo;
+	}
 
-  public void setCodigo(int codigo) {
-    this.codigo = codigo;
-  }
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
 
-  public Bairro getBairro() {
-    return bairro;
-  }
+	public List<Endereco> getListaEnderecos() {
+		return listaEnderecos;
+	}
 
-  public void setBairro(Bairro bairro) {
-    this.bairro = bairro;
-  }
+	public void setListaEnderecos(List<Endereco> listaEnderecos) {
+		this.listaEnderecos = listaEnderecos;
+	}
 
-  public String getNome() {
-    return nome;
-  }
-
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
-  public int getCpf() {
-    return cpf;
-  }
-
-  public void setCpf(int cpf) {
-    this.cpf = cpf;
-  }
-
-  public String getDataDeNascimento() {
-    return dataDeNascimento;
-  }
-
-  public void setDataDeNascimento(String dataDeNascimento) {
-    this.dataDeNascimento = dataDeNascimento;
-  }
-
-  public List<String> getEmails() {
-    return emails;
-  }
-
-  public void setEmails(List<String> emails) {
-    this.emails = emails;
-  }
-
-  public List<Integer> getTelefones() {
-    return telefones;
-  }
-
-  public void setTelefones(List<Integer> telefones) {
-    this.telefones = telefones;
-  }
-
-  public List<Portfolio> getPortfolios() {
-    return portfolios;
-  }
-
-  public void setPortfolios(List<Portfolio> portfolios) {
-    this.portfolios = portfolios;
-  }
 }

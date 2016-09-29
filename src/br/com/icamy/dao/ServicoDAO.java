@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.icamy.beans.Categoria;
+import br.com.icamy.beans.CategoriaServico;
 import br.com.icamy.beans.Servico;
 import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 import br.com.icamy.factory.ConnectionFactory;
@@ -111,7 +111,7 @@ public class ServicoDAO {
 			if (result.next()) {
 				Servico servico = new Servico();
 				servico.setCodigo(result.getInt("cd_servico"));
-				servico.setCategoria(new Categoria());
+				servico.setCategoria(new CategoriaServico());
 				servico.getCategoria().setCodigo(result.getInt("cd_categoria"));
 				servico.getCategoria().setNome(result.getString("nm_categoria"));
 				servico.setNome(result.getString("nm_servico"));
@@ -148,7 +148,7 @@ public class ServicoDAO {
 			while (result.next()) {
 				Servico servico = new Servico();
 				servico.setCodigo(result.getInt("cd_servico"));
-				servico.setCategoria(new Categoria());
+				servico.setCategoria(new CategoriaServico());
 				servico.getCategoria().setCodigo(result.getInt("cd_categoria"));
 				servico.getCategoria().setNome(result.getString("nm_categoria"));
 				servico.setNome(result.getString("nm_servico"));
