@@ -5,7 +5,6 @@ html, body {
     font-family: 'Work Sans', sans-serif;
 	font-weight: 200;
 }
-
 h1 {
 	color: #434343;
 	font-size: 30px;
@@ -34,6 +33,7 @@ button:focus {
 .section-container {
 	max-width: 980px;
 	margin: 0px auto;
+	padding: 0px 10px;
 }
 /************************************* Header *************************************/
 
@@ -109,6 +109,7 @@ button:focus {
 .result-img {
 	text-align: center;
 	margin-right: 20px;
+	min-width: 200px;
 }
 .result h2 {
 	color: #3F3F3F;
@@ -207,6 +208,7 @@ button:focus {
 }
 /************************************* Responsivo *************************************/
 @media (max-width: 960px) {
+	.header { height: 70px; }
     .header ul { display: none; }
     .section-container { width: auto; margin: 0; }
     .search { padding: 0px 10px; margin: 0; }
