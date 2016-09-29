@@ -2,61 +2,60 @@ package br.com.icamy.beans;
 
 public class Servico {
     private int codigo;
-    private Categoria categoria;
+    private CategoriaServico categoriaServico;
     private String nome;
-    private boolean status;
+    private char status;
     private String descricao;
-
-    public Servico(int codigo, Categoria categoria, String nome, boolean status, String descricao) {
-        super();
-        this.codigo = codigo;
-        this.categoria = categoria;
-        this.nome = nome;
-        this.status = status;
-        this.descricao = descricao;
-    }
-
-    public Servico() {
-        super();
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    
+    public Servico(int codigo, CategoriaServico categoriaServico, String nome, char status, String descricao) {
+    	this.codigo = codigo;
+    	this.categoriaServico = categoriaServico;
+    	this.nome = nome;
+    	this.status = status;
+    	this.descricao = descricao;
     }
     
-    public Categoria getCategoria() {
-    	return categoria;
-    }
+    public Servico() {}
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public CategoriaServico getCategoriaServico() {
+		return categoriaServico;
+	}
+
+	public void setCategoriaServico(CategoriaServico categoriaServico) {
+		this.categoriaServico = categoriaServico;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public char getStatus() {
+		return status;
+	}
+
+	public void setStatus(char status) {
+		this.status = status;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
     
-    public void setCategoria(Categoria categoria) {
-    	this.categoria = categoria;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+  
 }

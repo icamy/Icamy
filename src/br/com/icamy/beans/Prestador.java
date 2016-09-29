@@ -1,49 +1,25 @@
 package br.com.icamy.beans;
 
-public class Prestador {
-	private int codigo;
-	private String nome;
+public class Prestador extends Usuario {
 	private char tipoPessoa;
 	private long documento;
-	private long telefone;
-	private String email;
-	private String senha;
 	private String apresentacao;
-	private String dataDeNascimento;
-
-	public Prestador(int codigo, String nome, char tipoPessoa, long documento, long telefone, String email,
-			String senha, String apresentacao, String dataDeNascimento) {
-		super();
-		this.codigo = codigo;
-		this.nome = nome;
+	private List<Portfolio> listaPortfolios;
+	private List<Bairro> listaBairros;
+	
+	public Prestador(int codigo, String nome, long telefone, String email, String senha, String nascimento,
+			char tipoPessoa, long documento, String apresentacao, List<Portfolio> listaPortfolios,
+			List<Bairro> listaBairros) {
+		super(codigo, nome, telefone, email, senha, nascimento);
 		this.tipoPessoa = tipoPessoa;
 		this.documento = documento;
-		this.telefone = telefone;
-		this.email = email;
-		this.senha = senha;
 		this.apresentacao = apresentacao;
-		this.dataDeNascimento = dataDeNascimento;
+		this.listaPortfolios = listaPortfolios;
+		this.listaBairros = listaBairros;
 	}
 
 	public Prestador() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public char getTipoPessoa() {
@@ -62,30 +38,6 @@ public class Prestador {
 		this.documento = documento;
 	}
 
-	public long getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(long telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
 	public String getApresentacao() {
 		return apresentacao;
 	}
@@ -94,11 +46,21 @@ public class Prestador {
 		this.apresentacao = apresentacao;
 	}
 
-	public String getDataDeNascimento() {
-		return dataDeNascimento;
+	public List<Portfolio> getListaPortfolios() {
+		return listaPortfolios;
 	}
 
-	public void setDataDeNascimento(String dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
+	public void setListaPortfolios(List<Portfolio> listaPortfolios) {
+		this.listaPortfolios = listaPortfolios;
 	}
+
+	public List<Bairro> getListaBairros() {
+		return listaBairros;
+	}
+
+	public void setListaBairros(List<Bairro> listaBairros) {
+		this.listaBairros = listaBairros;
+	}
+	
+	
 }

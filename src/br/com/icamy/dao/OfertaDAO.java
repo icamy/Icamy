@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.icamy.beans.Categoria;
+import br.com.icamy.beans.CategoriaServico;
 import br.com.icamy.beans.Oferta;
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.beans.Servico;
@@ -80,7 +80,7 @@ public class OfertaDAO {
 
 				oferta.setServico(new Servico());
 				oferta.getServico().setCodigo(result.getInt("cd_servico"));
-				oferta.getServico().setCategoria(new Categoria());
+				oferta.getServico().setCategoria(new CategoriaServico());
 				oferta.getServico().getCategoria().setCodigo(result.getInt("cd_categoria"));
 				oferta.getServico().getCategoria().setNome(result.getString("nm_categoria"));
 				oferta.getServico().setNome(result.getString("nm_servico"));
@@ -134,7 +134,7 @@ public class OfertaDAO {
 
 				oferta.setServico(new Servico());
 				oferta.getServico().setCodigo(result.getInt("cd_servico"));
-				oferta.getServico().setCategoria(new Categoria());
+				oferta.getServico().setCategoria(new CategoriaServico());
 				oferta.getServico().getCategoria().setCodigo(result.getInt("cd_categoria"));
 				oferta.getServico().getCategoria().setNome(result.getString("nm_categoria"));
 				oferta.getServico().setNome(result.getString("nm_servico"));

@@ -4,27 +4,25 @@ public class Oferta {
 	private int codigo;
 	private Prestador prestador;
 	private Servico servico;
-	private double valor;
 	private String titulo;
-	private String prazo;
-	private String texto;
+	private String descricao;
+	private double valor;
+	private int execucaoEmMinutos;
+	private int validadeEmDias;
 
-	public Oferta(int codigo, Prestador prestador, Servico servico, double valor, String titulo, String prazo,
-			String texto) {
-		super();
+	public Oferta(int codigo, Prestador prestador, Servico servico, String titulo, String descricao,
+			double valor, int execucaoEmMinutos, int validadeEmDias) {
 		this.codigo = codigo;
 		this.prestador = prestador;
 		this.servico = servico;
-		this.valor = valor;
 		this.titulo = titulo;
-		this.prazo = prazo;
-		this.texto = texto;
+		this.descricao = descricao;
+		this.valor = valor;
+		this.execucaoEmMinutos = execucaoEmMinutos;
+		this.validadeEmDias = validadeEmDias;
 	}
-
-	public Oferta() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+	public Oferta() {}
 
 	public int getCodigo() {
 		return codigo;
@@ -50,14 +48,6 @@ public class Oferta {
 		this.servico = servico;
 	}
 
-	public double getValor() {
-		return valor;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-
 	public String getTitulo() {
 		return titulo;
 	}
@@ -66,19 +56,36 @@ public class Oferta {
 		this.titulo = titulo;
 	}
 
-	public String getPrazo() {
-		return prazo;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setPrazo(String prazo) {
-		this.prazo = prazo;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public String getTexto() {
-		return texto;
+	public double getValor() {
+		return valor;
 	}
 
-	public void setTexto(String texto) {
-		this.texto = texto;
+	public void setValor(double valor) {
+		this.valor = valor;
 	}
+
+	public int getExecucaoEmMinutos() {
+		return execucaoEmMinutos;
+	}
+
+	public void setExecucaoEmMinutos(int execucaoEmMinutos) {
+		this.execucaoEmMinutos = execucaoEmMinutos;
+	}
+
+	public int getValidadeEmDias() {
+		return validadeEmDias;
+	}
+
+	public void setValidadeEmDias(int validadeEmDias) {
+		this.validadeEmDias = validadeEmDias;
+	}
+	
 }

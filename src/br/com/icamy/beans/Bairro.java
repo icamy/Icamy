@@ -1,53 +1,51 @@
 package br.com.icamy.beans;
 
 public class Bairro {
-  private int codigo;
-  private Cidade cidade;
-  private String nome;
-  private String regiao;
+	private int codigo;
+	private String nome;
+	private String regiao;
+	private Cidade cidade;
 
-  public Bairro(int codigo, Cidade cidade, String nome, String regiao) {
-    super();
-    this.codigo = codigo;
-    this.cidade = cidade;
-    this.nome = nome;
-    this.regiao = regiao;
-  }
+	public Bairro(int codigo, String nome, String regiao, Cidade cidade) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.regiao = regiao;
+		this.cidade = cidade;
+	}
+	
+	public Bairro() {}
 
-  public Bairro() {
-    super();
-    // TODO Auto-generated constructor stub
-  }
+	public int getCodigo() {
+		return codigo;
+	}
 
-  public int getCodigo() {
-    return codigo;
-  }
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 
-  public void setCodigo(int codigo) {
-    this.codigo = codigo;
-  }
+	public String getNome() {
+		return nome;
+	}
 
-  public Cidade getCidade() {
-    return cidade;
-  }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-  public void setCidade(Cidade cidade) {
-    this.cidade = cidade;
-  }
+	public String getRegiao() {
+		return regiao;
+	}
 
-  public String getNome() {
-    return nome;
-  }
+	public void setRegiao(String regiao) {
+		this.regiao = regiao;
+	}
 
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
+	public Cidade getCidade() {
+		return cidade;
+	}
 
-  public String getRegiao() {
-    return regiao;
-  }
-
-  public void setRegiao(String regiao) {
-    this.regiao = regiao;
-  }
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+	
+	
 }
