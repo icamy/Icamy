@@ -319,8 +319,6 @@ button:focus {
     .result { margin: 0; display: block; padding: 10px 10px; justify-content: center; align-items: center; }
     .result p { text-align: justify; }
     .result-img { margin: 0; }
-    .portifolio { padding: 10px 10px; }
-    .servicos { padding: 10px 10px; }
     .servicos-header-title { width: 100%; }
     .servico { min-width: 320px; font-size: 13px; line-height: 22px; padding: 20px 0px; }
     .servico-body { width: 100%; }
@@ -331,4 +329,14 @@ button:focus {
     .footer .section-container { flex-direction: column; }
     .footer-container1 { text-align: center; }
     .footer .section-container hr { display: block; }
+}
+
+@media(max-width: 400px) {
+	h2 { font-size: 15px; }
+	select { font-size: 15px !important; width: 100%;}
+	.servico { margin-right: 20px; padding: 10px 0px;}
+	.servico-btns { height: 90px; }
+	.servico-btns .cta { height: 40px; width: 40px;}
+	.servico-icone img { height: 90px; padding-left: 20px;}
+	.servico-body { max-width: auto; height: 90px; margin-right:-40px; }
 }
