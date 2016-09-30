@@ -194,6 +194,7 @@
 	</div>
 	<!-- Fim -->
 	<script>
+	// Função para mudar a classe do botão toggle do menu responsivo
 	function changeToggleState() {
 		console.log(this.className)
 		if (this.className == "toggle") {
@@ -202,6 +203,8 @@
 			this.className = "toggle"
 		}
 	}
+	// EventListener atrelado ao botão toggle para executar o callback
+	// changeToggleState quando o botão for clicado/pressionado.
 	document.querySelector(".toggle").addEventListener("click", changeToggleState, false);
 	</script>
 

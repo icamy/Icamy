@@ -124,6 +124,79 @@ button:focus {
 .logo-nav img {
 	height: 60px;
 }
+.menu-btn {
+	display: none;
+	color: white;
+}
+.toggle {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+}
+.toggle span, .toggle span:before, .toggle span:after { 
+	content: "";
+	height: 2px;
+	background: white;
+	width: 100%;
+	display: block;
+	position: relative;
+	transition: all 0.1s ease-in-out;
+}
+.toggle span:before {
+	top: 15px;
+}
+.toggle span:after {
+	top: -17px;
+}
+.toggle-open span {
+	background: transparent;
+}
+.toggle-open span:before {
+	transform-origin: center;
+	transform: rotate(45deg);
+	top: 0;
+}
+.toggle-open span:after {
+	transform: rotate(-45deg);
+	top: -3px;
+}
+
+.mobile-nav {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	visibility: hidden;
+	opacity: 0;
+	min-height: 70vh;
+	top: 70px;
+	bottom: 0;
+	width: 100%;
+	position: fixed;
+    background: rgba(0,0,0,0.8);
+    transition: opacity 0.2s ease-in-out;
+}
+.mobile-nav a {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	text-decoration: none;
+	color: white;
+	width: 100%;
+	border-bottom: 0.5px solid #A32044;
+	transition: background 0.2s ease-in-out;
+}
+.mobile-nav a:first-child {
+	border-top: 0.5px solid #A32044;
+}
+.mobile-nav a:hover {
+	background: rgba(255, 255, 255, 0.2)
+}
 /************************************* search *************************************/
 .search {
 	background: #EDEDED;
@@ -305,8 +378,15 @@ button:focus {
 }
 /************************************* Responsivo *************************************/
 @media (max-width: 960px) {
+	.header { height: 70px; position: fixed; width: 100%; background: rgba(0,0,0,0.8); margin: 0px -10px;}
 	.header ul { display: none; }
+	.logo-nav { margin: 0px 10px; }
+	.mobile-nav { padding-left: -10px; }
+	.menu-btn { display: initial; margin: auto 20px;}
+    #menu:checked + .mobile-nav { visibility: visible; opacity: 1; }
+    #menu:checked > span.btn-component { background: transparent; }
     .section-container { width: auto; margin: 0; }
+    .container-conteudo-hero { padding-top: 70px; }
     .search { padding: 0px 10px; margin: 0; }
     .search-select { display: block; width: 100%; margin:0; position: relative; font-size:15px; }
 	.search-input { display: block; width: 100%; margin:0; position: relative; padding-right: 0; font-size:15px; }

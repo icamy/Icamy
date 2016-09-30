@@ -19,12 +19,20 @@
 					</div>
 					<!-- fim_Logo -->
 					<!-- menu -->
+					<input style="display: none" type="checkbox" id="menu" />
+					<div class="mobile-nav">
+						<a href="#">Sobre</a>
+						<a href="#">Contato</a>
+						<a href="#">Busca</a>
+						<a href="#">Login</a>
+					</div>
 					<ul>
 						<li><a href="#">Sobre</a></li>
 						<li><a href="#">Contato</a></li>
 						<li><a href="#">Busca</a></li>
 						<li><a href="#">Login</a></li>
 					</ul>
+					<label class="menu-btn" for="menu"><div class="toggle"><span class="btn-component"></span></div></label>
 					<!-- fim menu -->
 				</nav>
 	
