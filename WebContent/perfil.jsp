@@ -12,24 +12,30 @@
 	
 	
 	<div class="container">
-				<nav class="header">
-					<div class="nav-container">
-						<div class="logo-nav">
-							<a href="/Icamy/"><img src="styles/img/logo-white.svg" alt="logo"/></a>
-						</div>
-			<!-- menu -->
-						<ul>
-							<li><a href="#">Sobre</a></li>
-							<li><a href="#">Contato</a></li>
-							<li><a href="#">Busca</a></li>
-							<li><a href="#">Login</a></li>
-						</ul>
-					</div>
-				</nav>
-		<!-- fim menu -->
+		<nav class="header">
+			<div class="nav-container">
+				<div class="logo-nav">
+					<a href="/Icamy/"><img src="styles/img/logo-white.svg" alt="logo"/></a>
+				</div>
+				<input style="display: none" type="checkbox" id="menu" />
+				<div class="mobile-nav">
+					<a href="#">Sobre</a>
+					<a href="#">Contato</a>
+					<a href="#">Busca</a>
+					<a href="#">Login</a>
+				</div>
+				<ul>
+					<li><a href="#">Sobre</a></li>
+					<li><a href="#">Contato</a></li>
+					<li><a href="#">Busca</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+				<label class="menu-btn" for="menu"><div class="toggle"><span class="btn-component"></span></div></label>
+			</div>
+		</nav>
 
 
-			<!--Inicio Perfil-->
+		<!-- início perfil -->
 		<!-- container busca -->
 		<section class="search">
 			<div class="section-container">	
@@ -76,9 +82,9 @@
 					</div>
 				</div>
 			</div>			
-			<!--Fim PortifÃ³lio-->
+			<!--fim portifólio-->
 
-			<!--Inicio Servico-->
+			<!-- início serviço -->
 			
 			<div class="section-container">			
 				<div class="servicos">
@@ -148,7 +154,7 @@
 					</div>
 				</div>
 			</div>	
-			<!--Fim Servico-->
+			<!--fim servico-->
 
 		<!--Inicio Footer-->
 		<section class="footer">
