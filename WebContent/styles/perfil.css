@@ -117,13 +117,27 @@ button:focus {
 	width: 100%;
 	display: block;
 	position: relative;
+	transition: all 0.1s ease-in-out;
 }
 .toggle span:before {
-	top: -15px;
-}
-.toggle span:after {
 	top: 15px;
 }
+.toggle span:after {
+	top: -17px;
+}
+.toggle-open span {
+	background: transparent;
+}
+.toggle-open span:before {
+	transform-origin: center;
+	transform: rotate(45deg);
+	top: 0;
+}
+.toggle-open span:after {
+	transform: rotate(-45deg);
+	top: -3px;
+}
+
 .mobile-nav {
 	display: flex;
 	flex-direction: column;

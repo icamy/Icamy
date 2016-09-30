@@ -193,6 +193,17 @@
 		<!-- Fim Footer -->
 	</div>
 	<!-- Fim -->
+	<script>
+	function changeToggleState() {
+		console.log(this.className)
+		if (this.className == "toggle") {
+			this.className += " toggle-open"
+		} else {
+			this.className = "toggle"
+		}
+	}
+	document.querySelector(".toggle").addEventListener("click", changeToggleState, false);
+	</script>
 
 </body>
 </html>
