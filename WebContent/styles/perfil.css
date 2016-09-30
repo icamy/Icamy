@@ -320,7 +320,7 @@ button:focus {
     .result p { text-align: justify; }
     .result-img { margin: 0; }
     .servicos-header-title { width: 100%; }
-    .servico { min-width: 320px; font-size: 13px; line-height: 22px; padding: 20px 0px; }
+    .servico { min-width: 320px; width: 100%; font-size: 13px; line-height: 22px; padding: 20px 0px; }
     .servico-body { width: 100%; }
     .portifolio-itens { justify-content: center; }
     .folio-2, .folio-3 { display: none; }
