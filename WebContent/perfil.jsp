@@ -84,7 +84,7 @@
 				<div class="servicos">
 					<div class="servicos-header">
 						<h2 class="servicos-header-title">Serviços</h2>
-						<h2 class="servicos-header-filter">Ordernar por:</h2>
+						<h2 class="servicos-header-filter">Ordernar:</h2>
 						<select class="servicos-header-filter">
 							<option>Mais Vistos</option>
 							<option>Opção 2</option>

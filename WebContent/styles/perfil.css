@@ -54,6 +54,7 @@ button:focus {
     position: fixed;
     width: 100%;
     border-bottom: 1px solid white;
+    z-index: 3;
 }
 .nav-container {
 	width: 980px;
@@ -185,7 +186,7 @@ button:focus {
 	border: 0px;
 	border-radius: 0px;
 	-webkit-appearance: none;
-	font-size: 23px;
+	font-size: 20px;
 	font-weight: 400;
 	width: 200px;
 	height: auto;
@@ -226,30 +227,27 @@ button:focus {
 	z-index: 1;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
+	flex-grow: 1;
 	margin-left: -50px;
 	margin-right: -50px;
 	padding-left: 60px;
 	height: 120px;
-	flex-direction: column;
-	flex-grow: 1;
 	transition: background-color 0.2s ease-in-out;
 }
-.servico:hover > .servico-body {
+.servico:hover .servico-body {
 	background-color: white;
 }
-.servico-body:hover + .servico-btns {
-	visibility: visible;
-}
-.servico-btns:hover {
-	visibility: visible;
+.servico:hover .cta {
+	opacity: 1;
 }
 .servico-btns {
-	visibility: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 .servico-btns .cta {
+	opacity: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -261,7 +259,8 @@ button:focus {
 	background: -moz-linear-gradient(top, #d62a5a 0%, #9c2241 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, #d62a5a 0%,#9c2241 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, #d62a5a 0%,#9c2241 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62a5a', endColorstr='#9c2241',GradientType=0 ); /* IE6-9 */	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d62a5a', endColorstr='#9c2241',GradientType=0 ); /* IE6-9 */
+	transition: opacity 0.2s ease-in-out;	
 }
 .cta img {
 	width:30px;
@@ -312,6 +311,7 @@ button:focus {
 }
 /************************************* Responsivo *************************************/
 @media (max-width: 960px) {
+	h2 { font-size: 20px; }
 	.header { height: 70px; }
     .header ul { display: none; }
     .section-container { width: auto; margin: 0; }
@@ -321,6 +321,7 @@ button:focus {
     .result-img { margin: 0; }
     .portifolio { padding: 10px 10px; }
     .servicos { padding: 10px 10px; }
+    .servicos-header-title { width: 100%; }
     .servico { min-width: 320px; font-size: 13px; line-height: 22px; padding: 20px 0px; }
     .servico-body { width: 100%; }
     .portifolio-itens { justify-content: center; }
