@@ -15,10 +15,12 @@ h2 {
 	color: #888888;
 }
 hr {
+	display:block;
+	width: 100%;
     border: 0;
-    height: 0;
+    height: 1;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 input:focus,
 select:focus,
@@ -285,6 +287,7 @@ button:focus {
 	flex-direction: column;
 }
 .footer-container2 {
+	padding: 10px 0px;
     flex-grow: 2;
     align-self: center;
     display: flex;
@@ -296,6 +299,9 @@ button:focus {
 }
 .footer-social-media span {
     padding: 0px 5px;
+}
+.footer .section-container hr {
+	display: none;
 }
 /************************************* Responsivo *************************************/
 @media (max-width: 960px) {
@@ -316,6 +322,7 @@ button:focus {
     .footer-logo img { width: 50%; }
     .footer .section-container { flex-direction: column; }
     .footer-container1 { text-align: center; }
+    .footer .section-container hr { display: block; }
 }
 @media (max-width: 320px) {
 	.conteudo-hero h1 { font-size: 38px; }

@@ -82,18 +82,69 @@
 			
 			<div class="section-container">			
 				<div class="servicos">
-					<h2>Serviços</h2>
+					<div class="servicos-header">
+						<h2 class="servicos-header-title">Serviços</h2>
+						<h2 class="servicos-header-filter">Ordernar por:</h2>
+						<select class="servicos-header-filter">
+							<option>Mais Vistos</option>
+							<option>Opção 2</option>
+							<option>Opção 3</option>
+						</select>
+					</div>
 					<hr/>
-					<div class="servicos-categoria">
-						<span class="servicos-icone">ICONE TESOURA</span>
-						<h2>Corte de Cabelo</h2>
-						<span class="servicos-icone-tempo"><img src="styles/img/glyphicons-46-calendar.png"></span>
-						<p>Até 1 semana</p>
-						<span class="servicos-icone-rating"><img src="styles/img/glyphicons-49-star-empty.png"></span>
-						<p>9.2/10</p>
-						<p>R$70,00</p>
-						<span class="img/servicoes-icone-carrinho"><img src="styles/img/glyphicons-203-shopping-cart.png"></span>
-						<span class="servicoes-icone-visao"><img src="styles/img/glyphicons-52-eye-open.png"></span	>
+					<div class="servicos-body">
+						<div class="servico">
+							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<div class="servico-body">
+								<h2>Corte de Cabelo</h2>
+								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span class="servicos-icone-rating"><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+							</div>
+							<div class="servico-btns">
+								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+							</div>
+						</div>
+						<div class="servico">
+							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<div class="servico-body">
+								<h2>Corte de Cabelo</h2>
+								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+							</div>
+							<div class="servico-btns">
+								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+							</div>
+						</div>
+						<div class="servico">
+							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<div class="servico-body">
+								<h2>Corte de Cabelo</h2>
+								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span class="servicos-icone-rating"><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+							</div>
+							<div class="servico-btns">
+								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+							</div>
+						</div>
+						<div class="servico">
+							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<div class="servico-body">
+								<h2>Corte de Cabelo</h2>
+								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span class="servicos-icone-rating"><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+							</div>
+							<div class="servico-btns">
+								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>	
@@ -111,7 +162,7 @@
 						<li>Login Profissional</li>
 					</ul>
 				</div>
-				<hr/>
+				<hr />
 				<div class="footer-container1">
 					<h2>Institucional</h2>
 					<ul>
@@ -121,7 +172,7 @@
 						<li>Termos de uso</li>
 					</ul>
 				</div>
-				<hr/>
+				<hr />
 				<div class="footer-container2">
 					<div class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></div>
 					<div class="footer-social-media">
