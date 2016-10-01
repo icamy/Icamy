@@ -2,7 +2,7 @@
 <html lang="pt">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/home.css">
+<link rel="stylesheet" type="text/css" href="static/css/home.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,700" rel="stylesheet">
 <head>
 	<title>Icamy</title>
@@ -15,7 +15,7 @@
 				<nav class="header">
 					<!-- logo -->
 					<div class="logo-nav">
-						<a href="/Icamy/"><img src="styles/img/logo-white.svg" alt="logo"/></a>
+						<a href="/Icamy/"><img src="static/img/logo-white.svg" alt="logo"/></a>
 					</div>
 					<!-- fim_Logo -->
 					<!-- menu -->
@@ -76,7 +76,7 @@
 						<%-- Resultado modelo --%>
 						<div class="result">
 							<div class="result-img">
-								<img src="styles/img/kravitz.jpg" width="200">
+								<img src="static/img/kravitz.jpg" width="200">
 							</div>
 							<div class="result-body">
 								<h2>Nome do Fornecedor</h2>
@@ -87,11 +87,11 @@
 									<span class="categoria">Categoria3</span>
 								</div>
 								<div class="detalhes">
-									<img src="styles/img/location.svg" width="15px">
+									<img src="static/img/location.svg" width="15px">
 									<span>Endereço</span>
 								</div>
 								<div class="detalhes">
-									<img src="styles/img/rating.svg" width="15px">
+									<img src="static/img/rating.svg" width="15px">
 									<span>8.7/10</span>
 								</div>
 							</div>
@@ -129,12 +129,12 @@
 				</div>
 				<hr/>
 				<div class="footer-container2">
-					<div class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></div>
+					<div class="footer-logo"><img src="static/img/logo-white.svg" width="200"></div>
 					<div class="footer-social-media">
-						<span><img src="styles/img/facebook.svg"></span>
-						<span><img src="styles/img/twitter.svg"></span>
-						<span><img src="styles/img/instagram.svg"></span>
-						<span><img src="styles/img/youtube.svg"></span>
+						<span><img src="static/img/facebook.svg"></span>
+						<span><img src="static/img/twitter.svg"></span>
+						<span><img src="static/img/instagram.svg"></span>
+						<span><img src="static/img/youtube.svg"></span>
 					</div>
 				</div>
 			</div>
@@ -142,19 +142,6 @@
 		<!-- Fim Footer -->
 	</div>
 	<!-- Fim -->
-	<script>
-	// Função para mudar a classe do botão toggle do menu responsivo
-	function changeToggleState() {
-		console.log(this.className)
-		if (this.className == "toggle") {
-			this.className += " toggle-open"
-		} else {
-			this.className = "toggle"
-		}
-	}
-	// EventListener atrelado ao botão toggle para executar o callback
-	// changeToggleState quando o botão for clicado/pressionado.
-	document.querySelector(".toggle").addEventListener("click", changeToggleState, false);
-	</script>
+	<script src="static/js/scripts.js"></script>
 </body>
 </html>

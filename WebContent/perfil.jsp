@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/perfil.css">
+<link rel="stylesheet" type="text/css" href="static/css/perfil.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,700" rel="stylesheet">
 	<title>Icamy</title>
 </head>
@@ -15,9 +15,10 @@
 		<nav class="header">
 			<div class="nav-container">
 				<div class="logo-nav">
-					<a href="/Icamy/"><img src="styles/img/logo-white.svg" alt="logo"/></a>
+					<a href="/Icamy/"><img src="static/img/logo-white.svg" alt="logo"/></a>
 				</div>
 				<input style="display: none" type="checkbox" id="menu" />
+<!-- 				<span class="cart-icon"><img src="static/img/cart.svg"/><span class="cart-counter">0</span></span> -->
 				<div class="mobile-nav">
 					<a href="#">Sobre</a>
 					<a href="#">Contato</a>
@@ -43,7 +44,7 @@
 					<div class="results">
 						<div class="result">
 							<div class="result-img">
-								<img src="styles/img/kravitz.jpg" width="200">
+								<img src="static/img/kravitz.jpg" width="200">
 							</div>
 							<div class="result-body">
 								<h1>Nome do Fornecedor</h1>
@@ -54,11 +55,11 @@
 									<span class="categoria">Categoria3</span>
 								</div>
 								<div class="detalhes">
-									<img src="styles/img/location.svg" width="15px">
+									<img src="static/img/location.svg" width="15px">
 									<span>Endereço</span>
 								</div>
 								<div class="detalhes">
-									<img src="styles/img/rating.svg" width="15px">
+									<img src="static/img/rating.svg" width="15px">
 									<span>8.7/10</span>
 								</div>
 							</div>
@@ -100,55 +101,55 @@
 					<hr/>
 					<div class="servicos-body">
 						<div class="servico">
-							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<span class="servico-icone"><img src="static/img/hair-cut.png" /></span>
 							<div class="servico-body">
 								<h2>Corte de Cabelo</h2>
-								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
-								<span class="servicos-icone-rating"><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+								<span><img src="static/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span class="servicos-icone-rating"><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
 							</div>
 							<div class="servico-btns">
-								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
 							</div>
 						</div>
 						<div class="servico">
-							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<span class="servico-icone"><img src="static/img/hair-cut.png" /></span>
 							<div class="servico-body">
 								<h2>Corte de Cabelo</h2>
-								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
-								<span><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+								<span><img src="static/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
 							</div>
 							<div class="servico-btns">
-								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
 							</div>
 						</div>
 						<div class="servico">
-							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<span class="servico-icone"><img src="static/img/hair-cut.png" /></span>
 							<div class="servico-body">
 								<h2>Corte de Cabelo</h2>
-								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
-								<span class="servicos-icone-rating"><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+								<span><img src="static/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span class="servicos-icone-rating"><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
 							</div>
 							<div class="servico-btns">
-								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
 							</div>
 						</div>
 						<div class="servico">
-							<span class="servico-icone"><img src="styles/img/hair-cut.png" /></span>
+							<span class="servico-icone"><img src="static/img/hair-cut.png" /></span>
 							<div class="servico-body">
 								<h2>Corte de Cabelo</h2>
-								<span><img src="styles/img/calendar.svg" width="15px" /> Até 1 semana</span>
-								<span class="servicos-icone-rating"><img src="styles/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="styles/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
+								<span><img src="static/img/calendar.svg" width="15px" /> Até 1 semana</span>
+								<span class="servicos-icone-rating"><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
+								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
 							</div>
 							<div class="servico-btns">
-								<span class="cta"><img class="cta-img" src="styles/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="styles/img/eye.svg" /></span>
+								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
+								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
 							</div>
 						</div>
 					</div>
@@ -180,12 +181,12 @@
 				</div>
 				<hr />
 				<div class="footer-container2">
-					<div class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></div>
+					<div class="footer-logo"><img src="static/img/logo-white.svg" width="200"></div>
 					<div class="footer-social-media">
-						<span><img src="styles/img/facebook.svg"></span>
-						<span><img src="styles/img/twitter.svg"></span>
-						<span><img src="styles/img/instagram.svg"></span>
-						<span><img src="styles/img/youtube.svg"></span>
+						<span><img src="static/img/facebook.svg"></span>
+						<span><img src="static/img/twitter.svg"></span>
+						<span><img src="static/img/instagram.svg"></span>
+						<span><img src="static/img/youtube.svg"></span>
 					</div>
 				</div>
 			</div>
@@ -204,28 +205,7 @@
 		
 	</div>
 	<!-- Fim -->
-	<script>
-	// Função para mudar a classe do botão toggle do menu responsivo
-	function changeToggleState() {
-		console.log(this.className)
-		if (this.className == "toggle") {
-			this.className += " toggle-open"
-		} else {
-			this.className = "toggle"
-		}
-	}
-	// EventListener atrelado ao botão toggle para executar o callback
-	// changeToggleState quando o botão for clicado/pressionado.
-	document.querySelector(".toggle").addEventListener("click", changeToggleState, false);
-	
-	function changeDisplayStyle() {
-		document.querySelector(".modal-container").style.display = "none"
-	}
-	
-	document.querySelector(".modal-close-btn").addEventListener("click", changeDisplayStyle, false)
-	
-	</script>
-
+	<script src="static/js/scripts.js"></script>
 </body>
 </html>
 

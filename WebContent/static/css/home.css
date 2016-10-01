@@ -39,7 +39,7 @@ button:focus {
 }
 /************************************* Header *************************************/
 .hero {
-	background-image: url("img/bghero.jpg");
+	background-image: url("../img/bghero.jpg");
 	background-size: cover;
 	background-repeat: no-repeat; 
 	color: white;
@@ -219,7 +219,7 @@ button:focus {
 	padding: 0px 20px;
 	position: absolute;
 	margin-right: -5px;
-	background: #D3D3D3 url(img/angle-arrow-down.svg) no-repeat;
+	background: #D3D3D3 url(../img/angle-arrow-down.svg) no-repeat;
 	background-position: 95% 50%;
 	background-size: 20px;
 	color: #676767;
@@ -237,7 +237,7 @@ button:focus {
 	margin-left: 280px;
 	box-sizing: border-box;
 	transition: border 0.2s ease-in-out;
-	background: url(img/gps-arrow.svg) no-repeat scroll 10px;
+	background: url(../img/gps-arrow.svg) no-repeat scroll 10px;
 	background-size: 20px;
 	
 }
@@ -254,9 +254,9 @@ button:focus {
 	display: inline-block;
 	cursor: pointer;
 	background: #d62a5a; /* Old browsers */
-	background: url(img/search-ico.svg) no-repeat scroll 10px, -moz-linear-gradient(top, #d62a5a 0%, #9c2241 100%); /* FF3.6-15 */
-	background: url(img/search-ico.svg) no-repeat scroll 10px, -webkit-linear-gradient(top, #d62a5a 0%,#9c2241 100%); /* Chrome10-25,Safari5.1-6 */
-	background: url(img/search-ico.svg) no-repeat scroll 10pxm linear-gradient(to bottom, #d62a5a 0%,#9c2241 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: url(../img/search-ico.svg) no-repeat scroll 10px, -moz-linear-gradient(top, #d62a5a 0%, #9c2241 100%); /* FF3.6-15 */
+	background: url(../img/search-ico.svg) no-repeat scroll 10px, -webkit-linear-gradient(top, #d62a5a 0%,#9c2241 100%); /* Chrome10-25,Safari5.1-6 */
+	background: url(../img/search-ico.svg) no-repeat scroll 10pxm linear-gradient(to bottom, #d62a5a 0%,#9c2241 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .search-results {
