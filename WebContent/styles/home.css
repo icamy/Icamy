@@ -378,7 +378,7 @@ button:focus {
 }
 /************************************* Responsivo *************************************/
 @media (max-width: 960px) {
-	.header { height: 70px; position: fixed; width: 100%; background: rgba(0,0,0,0.8); margin: 0px -10px;}
+	.header { height: 70px; position: fixed; width: 100%; background: rgba(0,0,0,0.8); margin: 0px -10px; z-index: 10;}
 	.header ul { display: none; }
 	.logo-nav { margin: 0px 10px; }
 	.mobile-nav { padding-left: -10px; }
