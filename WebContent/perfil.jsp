@@ -191,6 +191,17 @@
 			</div>
 		</section>
 		<!-- Fim Footer -->
+		
+		<!-- Inicio Modal -->
+		
+	<div class="modal-container">
+		<div class="modal-content">
+			<div class="modal-close-btn"><span></span></div>
+		</div>
+	</div>	
+		
+		<!-- Fim Modal -->
+		
 	</div>
 	<!-- Fim -->
 	<script>
@@ -206,6 +217,13 @@
 	// EventListener atrelado ao botão toggle para executar o callback
 	// changeToggleState quando o botão for clicado/pressionado.
 	document.querySelector(".toggle").addEventListener("click", changeToggleState, false);
+	
+	function changeDisplayStyle() {
+		document.querySelector(".modal-container").style.display = "none"
+	}
+	
+	document.querySelector(".modal-close-btn").addEventListener("click", changeDisplayStyle, false)
+	
 	</script>
 
 </body>

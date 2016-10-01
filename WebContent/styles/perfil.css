@@ -338,6 +338,59 @@ button:focus {
 .cta img {
 	width:30px;
 }
+/************************************* Modal *************************************/
+
+.modal-container {
+	background: rgba(0,0,0,0.5);
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    z-index: 15;	
+}
+
+.modal-content {
+	background: white;
+    width: 980px;
+    height: 80%;
+    border-radius: 7px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.modal-close-btn {
+	align-self: flex-end;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.modal-close-btn span:before, .modal-close-btn span:after {
+	height: 2px;
+	background: #b1b1b1;
+	display: block;
+	content:""; 
+	transform-origin: center;
+}
+.modal-close-btn span:before {
+	transform: rotate(45deg);
+}
+.modal-close-btn span:after {
+	margin-top: -1px;
+	transform: rotate(-45deg);
+}
+
 /************************************* Footer *************************************/
 .footer {
     background: #6D162E;
@@ -388,6 +441,7 @@ button:focus {
 	.header { height: 70px; }
     .header ul { display: none; }
     .menu-btn { display: initial; }
+    .mobile-nav { left: 0; }
     #menu:checked + .mobile-nav { visibility: visible; opacity: 1; }
     #menu:checked > span.btn-component { background: transparent; }
     .section-container { width: auto; margin: 0; }
