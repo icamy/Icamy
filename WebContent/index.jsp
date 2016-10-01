@@ -1,9 +1,8 @@
-<%@ page import="br.com.icamy.dao.*" %>
 <!DOCTYPE html>
 <html lang="pt">
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/home.css">
+<link rel="stylesheet" type="text/css" href="static/css/home.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,700" rel="stylesheet">
 <head>
 	<title>Icamy</title>
@@ -11,22 +10,29 @@
 <body>
 
 	<div id="container">
-
 		<section class="hero">
 			<div class="section-container">
 				<nav class="header">
 					<!-- logo -->
 					<div class="logo-nav">
-						<img src="styles/img/logo-white.svg" alt="logo"/>
+						<a href="/Icamy/"><img src="static/img/logo-white.svg" alt="logo"/></a>
 					</div>
 					<!-- fim_Logo -->
 					<!-- menu -->
+					<input style="display: none" type="checkbox" id="menu" />
+					<div class="mobile-nav">
+						<a href="#">Sobre</a>
+						<a href="#">Contato</a>
+						<a href="#">Busca</a>
+						<a href="#">Login</a>
+					</div>
 					<ul>
 						<li><a href="#">Sobre</a></li>
 						<li><a href="#">Contato</a></li>
 						<li><a href="#">Busca</a></li>
 						<li><a href="#">Login</a></li>
 					</ul>
+					<label class="menu-btn" for="menu"><div class="toggle"><span class="btn-component"></span></div></label>
 					<!-- fim menu -->
 				</nav>
 	
@@ -43,22 +49,20 @@
 				</div>
 			</div>
 		</section>
-
-
-
+		
 		<!-- container busca -->
 		<section class="search">
 			<div class="section-container">
 				<!-- container formulario -->
 				<div class="search-bar">
 					<!-- formulário -->
-					<form class="" action="" method="get">
+					<form action="" method="get">
 						<!-- caixa de seleção de categorias -->
 						<select class="search-select" name="cars">
-							<option value="volvo" selected="selected">Categoria</option>
-							<option value="saab">1</option>
-							<option value="fiat">2</option>
-							<option value="audi">3</option>
+							<option value="categoria" selected="selected">Categoria</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
 						</select>
 						<!-- fim caixa de seleção de categorias -->
 						<input class="search-input" type="text" placeholder="Onde deseja ser atendido(a)?" />
@@ -72,24 +76,24 @@
 						<%-- Resultado modelo --%>
 						<div class="result">
 							<div class="result-img">
-								<img src="styles/img/kravitz.jpg" width="200">
+								<img src="static/img/kravitz.jpg" width="200">
 							</div>
 							<div class="result-body">
-								<h2>Nome do Prestador</h2>
+								<h2>Nome do Fornecedor</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 								<div class="categorias">
 									<span class="categoria">Categoria1</span>
 									<span class="categoria">Categoria2</span>
 									<span class="categoria">Categoria3</span>
 								</div>
-								<span class="detalhes">
-									<img src="styles/img/ic_position.png" width="13px">
+								<div class="detalhes">
+									<img src="static/img/location.svg" width="15px">
 									<span>Endereço</span>
-								</span>
-								<span class="detalhes">
-									<span>í­cone-rating</span>
+								</div>
+								<div class="detalhes">
+									<img src="static/img/rating.svg" width="15px">
 									<span>8.7/10</span>
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -113,7 +117,8 @@
 						<li>Login Profissional</li>
 					</ul>
 				</div>
-				<div class="footer-container2">
+				<hr/>
+				<div class="footer-container1">
 					<h2>Institucional</h2>
 					<ul>
 						<li>Como funciona</li>
@@ -122,13 +127,14 @@
 						<li>Termos de uso</li>
 					</ul>
 				</div>
-				<div class="footer-container3">
-					<span class="footer-logo"><img src="styles/img/logo-white.svg" width="200"></span>
+				<hr/>
+				<div class="footer-container2">
+					<div class="footer-logo"><img src="static/img/logo-white.svg" width="200"></div>
 					<div class="footer-social-media">
-						<span><img src="styles/img/facebook.svg"></span>
-						<span><img src="styles/img/twitter.svg"></span>
-						<span><img src="styles/img/instagram.svg"></span>
-						<span><img src="styles/img/youtube.svg"></span>
+						<span><img src="static/img/facebook.svg"></span>
+						<span><img src="static/img/twitter.svg"></span>
+						<span><img src="static/img/instagram.svg"></span>
+						<span><img src="static/img/youtube.svg"></span>
 					</div>
 				</div>
 			</div>
@@ -136,6 +142,6 @@
 		<!-- Fim Footer -->
 	</div>
 	<!-- Fim -->
-
+	<script src="static/js/scripts.js"></script>
 </body>
 </html>
