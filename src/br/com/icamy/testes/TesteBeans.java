@@ -1,20 +1,36 @@
 package br.com.icamy.testes;
 
-import br.com.icamy.beans.CategoriaServico;
-import br.com.icamy.beans.Servico;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import br.com.icamy.beans.Prestador;
+import br.com.icamy.dao.PrestadorDAO;
+import br.com.icamy.factory.ConnectionFactory;
 
 public class TesteBeans {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Servico s = new Servico(1, new CategoriaServico(1, "Corte Feminino"), "Corte da moda", 1, 
-				"Este é o verdadeiro corte da moda atual!");
-		
-		System.out.println(s.getCodigo());
-		System.out.println(s.getCategoriaServico().getNome());
-		System.out.println(s.getNome());
-		System.out.println(s.getDescricao());
+//		try {
+//			OfertaBO oBO = new OfertaBO();
+//			List<Oferta> ofertasPrestador = oBO.getByPrestador(3);
+//			for (Oferta oferta : ofertasPrestador) {
+//				System.out.println("Código: " + oferta.getCodigo());
+//				System.out.println("Título: " + oferta.getTitulo());
+//				System.out.println("//---------------//");
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+
+		try {
+			Prestador p = new PrestadorDAO().get(1);
+			System.out.println(p.getNome());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 
 	}
 

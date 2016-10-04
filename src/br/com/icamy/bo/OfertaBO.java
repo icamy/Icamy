@@ -3,7 +3,9 @@ package br.com.icamy.bo;
 import java.util.List;
 
 import br.com.icamy.beans.Oferta;
+import br.com.icamy.beans.Prestador;
 import br.com.icamy.dao.OfertaDAO;
+import br.com.icamy.dao.PrestadorDAO;
 import br.com.icamy.exceptions.CodigoNuloException;
 import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 
@@ -16,17 +18,28 @@ public class OfertaBO {
 
 	public Oferta get(int codigo) throws Exception {
 		if (codigo < 1)
-			throw new CodigoNuloException("CÃ³digo invÃ¡lido");
+			throw new CodigoNuloException("Código inválido");
 
 		return ofertaDAO.get(codigo);
 	}
 
 	public List<Oferta> getAll() throws Exception {
-		List<Oferta> ofertas = ofertaDAO.getAll();
+		List<Oferta> lstOfertas = ofertaDAO.getAll();
 
-		if (ofertas.size() == 0)
+		if (lstOfertas.size() == 0)
 			throw new RegistroNaoEncontradoException("Nenhum registro encontrado");
 
-		return ofertas;
+		return lstOfertas;
+	}
+	
+	public List<Oferta> getByPrestador(int codigo) throws Exception {
+		
+		Prestador p = new PrestadorDAO().get(codigo);
+		List<Oferta> lstOfertas = ofertaDAO.getByPrestador(p);
+
+		if (lstOfertas.size() == 0)
+			throw new RegistroNaoEncontradoException("Nenhum registro encontrado");
+
+		return lstOfertas;
 	}
 }

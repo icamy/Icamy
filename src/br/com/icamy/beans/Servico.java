@@ -5,14 +5,12 @@ public class Servico {
     private CategoriaServico categoriaServico;
     private String nome;
     private char status;
-    private String descricao;
     
-    public Servico(int codigo, CategoriaServico categoriaServico, String nome, char status, String descricao) {
+    public Servico(int codigo, CategoriaServico categoriaServico, String nome, char status) {
     	this.codigo = codigo;
     	this.categoriaServico = categoriaServico;
     	this.nome = nome;
     	this.status = status;
-    	this.descricao = descricao;
     }
     
     public Servico() {}
@@ -48,14 +46,5 @@ public class Servico {
 	public void setStatus(char status) {
 		this.status = status;
 	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-    
   
 }

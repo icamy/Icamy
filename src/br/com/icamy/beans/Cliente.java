@@ -1,5 +1,7 @@
 package br.com.icamy.beans;
 
+import java.util.List;
+
 public class Cliente extends Usuario {
 	private long cpf;
 	private char sexo;
