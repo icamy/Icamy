@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Oferta(s) do prestador <c:out value="${prestador.nome}"></c:out></h1>
-	
+	<!--  comentário -->
 	<table style="width:100%">
 		<thead>
 			<tr>
