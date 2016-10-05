@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="pt">
 <meta charset="utf-8"/>
@@ -8,6 +12,26 @@
 	<title>Icamy</title>
 </head>
 <body>
+		
+		<c:if test="${categorias == null}" >
+			<c:redirect url="/BemVindo"/>
+		</c:if>
+		
+		<div style="display: block; padding: 30px">
+			<table>
+				<tr>
+					<td>Codigo</td>
+					<td>Nome</td>
+				</tr>
+				<c:forEach items="${categorias }" var="cat">
+					<tr>
+						<td><c:out value="${cat.codigo}"/></td>
+						<td><c:out value="${cat.nome}"/></td>		
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+
 
 	<div id="container">
 		<section class="hero">
