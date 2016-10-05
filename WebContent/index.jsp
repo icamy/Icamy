@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+		
+<c:if test="${categorias == null}" >
+	<c:redirect url="/BemVindo"/>
+</c:if>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -12,25 +16,6 @@
 	<title>Icamy</title>
 </head>
 <body>
-		
-		<c:if test="${categorias == null}" >
-			<c:redirect url="/BemVindo"/>
-		</c:if>
-		
-		<div style="display: block; padding: 30px">
-			<table>
-				<tr>
-					<td>Codigo</td>
-					<td>Nome</td>
-				</tr>
-				<c:forEach items="${categorias }" var="cat">
-					<tr>
-						<td><c:out value="${cat.codigo}"/></td>
-						<td><c:out value="${cat.nome}"/></td>		
-					</tr>
-				</c:forEach>
-			</table>
-		</div>
 
 
 	<div id="container">
@@ -98,6 +83,24 @@
 				<div class="search-results">
 					<div class="results">
 						<%-- Resultado modelo --%>
+						
+						<%-- Resultado original --%>
+							<div style="display: block; padding: 30px">
+								<table>
+									<tr>
+										<td>Codigo</td>
+										<td>Nome</td>
+									</tr>
+									<c:forEach items="${categorias }" var="cat">
+										<tr>
+											<td><c:out value="${cat.codigo}"/></td>
+											<td><c:out value="${cat.nome}"/></td>		
+										</tr>
+									</c:forEach>
+								</table>
+							</div>
+						<div style = "display: none;" class="result-original">
+						
 						<div class="result">
 							<div class="result-img">
 								<img src="static/img/kravitz.jpg" width="200">
@@ -119,6 +122,7 @@
 									<span>8.7/10</span>
 								</div>
 							</div>
+						</div>
 						</div>
 					</div>
 					<hr />
