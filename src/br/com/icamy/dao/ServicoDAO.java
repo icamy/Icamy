@@ -29,11 +29,10 @@ public class ServicoDAO {
 		ResultSet result = null;
 
 		try {
-			String sql = "insert into t_icm_servico (cd_categoria, nm_servico, ds_servico) values (?,?,?);";
+			String sql = "insert into t_icm_servico (cd_categoria, nm_servico, ds_servico) values (?, ?)";
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			statement.setInt(1, servico.getCategoria().getCodigo());
+			statement.setInt(1, servico.getCategoriaServico().getCodigo());
 			statement.setString(2, servico.getNome());
-			statement.setString(3, servico.getDescricao());
 			statement.executeUpdate();
 			result = statement.getGeneratedKeys();
 
@@ -58,11 +57,10 @@ public class ServicoDAO {
 		PreparedStatement statement = null;
 
 		try {
-			String sql = "update t_icm_servico set cd_categoria = ?, nm_servico = ?, ds_servico = ?;";
+			String sql = "update t_icm_servico set cd_categoria = ?, nm_servico = ?";
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1, servico.getCategoria().getCodigo());
+			statement.setInt(1, servico.getCategoriaServico().getCodigo());
 			statement.setString(2, servico.getNome());
-			statement.setString(3, servico.getDescricao());
 
 			return statement.executeUpdate();
 		} catch (SQLException e) {
@@ -111,12 +109,11 @@ public class ServicoDAO {
 			if (result.next()) {
 				Servico servico = new Servico();
 				servico.setCodigo(result.getInt("cd_servico"));
-				servico.setCategoria(new CategoriaServico());
-				servico.getCategoria().setCodigo(result.getInt("cd_categoria"));
-				servico.getCategoria().setNome(result.getString("nm_categoria"));
+				servico.setCategoriaServico(new CategoriaServico());
+				servico.getCategoriaServico().setCodigo(result.getInt("cd_categoria"));
+				servico.getCategoriaServico().setNome(result.getString("nm_categoria"));
 				servico.setNome(result.getString("nm_servico"));
-				servico.setDescricao(result.getString("ds_servico"));
-				servico.setStatus(result.getBoolean("st_servico"));
+				servico.setStatus(result.getString("st_servico").charAt(0));
 
 				return servico;
 			} else {
@@ -138,27 +135,27 @@ public class ServicoDAO {
 	public List<Servico> getAll() throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
-		List<Servico> servicos = new ArrayList<>();
+		List<Servico> lstServicos = new ArrayList<Servico>();
 
 		try {
-			statement = connection.prepareStatement("select cd_servico, nm_servico, st_servico, ds_servico, "
-					+ "cd_categoria, nm_categoria from t_icm_servico natural join t_icm_categoria;");
+			String sql = "SELECT * FROM t_icm_servico "
+						+ "NATURAL JOIN t_icm_categoria_servico";
+			statement = connection.prepareStatement(sql);
 			result = statement.executeQuery();
 
 			while (result.next()) {
 				Servico servico = new Servico();
 				servico.setCodigo(result.getInt("cd_servico"));
-				servico.setCategoria(new CategoriaServico());
-				servico.getCategoria().setCodigo(result.getInt("cd_categoria"));
-				servico.getCategoria().setNome(result.getString("nm_categoria"));
+				servico.setCategoriaServico(new CategoriaServico());
+				servico.getCategoriaServico().setCodigo(result.getInt("cd_categoria"));
+				servico.getCategoriaServico().setNome(result.getString("nm_categoria"));
 				servico.setNome(result.getString("nm_servico"));
-				servico.setDescricao(result.getString("ds_servico"));
-				servico.setStatus(result.getBoolean("st_servico"));
+				servico.setStatus(result.getString("st_servico").charAt(0));
 
-				servicos.add(servico);
+				lstServicos.add(servico);
 			}
 
-			return servicos;
+			return lstServicos;
 		} catch (SQLException e) {
 			throw new Exception(e);
 		} finally {

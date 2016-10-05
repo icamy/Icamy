@@ -44,9 +44,30 @@
 					</c:forEach>
 				</c:when>
 				<c:otherwise>
-					
+					<tr>
+						<td><c:out value="${oferta.codigo}"></c:out></td>
+						<td><c:out value="${oferta.titulo}"></c:out></td>
+						<td><c:out value="${oferta.descricao}"></c:out></td>
+						<td><c:out value="${oferta.valor}"></c:out></td>
+						<td>
+							<a href="Oferta?op=editar&prestador=<c:out value="${prestador.codigo}"/>&oferta=<c:out value="${oferta.codigo}"/>">
+								Editar
+							</a>
+						</td>
+						<td>
+							<a href="Oferta?op=excluir&prestador=<c:out value="${prestador.codigo}"/>&oferta=<c:out value="${oferta.codigo}"/>">
+								Excluir
+							</a>
+						</td>
+					</tr>
 				</c:otherwise>
 			</c:choose>
+		<tr>
+			<td colspan="3"></td>
+			<td colspan="3">
+				<a href="Oferta?op=inserir">Inserir novo registro</a>
+			</td>
+		</tr>
 		</tbody>
 	</table>
 </body>
