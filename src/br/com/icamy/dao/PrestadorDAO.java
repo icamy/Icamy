@@ -73,10 +73,10 @@ public class PrestadorDAO {
 		String sql = "";
 		
 		try {
-			sql += "select t_icm_prestador.* from t_icm_categoria ";
+			sql += "select distinct t_icm_prestador.* from t_icm_categoria ";
 			sql += "natural join t_icm_servico "; 
-			sql += "natural join t_icm_oferta";
-    		sql += "natural join t_icm_prestador";
+			sql += "natural join t_icm_oferta ";
+    		sql += "natural join t_icm_prestador ";
     		sql += "where cd_categoria = ?;";
     		
     		statement = connection.prepareStatement(sql);
