@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:if test="${categorias == null}" >
+<c:if test="${categorias == null && prestadores == null}" >
 	<c:redirect url="/BemVindo"/>
 </c:if>
 
@@ -86,42 +86,47 @@
 						<%-- Resultado modelo --%>
 
 						<%-- Resultado original --%>
+						<c:if test="${categorias != null}">
 							<div style="display: block; padding: 30px">
 								<div class="row">
 									<c:forEach items="${categorias }" var="cat">
 										<div class="col-half-lg">
-											<a href="/Icamy/BemVindo?action=getServicosPrestadoress&categoria=<c:out value="${cat.codigo}"/>">
+											<a href="/Icamy/BemVindo?action=getServicosPrestadores&categoria=<c:out value="${cat.codigo}"/>">
 												<c:out value="${cat.nome}"/>
 											</a>
 										</div>
 									</c:forEach>
 								</div>
 							</div>
-						<div style = "display: none;" class="result-original">
-
-						<div class="result">
-							<div class="result-img">
-								<img src="static/img/kravitz.jpg" width="200">
+						</c:if>
+						<c:if test="${prestadores != null}">
+							<div class="result-original">
+								<c:forEach items="${prestadores}" var="prestador">
+									<div class="result">
+										<div class="result-img">
+											<img src="static/img/kravitz.jpg" width="200">
+										</div>
+										<div class="result-body">
+											<h2><c:out value="${prestador.nome}"/></h2>
+											<p><c:out value="${prestador.apresentacao}"/></p>
+											<!-- <div class="categorias">
+												<span class="categoria">Categoria1</span>
+												<span class="categoria">Categoria2</span>
+												<span class="categoria">Categoria3</span>
+											</div> -->
+											<div class="detalhes">
+												<img src="static/img/location.svg" width="15px">
+												<span>Endere�o</span>
+											</div>
+											<div class="detalhes">
+												<img src="static/img/rating.svg" width="15px">
+												<span>8.7/10</span>
+											</div>
+										</div>
+									</div>
+								</c:forEach>
 							</div>
-							<div class="result-body">
-								<h2>Nome do Fornecedor</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<div class="categorias">
-									<span class="categoria">Categoria1</span>
-									<span class="categoria">Categoria2</span>
-									<span class="categoria">Categoria3</span>
-								</div>
-								<div class="detalhes">
-									<img src="static/img/location.svg" width="15px">
-									<span>Endere�o</span>
-								</div>
-								<div class="detalhes">
-									<img src="static/img/rating.svg" width="15px">
-									<span>8.7/10</span>
-								</div>
-							</div>
-						</div>
-						</div>
+						</c:if>
 					</div>
 					<hr />
 					<div class="btn-ver-mais">
