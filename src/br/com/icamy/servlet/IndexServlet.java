@@ -23,33 +23,23 @@ public class IndexServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CategoriaServicoBO categoriaBO = null;
-		
 		if (request.getParameter("action") != null) {
 			switch (request.getParameter("action")) {
 				// Listar os serviços e os prestadores de serviços da categoria dada
 				case "getServicosPrestadores": {
 					try {
-						List<Prestador> prestadores = new PrestadorBO().getPrestadoresDeServicosDe
-								(Integer.parseInt(request.getParameter("categoria")));
-						request.setAttribute("prestadores", prestadores);
+						request.setAttribute("prestadores", new PrestadorBO().getPrestadoresDeServicosDe
+								(Integer.parseInt(request.getParameter("categoria"))));
 					} catch (Exception e) {}
-					
-					System.out.println("Churros");
 					
 					break;
 				}
 			}
 		} else {
 			// Listar as categorias
-				try {
-					categoriaBO = new CategoriaServicoBO();
-					List<CategoriaServico> categorias = categoriaBO.getAll();
-
-					request.setAttribute("categorias", categorias);
-
-					System.out.println("Pão de batata");
-				} catch(Exception e) {}
+			try {
+				request.setAttribute("categorias", new CategoriaServicoBO().getAll());
+			} catch(Exception e) {}
 		}
 		
 		// Retornar para a página inicial com os parâmetros setados
