@@ -5,7 +5,6 @@ import java.util.List;
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.dao.PrestadorDAO;
 import br.com.icamy.exceptions.CodigoNuloException;
-import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 
 public class PrestadorBO {
 	private PrestadorDAO prestadorDAO;
@@ -16,9 +15,16 @@ public class PrestadorBO {
 
 	public Prestador get(int codigo) throws Exception {
 		if (codigo < 1)
-			throw new CodigoNuloException("Código inválido");
+			throw new CodigoNuloException("Cï¿½digo invï¿½lido");
 
 		return prestadorDAO.get(codigo);
+	}
+	
+	public List<Prestador> getPrestadoresDeServicosDe(int cdCategoria) throws Exception {
+		if (cdCategoria < 1)
+			throw new CodigoNuloException("Categoria invÃ¡lida");
+
+		return prestadorDAO.getPrestadoresDeServicosDe(cdCategoria);
 	}
 
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-		
+
 <c:if test="${categorias == null}" >
 	<c:redirect url="/BemVindo"/>
 </c:if>
@@ -11,6 +11,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="static/css/home.css">
+<link rel="stylesheet" type="text/css" href="styles/grid.css" />
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,700" rel="stylesheet">
 <head>
 	<title>Icamy</title>
@@ -44,13 +45,13 @@
 					<label class="menu-btn" for="menu"><div class="toggle"><span class="btn-component"></span></div></label>
 					<!-- fim menu -->
 				</nav>
-	
+
 				<div class="container-conteudo-hero">
 					<div class="conteudo-hero">
 						<h1 class="titulo-hero">Mariana fez limpeza de pele</h1>
 						<p>
 							Adorei a limpeza de pele, meu rosto parece mais claro.
-							Achei ótima a ideia de poder contratar um profissional e ele vir até mim.
+							Achei ï¿½tima a ideia de poder contratar um profissional e ele vir atï¿½ mim.
 							Agora eu sei como cuidar da minha beleza sem me preocupar!
 						</p>
 						<span>Encontre o profissional ideal</span>
@@ -58,49 +59,46 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<!-- container busca -->
 		<section class="search">
 			<div class="section-container">
 				<!-- container formulario -->
 				<div class="search-bar">
-					<!-- formulário -->
+					<!-- formulï¿½rio -->
 					<form action="" method="get">
-						<!-- caixa de seleção de categorias -->
+						<!-- caixa de seleï¿½ï¿½o de categorias -->
 						<select class="search-select" name="cars">
 							<option value="categoria" selected="selected">Categoria</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 						</select>
-						<!-- fim caixa de seleção de categorias -->
+						<!-- fim caixa de seleï¿½ï¿½o de categorias -->
 						<input class="search-input" type="text" placeholder="Onde deseja ser atendido(a)?" />
 						<input class="search-submit" type="submit" name="submit" value="" />
 					</form>
 					<!-- fim formulario -->
 				</div>
-	
+
 				<div class="search-results">
 					<div class="results">
 						<%-- Resultado modelo --%>
-						
+
 						<%-- Resultado original --%>
 							<div style="display: block; padding: 30px">
-								<table>
-									<tr>
-										<td>Codigo</td>
-										<td>Nome</td>
-									</tr>
+								<div class="row">
 									<c:forEach items="${categorias }" var="cat">
-										<tr>
-											<td><c:out value="${cat.codigo}"/></td>
-											<td><c:out value="${cat.nome}"/></td>		
-										</tr>
+										<div class="col-half-lg">
+											<a href="/Icamy/BemVindo?action=getServicosPrestadoress&categoria=<c:out value="${cat.codigo}"/>">
+												<c:out value="${cat.nome}"/>
+											</a>
+										</div>
 									</c:forEach>
-								</table>
+								</div>
 							</div>
 						<div style = "display: none;" class="result-original">
-						
+
 						<div class="result">
 							<div class="result-img">
 								<img src="static/img/kravitz.jpg" width="200">
@@ -115,7 +113,7 @@
 								</div>
 								<div class="detalhes">
 									<img src="static/img/location.svg" width="15px">
-									<span>Endereço</span>
+									<span>Endereï¿½o</span>
 								</div>
 								<div class="detalhes">
 									<img src="static/img/rating.svg" width="15px">
