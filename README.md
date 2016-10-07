@@ -17,3 +17,4 @@ Código fonte do projeto Icamy (FIAP - 1TINR - 2016)
 - Inserir mais registros nas tabelas de serviços/bairros/prestadores (pra termos mais registros exibidos quando filtrarmos os serviços)
 - Implementar a lógica de agendamento (vamos exibir?)
 - Desenvoler um ícone para cada categoria de serviço
+- Revisão da doc
