@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.icamy.beans.CategoriaServico;
-import br.com.icamy.beans.Prestador;
 import br.com.icamy.bo.CategoriaServicoBO;
 import br.com.icamy.bo.PrestadorBO;
+import br.com.icamy.bo.ServicoBO;
 
 @WebServlet("/BemVindo")
 public class IndexServlet extends HttpServlet {
@@ -30,12 +30,12 @@ public class IndexServlet extends HttpServlet {
 				// Listar os serviços e os prestadores de serviços da categoria dada
 				case "getServicosPrestadores": {
 					try {
-						List<Prestador> prestadores = new PrestadorBO().getPrestadoresDeServicosDe
-								(Integer.parseInt(request.getParameter("categoria")));
-						request.setAttribute("prestadores", prestadores);
+						request.setAttribute("prestadores", new PrestadorBO().getPrestadoresDeServicosDe
+								(Integer.parseInt(request.getParameter("categoria"))));
+						
+						request.setAttribute("servicos", new ServicoBO().getServicosDoTipo
+								(Integer.parseInt(request.getParameter("categoria"))));
 					} catch (Exception e) {}
-					
-					System.out.println("Churros");
 					
 					break;
 				}
@@ -48,7 +48,6 @@ public class IndexServlet extends HttpServlet {
 
 					request.setAttribute("categorias", categorias);
 
-					System.out.println("Pão de batata");
 				} catch(Exception e) {}
 		}
 		

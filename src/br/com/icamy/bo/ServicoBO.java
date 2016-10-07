@@ -29,5 +29,9 @@ public class ServicoBO {
     	
     	return servicos;
     }
+    
+    public List<Servico> getServicosDoTipo(int cdCategoria) throws Exception {
+    	return servicoDAO.getServicosDoTipo(cdCategoria);
+    }
 
 }
