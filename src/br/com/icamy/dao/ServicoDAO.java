@@ -168,4 +168,40 @@ public class ServicoDAO {
 			}
 		}
 	}
+	
+ 	public List<Servico> getServicosDoTipo(int cdCategoria) throws Exception {
+ 		List<Servico> servicos = new ArrayList<Servico>();
+		PreparedStatement statement = null;
+		ResultSet result = null;
+		String sql = "";
+		
+		try {
+			sql += "select * from t_icm_servico ";
+			sql += "natural join t_icm_categoria ";
+			sql += "where cd_categoria = ?;";
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, cdCategoria);
+			
+			result = statement.executeQuery();
+			
+			while (result.next()) {
+				servicos.add(new Servico(result.getInt("cd_servico"), new CategoriaServico(result.getInt("cd_categoria"),
+					result.getString("nm_categoria")), result.getString("nm_servico"), result.getString("st_servico").charAt(0)));
+			}
+			
+			return servicos;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new Exception(e);
+		} finally {
+			try {
+				result.close();
+				statement.close();
+				connection.close();
+			} catch(RuntimeException e) {
+				e.printStackTrace();
+				throw new Exception(e);
+			}
+		}
+	}
 }

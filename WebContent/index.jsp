@@ -69,10 +69,10 @@
 					<form action="" method="get">
 						<!-- caixa de seleï¿½ï¿½o de categorias -->
 						<select class="search-select" name="cars">
-							<option value="categoria" selected="selected">Categoria</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
+							<option value="categoria" selected="selected" hidden="hidden" disabled="disabled">Selecione um serviço</option>
+							<c:forEach var="servico" items="${servicos}">
+								<option value="<c:out value="${servico.codigo }"/>"><c:out value="${servico.nome }"/></option>
+							</c:forEach>
 						</select>
 						<!-- fim caixa de seleï¿½ï¿½o de categorias -->
 						<input class="search-input" type="text" placeholder="Onde deseja ser atendido(a)?" />
