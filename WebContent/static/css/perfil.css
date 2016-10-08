@@ -383,15 +383,15 @@ button:focus {
 }
 
 .modal-content {
-	background: white;
-    width: 980px;
-    height: 80%;
+    width: 200px;
+    height: 40%;
     border-radius: 7px;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    
+    transition: all 0s;
+    background-color: rgba(0,0,0,0);
 }
 
 .modal-close-btn {

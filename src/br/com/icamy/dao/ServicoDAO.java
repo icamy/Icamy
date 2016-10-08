@@ -173,12 +173,11 @@ public class ServicoDAO {
  		List<Servico> servicos = new ArrayList<Servico>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
-		String sql = "";
+		String sql = "SELECT * FROM t_icm_servico "
+					+ "INNER JOIN t_icm_categoria_servico USING (cd_categoria)"
+					+ "WHERE cd_categoria=?";
 		
 		try {
-			sql += "select * from t_icm_servico ";
-			sql += "natural join t_icm_categoria ";
-			sql += "where cd_categoria = ?;";
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, cdCategoria);
 			

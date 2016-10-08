@@ -12,6 +12,10 @@ public class CategoriaServicoBO {
 		dao = new CategoriaServicoDAO();
 	}
 	
+	public CategoriaServico get(int codigo) throws Exception {
+		return dao.get(codigo);
+	}
+	
 	public List<CategoriaServico> getAll() throws Exception {
 		return dao.getAll();
 	}

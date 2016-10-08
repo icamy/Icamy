@@ -269,12 +269,6 @@ a {
 }
 
 /************************************* results *************************************/
-
-
-.content{
-	display: none;
-}
-
 .results {
 	display: flex;
 	flex-direction: column;

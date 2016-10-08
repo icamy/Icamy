@@ -20,6 +20,10 @@ public class PrestadorBO {
 		return prestadorDAO.get(codigo);
 	}
 	
+	public List<Prestador> getAll() throws Exception {
+		return prestadorDAO.getAll();
+	}
+	
 	public List<Prestador> getPrestadoresDeServicosDe(int cdCategoria) throws Exception {
 		if (cdCategoria < 1)
 			throw new CodigoNuloException("Categoria inválida");
