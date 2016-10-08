@@ -11,11 +11,11 @@ import br.com.icamy.beans.CategoriaServico;
 import br.com.icamy.factory.ConnectionFactory;
 
 public class CategoriaServicoDAO {
-	private Connection connection;
+	private Connection conexao;
 
 	public CategoriaServicoDAO() throws Exception {
 		try {
-			connection = new ConnectionFactory().getConnection();
+			this.conexao = new ConnectionFactory().getConnection();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new Exception(e);
@@ -23,28 +23,28 @@ public class CategoriaServicoDAO {
 	}
 
 	public List<CategoriaServico> getAll() throws Exception {
-		List<CategoriaServico> categorias = new ArrayList<CategoriaServico>();
+		List<CategoriaServico> lstCategorias = new ArrayList<CategoriaServico>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		try {
-			String sql = "select cd_categoria, nm_categoria from t_icm_categoria";
-			statement = connection.prepareStatement(sql);
+			String sql = "SELECT cd_categoria, nm_categoria FROM t_icm_categoria";
+			statement = conexao.prepareStatement(sql);
 			result = statement.executeQuery();
 			
 			while(result.next()) {
-				categorias.add(new CategoriaServico(result.getInt("cd_categoria"), result.getString("nm_categoria")));
+				lstCategorias.add(new CategoriaServico(result.getInt("cd_categoria"), result.getString("nm_categoria")));
 			}
 			
-			return categorias;
+			return lstCategorias;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new Exception(e);
 		} finally {
-			if (connection != null)
+			if (conexao != null)
 				try {
 					result.close();
 					statement.close();
-					connection.close();
+					conexao.close();
 				} catch (RuntimeException e) {
 					e.printStackTrace();
 					throw new Exception(e);

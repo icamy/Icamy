@@ -1,16 +1,20 @@
 package br.com.icamy.beans;
 
+import java.util.List;
+
 public class Prestador extends Usuario {
 	private char tipoPessoa;
 	private long documento;
 	private String apresentacao;
+	private List<Portfolio> portfolio;
 	
 	public Prestador(int codigo, String nome, long telefone, String email, String senha, String nascimento,
-			char tipoPessoa, long documento, String apresentacao) {
-		super(codigo, nome, telefone, email, senha, nascimento);
+			String urlFoto, char tipoPessoa, long documento, String apresentacao, List<Portfolio> portfolio) {
+		super(codigo, nome, telefone, email, senha, nascimento, urlFoto);
 		this.tipoPessoa = tipoPessoa;
 		this.documento = documento;
 		this.apresentacao = apresentacao;
+		this.portfolio = portfolio;
 	}
 
 	public Prestador() {
@@ -40,6 +44,13 @@ public class Prestador extends Usuario {
 	public void setApresentacao(String apresentacao) {
 		this.apresentacao = apresentacao;
 	}
-	
-	
+
+	public List<Portfolio> getPortfolio() {
+		return portfolio;
+	}
+
+	public void setPortfolio(List<Portfolio> portfolio) {
+		this.portfolio = portfolio;
+	}
+
 }

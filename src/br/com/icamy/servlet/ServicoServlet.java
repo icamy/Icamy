@@ -28,7 +28,7 @@ public class ServicoServlet extends HttpServlet {
 				//request.getRequestDispatcher("/servico.jsp").forward(request, response);
 				
 				out.println("Nome: " + servico.getNome());
-				out.println("Categoria: " + servico.getCategoria().getNome());
+				out.println("Categoria: " + servico.getCategoriaServico().getNome());
 				out.println("Descrição: " + servico.getStatus());
 				out.println("Status: " + servico.getStatus());
 			} else {
@@ -36,7 +36,7 @@ public class ServicoServlet extends HttpServlet {
 				
 				for(Servico servico : servicos) {
 					out.println("Nome: " + servico.getNome());
-					out.println("Categoria: " + servico.getCategoria().getNome());
+					out.println("Categoria: " + servico.getCategoriaServico().getNome());
 					out.println("Descrição: " + servico.getStatus());
 					out.println("Status: " + servico.getStatus());
 					out.println("");

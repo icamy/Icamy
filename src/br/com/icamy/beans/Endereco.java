@@ -2,13 +2,20 @@ package br.com.icamy.beans;
 
 public class Endereco {
 	private int codigo;
-	private Cep cep;
+	private Bairro bairro;
+	private int cep;
+	private String logradouro;
 	private int numero;
 	private String complemento;
 	
-	public Endereco(int codigo, Cep cep, int numero, String complemento) {
+	
+
+	public Endereco(int codigo, Bairro bairro, int cep, String logradouro, int numero, String complemento) {
+		super();
 		this.codigo = codigo;
+		this.bairro = bairro;
 		this.cep = cep;
+		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
 	}
@@ -23,12 +30,28 @@ public class Endereco {
 		this.codigo = codigo;
 	}
 
-	public Cep getCep() {
+	public Bairro getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(Bairro bairro) {
+		this.bairro = bairro;
+	}
+
+	public int getCep() {
 		return cep;
 	}
 
-	public void setCep(Cep cep) {
+	public void setCep(int cep) {
 		this.cep = cep;
+	}
+
+	public String getLogradouro() {
+		return logradouro;
+	}
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
 	public int getNumero() {
@@ -46,7 +69,5 @@ public class Endereco {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	
-	
 
 }

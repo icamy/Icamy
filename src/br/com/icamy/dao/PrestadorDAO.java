@@ -48,10 +48,11 @@ public class PrestadorDAO {
 				p.setSenha(result.getString("ds_senha"));
 				p.setApresentacao(result.getString("tx_apresentacao"));
 				p.setNascimento(result.getString("dt_nascimento"));
+				p.setUrlFoto(result.getString("ds_url_foto"));
 
 				return p;
 			} else {
-				throw new RegistroNaoEncontradoException("Registro nï¿½o encontrado");
+				throw new RegistroNaoEncontradoException("Registro não encontrado");
 			}
 		} catch (SQLException e) {
 			throw new Exception(e);
@@ -73,7 +74,7 @@ public class PrestadorDAO {
 		String sql = "";
 		
 		try {
-			sql += "select distinct t_icm_prestador.* from t_icm_categoria ";
+			sql += "select distinct t_icm_prestador * from t_icm_categoria ";
 			sql += "natural join t_icm_servico "; 
 			sql += "natural join t_icm_oferta ";
     		sql += "natural join t_icm_prestador ";
@@ -85,9 +86,18 @@ public class PrestadorDAO {
     		result = statement.executeQuery();
     		
     		while (result.next()) {
-    			prestadores.add(new Prestador(result.getInt("cd_prestador"), result.getString("nm_prestador"),
-    					result.getLong("nr_telefone"), result.getString("ds_email"), "", result.getString("dt_nascimento"),
-    					result.getString("ds_tipo_pessoa").charAt(0), result.getLong("nr_documento"), result.getString("tx_apresentacao")));
+    			Prestador p = new Prestador();
+    			p.setCodigo(result.getInt("cd_prestador"));
+				p.setNome(result.getString("nm_prestador"));
+				p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
+				p.setDocumento(result.getLong("nr_documento"));
+				p.setTelefone(result.getLong("nr_telefone"));
+				p.setEmail(result.getString("ds_email"));
+				p.setSenha(result.getString("ds_senha"));
+				p.setApresentacao(result.getString("tx_apresentacao"));
+				p.setNascimento(result.getString("dt_nascimento"));
+				p.setUrlFoto(result.getString("ds_url_foto"));
+    			prestadores.add(p);
     		}
     		
     		return prestadores;

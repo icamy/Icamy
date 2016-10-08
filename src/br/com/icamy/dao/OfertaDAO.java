@@ -31,18 +31,16 @@ public class OfertaDAO {
 		ResultSet result = null;
 
 		try {
-			String sql = "INSERT INTO t_icm_oferta "
-						+ "(cd_servico, cd_prestador, ds_titulo, "
-						+ "tx_oferta, vl_oferta, nr_minutos_execucao, nr_dias_validade) "
-						+ "values (?, ?, ?, ?, ?, ?, ?);";
+			String sql = "INSERT INTO t_icm_oferta ("
+						+ "cd_servico, cd_prestador, tx_oferta, vl_oferta, nr_minutos_execucao, nr_dias_validade"
+						+ ") values (?, ?, ?, ?, ?, ?)";
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			statement.setInt(1, oferta.getServico().getCodigo());
 			statement.setInt(2, oferta.getPrestador().getCodigo());
-			statement.setString(3, oferta.getTitulo());
-			statement.setString(4, oferta.getDescricao());
-			statement.setDouble(5, oferta.getValor());
-			statement.setInt(6, oferta.getExecucaoEmMinutos());
-			statement.setInt(7, oferta.getValidadeEmDias());
+			statement.setString(3, oferta.getDescricao());
+			statement.setDouble(4, oferta.getValor());
+			statement.setInt(5, oferta.getExecucaoEmMinutos());
+			statement.setInt(6, oferta.getValidadeEmDias());
 
 			result = statement.getGeneratedKeys();
 
@@ -80,7 +78,6 @@ public class OfertaDAO {
 			if (result.next()) {
 				Oferta oferta = new Oferta();
 				oferta.setCodigo(result.getInt("cd_oferta"));
-				oferta.setTitulo(result.getString("ds_titulo"));
 				oferta.setDescricao(result.getString("tx_oferta"));
 				oferta.setValor(result.getDouble("vl_oferta"));
 				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
@@ -103,10 +100,11 @@ public class OfertaDAO {
 				oferta.getPrestador().setEmail(result.getString("ds_email"));
 				oferta.getPrestador().setApresentacao(result.getString("tx_apresentacao"));
 				oferta.getPrestador().setNascimento(result.getString("dt_nascimento"));
+				oferta.getPrestador().setUrlFoto(result.getString("ds_url_foto"));
 
 				return oferta;
 			} else {
-				throw new RegistroNaoEncontradoException("Registro n√£o encontrado");
+				throw new RegistroNaoEncontradoException("Registro n„o encontrado");
 			}
 		} catch (SQLException e) {
 			throw new Exception(e);
@@ -130,7 +128,6 @@ public class OfertaDAO {
 					+ "NATURAL JOIN t_icm_servico "
 					+ "NATURAL JOIN t_icm_categoria_servico "
 					+ "NATURAL JOIN t_icm_prestador ";
-//			String sql = "SELECT * FROM  t_icm_oferta";
 			statement = connection.prepareStatement(sql);
 			result = statement.executeQuery();
 			List<Oferta> lstOfertas = new ArrayList<Oferta>();
@@ -138,7 +135,6 @@ public class OfertaDAO {
 			while (result.next()) {
 				Oferta oferta = new Oferta();
 				oferta.setCodigo(result.getInt("cd_oferta"));
-				oferta.setTitulo(result.getString("ds_titulo"));
 				oferta.setDescricao(result.getString("tx_oferta"));
 				oferta.setValor(result.getDouble("vl_oferta"));
 				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
@@ -161,6 +157,7 @@ public class OfertaDAO {
 				oferta.getPrestador().setEmail(result.getString("ds_email"));
 				oferta.getPrestador().setApresentacao(result.getString("tx_apresentacao"));
 				oferta.getPrestador().setNascimento(result.getString("dt_nascimento"));
+				oferta.getPrestador().setUrlFoto(result.getString("ds_url_foto"));
 
 				lstOfertas.add(oferta);
 			}
@@ -197,7 +194,6 @@ public class OfertaDAO {
 			while (result.next()) {
 				Oferta oferta = new Oferta();
 				oferta.setCodigo(result.getInt("cd_oferta"));
-				oferta.setTitulo(result.getString("ds_titulo"));
 				oferta.setDescricao(result.getString("tx_oferta"));
 				oferta.setValor(result.getDouble("vl_oferta"));
 				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
@@ -220,6 +216,7 @@ public class OfertaDAO {
 //				oferta.getPrestador().setEmail(result.getString("ds_email"));
 //				oferta.getPrestador().setApresentacao(result.getString("tx_apresentacao"));
 //				oferta.getPrestador().setNascimento(result.getString("dt_nascimento"));
+//				oferta.getPrestador().setUrlFoto(result.getString("ds_url_foto"));
 
 				lstOfertas.add(oferta);
 			}

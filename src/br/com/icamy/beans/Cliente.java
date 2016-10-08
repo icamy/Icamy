@@ -7,9 +7,9 @@ public class Cliente extends Usuario {
 	private char sexo;
 	private List<Endereco> listaEnderecos;
 	
-	public Cliente(int codigo, String nome, long telefone, String email, String senha, String nascimento, long cpf,
-			char sexo, List<Endereco> listaEnderecos) {
-		super(codigo, nome, telefone, email, senha, nascimento);
+	public Cliente(int codigo, String nome, long telefone, String email, String senha, String nascimento, String urlFoto, 
+			long cpf, char sexo, List<Endereco> listaEnderecos) {
+		super(codigo, nome, telefone, email, senha, nascimento, urlFoto);
 		this.cpf = cpf;
 		this.sexo = sexo;
 		this.listaEnderecos = listaEnderecos;
