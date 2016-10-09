@@ -388,7 +388,7 @@ a {
   cursor: pointer;
 }
 a .modal-btn-cta-home {
-  height: 120px;
+  height: 65px;
 }
 .modal-btn-cta-home h2 {
   margin-left: -7%;
@@ -398,7 +398,7 @@ a .modal-btn-cta-home {
 }
 .modal-btn-cta-home img {
   flex-grow: 1;
-  width: 60px;
+  width: 40px;
   margin-left: 30%;
 }
 .modal-btn-cta-home:hover {
