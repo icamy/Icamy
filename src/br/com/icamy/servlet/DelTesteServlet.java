@@ -15,7 +15,7 @@ import br.com.icamy.bo.PrestadorBO;
 import br.com.icamy.dao.BairroDAO;
 
 @WebServlet("/Teste")
-public class TesteServlet extends HttpServlet {
+public class DelTesteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();

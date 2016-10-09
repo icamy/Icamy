@@ -18,7 +18,7 @@ import br.com.icamy.bo.PrestadorBO;
 import br.com.icamy.bo.ServicoBO;
 
 @WebServlet("/Welcome")
-public class WelcomeServlet extends HttpServlet {
+public class DelWelcomeServlet extends HttpServlet {
 	
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	PrintWriter out = response.getWriter();

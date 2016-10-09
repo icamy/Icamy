@@ -18,7 +18,7 @@ import br.com.icamy.bo.PrestadorBO;
 import br.com.icamy.bo.ServicoBO;
 
 @WebServlet("/Oferta")
-public class OfertaServlet extends HttpServlet {
+public class DelOfertaServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("Abriu a servlet");

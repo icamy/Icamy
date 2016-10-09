@@ -12,7 +12,7 @@ public class TesteBeans {
 	public static void main(String[] args) {
 		
 		try {
-			List<Prestador> lstPrestadores = new PrestadorDAO().getAll();
+			List<Prestador> lstPrestadores = new PrestadorDAO().selectAll();
 			for (Prestador p : lstPrestadores) {
 //				p.setBairro(new BairroDAO().selectWherePrestador(p));
 //				for (Bairro b : p.getBairro()) {

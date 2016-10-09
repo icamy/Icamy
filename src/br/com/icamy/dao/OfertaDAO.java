@@ -61,7 +61,7 @@ public class OfertaDAO {
 		}
 	}
 	
-	public Oferta get(int codigo) throws Exception {
+	public Oferta selectWhereOferta(int codigo) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		
@@ -119,7 +119,7 @@ public class OfertaDAO {
 		}
 	}
 
-	public List<Oferta> getAll() throws Exception {
+	public List<Oferta> selectAll() throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 
@@ -176,16 +176,16 @@ public class OfertaDAO {
 		}
 	}
 	
-	public List<Oferta> getByPrestador(Prestador p) throws Exception {
+	public List<Oferta> selectWherePrestador(Prestador p) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 
 		try {
 			String sql = "SELECT * FROM  t_icm_oferta "
-					+ "NATURAL JOIN t_icm_servico "
-					+ "NATURAL JOIN t_icm_categoria_servico "
-					+ "NATURAL JOIN t_icm_prestador "
-					+ "WHERE cd_prestador = ?";
+						+ "NATURAL JOIN t_icm_servico "
+						+ "NATURAL JOIN t_icm_categoria_servico "
+						+ "NATURAL JOIN t_icm_prestador "
+						+ "WHERE cd_prestador = ?";
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, p.getCodigo());
 			result = statement.executeQuery();

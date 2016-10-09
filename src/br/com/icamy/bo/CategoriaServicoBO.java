@@ -13,11 +13,11 @@ public class CategoriaServicoBO {
 	}
 	
 	public CategoriaServico get(int codigo) throws Exception {
-		return dao.get(codigo);
+		return dao.selectWhereCategoria(codigo);
 	}
 	
 	public List<CategoriaServico> getAll() throws Exception {
-		return dao.getAll();
+		return dao.selectAll();
 	}
 }
  

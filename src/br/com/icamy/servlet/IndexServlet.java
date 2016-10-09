@@ -29,32 +29,47 @@ public class IndexServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		CategoriaServicoBO categoriaBO = null;
-		
-		if (request.getParameter("action") != null) {
+	
+		if (request.getParameter("action") != null && request.getParameter("action") != "") {
 			switch (request.getParameter("action")) {
 				// Listar os serviços e os prestadores de serviços da categoria dada
 				case "getServicosPrestadores": {
 					try {
 						int cdCategoria = Integer.parseInt(request.getParameter("categoria"));
 						CategoriaServico categoria = new CategoriaServicoBO().get(cdCategoria);
-						request.setAttribute("catetorias", categoria);
-						List<Prestador> lstPrestadores = new PrestadorBO().getPrestadoresDeServicosDe(cdCategoria);
+						request.setAttribute("categoria", categoria);
+						List<Prestador> lstPrestadores = new PrestadorBO().getByCategoria(cdCategoria);
 						request.setAttribute("prestadores", lstPrestadores);
 						List<Servico> lstServicos = new ServicoBO().getServicosDoTipo(cdCategoria);
 						request.setAttribute("servicos", lstServicos);
 					} catch (Exception e) {}
+					request.getRequestDispatcher("/index-results.jsp").forward(request, response);
 					break;
 				}
-				case "getPrestadoresBairros": {
+				case "getPrestadoresServicoBairro": {
+					int cdCategoria = Integer.parseInt(request.getParameter("categoria"));
+					int cdServico = (!request.getParameter("servico").isEmpty()) ? Integer.parseInt(request.getParameter("servico")) : 0;
+					String nmBairro = request.getParameter("bairro");
+					List<Prestador> lstPrestadores = null;
 					try {
-						int cdCategoria = Integer.parseInt(request.getParameter("categoria"));
 						CategoriaServico categoria = new CategoriaServicoBO().get(cdCategoria);
-						request.setAttribute("catetorias", categoria);
-						List<Prestador> lstPrestadores = new PrestadorBO().getPrestadoresDeServicosDe(cdCategoria);
+						request.setAttribute("categoria", categoria);
+						if (cdServico>0) {
+							if (nmBairro != "") {
+								lstPrestadores = new PrestadorBO().getByServicoBairro(cdServico, nmBairro);
+							} else {
+								lstPrestadores = new PrestadorBO().getByServico(cdServico);
+							}
+						} else {
+							if (nmBairro != "") {
+								lstPrestadores = new PrestadorBO().getByBairro(nmBairro);
+							}
+						}
 						request.setAttribute("prestadores", lstPrestadores);
 						List<Servico> lstServicos = new ServicoBO().getServicosDoTipo(cdCategoria);
 						request.setAttribute("servicos", lstServicos);
 					} catch (Exception e) {}
+					request.getRequestDispatcher("/index-results.jsp").forward(request, response);
 					break;
 				}
 			}
@@ -78,10 +93,11 @@ public class IndexServlet extends HttpServlet {
 	    		e.getMessage();
 	    		out.println("Caiu no catch");
 	    	}
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 		
 		// Retornar para a página inicial com os parÃ¢metros setados
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		//request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

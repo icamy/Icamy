@@ -25,7 +25,7 @@ public class CategoriaServicoDAO {
 		}
 	}
 	
-	public CategoriaServico get(int codigo) throws Exception {
+	public CategoriaServico selectWhereCategoria(int codigo) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		
@@ -57,7 +57,7 @@ public class CategoriaServicoDAO {
 		}
 	}
 
-	public List<CategoriaServico> getAll() throws Exception {
+	public List<CategoriaServico> selectAll() throws Exception {
 		List<CategoriaServico> lstCategorias = new ArrayList<CategoriaServico>();
 		PreparedStatement statement = null;
 		ResultSet result = null;

@@ -14,7 +14,7 @@ import br.com.icamy.beans.Servico;
 import br.com.icamy.bo.ServicoBO;
 
 @WebServlet("/Servico")
-public class ServicoServlet extends HttpServlet {
+public class DelServicoServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("Servicos:");
