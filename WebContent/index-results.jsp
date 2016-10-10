@@ -119,13 +119,13 @@
 								<c:forEach items="${prestadores}" var="prestador">
 									<div class="result">
 										<div class="result-img">
-											<a href="/Prestador&prestador=<c:out value="${prestador.codigo }" />">
+											<a href="Perfil?prestador=<c:out value="${prestador.codigo }" />">
 												<img src="static/img/profile/<c:out value="${prestador.urlFoto}" />" width="200">
 											</a>
 										</div>
 										<div class="result-body">
 											<h2>
-												<a href="/Prestador&prestador=<c:out value="${prestador.codigo }" />">
+												<a href="Perfil?prestador=<c:out value="${prestador.codigo }" />">
 													<c:out value="${prestador.nome}"/>
 												</a>
 											</h2>

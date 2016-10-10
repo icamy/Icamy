@@ -168,55 +168,47 @@ public class OfertaDAO {
 //		}
 //	}
 	
-//	public List<Oferta> selectWherePrestador(int cdPrestador) throws Exception {
-//		PreparedStatement statement = null;
-//		ResultSet result = null;
-//
-//		try {
-//			String sql = "SELECT * FROM  t_icm_oferta "
-//						+ "NATURAL JOIN t_icm_servico "
-//						+ "NATURAL JOIN t_icm_categoria_servico "
-//						+ "NATURAL JOIN t_icm_prestador "
-//						+ "WHERE cd_prestador = ?";
-//			statement = connection.prepareStatement(sql);
-//			statement.setInt(1, p.getCodigo());
-//			result = statement.executeQuery();
-//			List<Oferta> lstOfertas = new ArrayList<Oferta>();
-//
-//			while (result.next()) {
-//				
-//				CategoriaServico categoria = new CategoriaServico();
-//				categoria.setCodigo(result.getInt("cd_categoria"));
-//				categoria.setNome(result.getString("nm_categoria"));
-//				
-//				Servico servico = new Servico();
-//				servico.setCodigo(result.getInt("cd_servico"));
-//				servico.setNome(result.getString("nm_servico"));
-//				servico.setCategoriaServico(categoria);
-//				
-//				Oferta oferta = new Oferta();
-//				oferta.setCodigo(result.getInt("cd_oferta"));
-//				oferta.setServico(servico);
-//				oferta.setDescricao(result.getString("tx_oferta"));
-//				oferta.setValor(result.getDouble("vl_oferta"));
-//				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
-//				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
-//				
-//				lstOfertas.add(oferta);
-//			}
-//
-//			return lstOfertas;
-//		} catch (SQLException e) {
-//			throw new Exception(e);
-//		} finally {
-//			try {
-//				result.close();
-//				statement.close();
-//				connection.close();
-//			} catch (RuntimeException e) {
-//				throw new Exception(e);
-//			}
-//		}
-//	}
+	public List<Oferta> selectWherePrestador(int cdPrestador) throws Exception {
+		PreparedStatement statement = null;
+		ResultSet result = null;
+
+		try {
+			String sql = "SELECT * FROM  t_icm_oferta "
+						+ "NATURAL JOIN t_icm_servico "
+						+ "NATURAL JOIN t_icm_categoria_servico "
+						+ "NATURAL JOIN t_icm_prestador "
+						+ "WHERE cd_prestador = ?";
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, cdPrestador);
+			result = statement.executeQuery();
+			List<Oferta> lstOfertas = new ArrayList<Oferta>();
+
+			while (result.next()) {
+				
+				Oferta oferta = new Oferta();
+				oferta.setCodigo(result.getInt("cd_oferta"));
+				oferta.setTitulo(result.getString("nm_servico"));
+				oferta.setDescricao(result.getString("tx_oferta"));
+				oferta.setValor(result.getDouble("vl_oferta"));
+				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
+				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
+				oferta.setIcone(result.getString("nm_categoria"));
+				
+				lstOfertas.add(oferta);
+			}
+
+			return lstOfertas;
+		} catch (SQLException e) {
+			throw new Exception(e);
+		} finally {
+			try {
+				result.close();
+				statement.close();
+				connection.close();
+			} catch (RuntimeException e) {
+				throw new Exception(e);
+			}
+		}
+	}
 
 }

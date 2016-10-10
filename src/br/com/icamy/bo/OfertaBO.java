@@ -36,14 +36,20 @@ public class OfertaBO {
 		return ofertaDAO.selectWhereOferta(codigo);
 	}
 
-//	public List<Oferta> getByPrestador(Prestador p) throws Exception {
-//		
-//		//Prestador p = new PrestadorDAO().selectWherePrestador(codigo);
-//		List<Oferta> lstOfertas = ofertaDAO.selectWherePrestador(p);
-//
-//		if (lstOfertas.size() == 0)
-//			throw new RegistroNaoEncontradoException("Nenhum registro encontrado");
-//
-//		return lstOfertas;
-//	}
+	public List<Oferta> getByPrestador(int cdPrestador) throws Exception {
+		
+		List<Oferta> lstOfertas = ofertaDAO.selectWherePrestador(cdPrestador);
+
+		if (lstOfertas.size() == 0)
+			throw new RegistroNaoEncontradoException("Nenhum registro encontrado");
+		for (Oferta oferta : lstOfertas) {
+			String strIcone = oferta.getIcone().toLowerCase();
+			if (strIcone.equals("depilação")) {
+				strIcone = "depilacao";
+			}
+			oferta.setIcone(strIcone);
+		}
+
+		return lstOfertas;
+	}
 }
