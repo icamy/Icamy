@@ -6,6 +6,6 @@ public class CodigoNuloException extends Exception {
     }
     
     public CodigoNuloException() {
-        super("C√≥digo fornecido inv√°lido");
+        super("CÛdigo fornecido inv·lido");
     }
 }

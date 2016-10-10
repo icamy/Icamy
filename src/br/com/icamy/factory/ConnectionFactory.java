@@ -10,9 +10,20 @@ public class ConnectionFactory {
             throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         Class.forName ("com.mysql.jdbc.Driver");
+        /*
+         * Alternar url, usuário e senha conforme ambiente (desenvolvimento ou produção:
+         * 
+         * AMBIENTE DE DESENVOLVIMENTO:
+         * URL: String url = "jdbc:mysql://localhost:3306/icamydb";
+         * CONEXAO: (LUCAS - USANDO MAMP C/SENHA): Connection conexao = DriverManager.getConnection (url,"root","root");
+         * CONEXAO: (DEMAIS - USANDO WAMP/XAMPP S/ SENHA): Connection conexao = DriverManager.getConnection (url,"root","");
+         * 
+         * AMBIENTE DE PRODUÇÃO:
+         * URL: String url = "jdbc:mysql://icamydb.mysql.uhserver.com";
+         * CONEXAO: Connection conexao = DriverManager.getConnection (url,"icamydbuser","icamy@2016");
+         */
         String url = "jdbc:mysql://localhost:3306/icamydb";
-        Connection conexao = DriverManager.getConnection (url,"root","root");
-        //System.out.println ("Yeah!!! Database connection established");
+        Connection conexao = DriverManager.getConnection (url,"root","");
         return conexao;
     }
 }

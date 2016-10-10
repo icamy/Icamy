@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:if test="${categorias == null && prestadores == null}" >
@@ -8,12 +8,13 @@
 
 <!DOCTYPE html>
 <html lang="pt">
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="static/css/home.css">
-<link rel="stylesheet" type="text/css" href="styles/grid.css" />
-<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,700" rel="stylesheet">
+
 <head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="static/css/home.css">
+	<link rel="stylesheet" type="text/css" href="styles/grid.css" />
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400,700" rel="stylesheet">
 	<title>Icamy</title>
 </head>
 <body>
@@ -51,91 +52,14 @@
 						<h1 class="titulo-hero">Mariana fez limpeza de pele</h1>
 						<p>
 							Adorei a limpeza de pele, meu rosto parece mais claro.
-							Achei �tima a ideia de poder contratar um profissional e ele vir at� mim.
+							Achei ótima a ideia de poder contratar um profissional e ele vir at� mim.
 							Agora eu sei como cuidar da minha beleza sem me preocupar!
 						</p>
-						<span>Encontre o profissional ideal</span>
+						<span onclick="openModal()">Encontre o profissional ideal</span>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- container busca -->
-		<section class="search">
-			<div class="section-container">
-				<!-- container formulario -->
-				<div class="search-bar">
-					<!-- formul�rio -->
-					<form action="" method="get">
-						<!-- caixa de sele��o de categorias -->
-						<select class="search-select" name="cars">
-							<option value="categoria" selected="selected" hidden="hidden" disabled="disabled">Selecione um servi�o</option>
-							<c:forEach var="servico" items="${servicos}">
-								<option value="<c:out value="${servico.codigo }"/>"><c:out value="${servico.nome }"/></option>
-							</c:forEach>
-						</select>
-						<!-- fim caixa de sele��o de categorias -->
-						<input class="search-input" type="text" placeholder="Onde deseja ser atendido(a)?" />
-						<input class="search-submit" type="submit" name="submit" value="" />
-					</form>
-					<!-- fim formulario -->
-				</div>
-
-				<div class="search-results">
-					<div class="results">
-						<%-- Resultado modelo --%>
-
-						<%-- Resultado original --%>
-						<c:if test="${categorias != null}">
-							<div style="display: block; padding: 30px">
-								<div class="row">
-									<c:forEach items="${categorias }" var="cat">
-										<div class="col-half-lg">
-											<a href="/Icamy/BemVindo?action=getServicosPrestadores&categoria=<c:out value="${cat.codigo}"/>">
-												<c:out value="${cat.nome}"/>
-											</a>
-										</div>
-									</c:forEach>
-								</div>
-							</div>
-						</c:if>
-						<c:if test="${prestadores != null}">
-							<div class="result-original">
-								<c:forEach items="${prestadores}" var="prestador">
-									<div class="result">
-										<div class="result-img">
-											<img src="static/img/kravitz.jpg" width="200">
-										</div>
-										<div class="result-body">
-											<h2><c:out value="${prestador.nome}"/></h2>
-											<p><c:out value="${prestador.apresentacao}"/></p>
-											<!-- <div class="categorias">
-												<span class="categoria">Categoria1</span>
-												<span class="categoria">Categoria2</span>
-												<span class="categoria">Categoria3</span>
-											</div> -->
-											<div class="detalhes">
-												<img src="static/img/location.svg" width="15px">
-												<span>Endere�o</span>
-											</div>
-											<div class="detalhes">
-												<img src="static/img/rating.svg" width="15px">
-												<span>8.7/10</span>
-											</div>
-										</div>
-									</div>
-								</c:forEach>
-							</div>
-						</c:if>
-					</div>
-					<hr />
-					<div class="btn-ver-mais">
-						<span>Ver mais</span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- fim container busca -->
 		<!--Inicio Footer-->
 		<section class="footer">
 			<div class="section-container">
@@ -171,6 +95,24 @@
 			</div>
 		</section>
 		<!-- Fim Footer -->
+
+		<!--Inicio Modal-->
+			<div class="modal-container-home">
+				<div class="modal-content-home">
+						<div class="modal-close-btn-home" onclick="closeModal()"><span></span></div>
+						<div class="modal-content-inner-home">
+							<a href="BemVindo?action=getServicosPrestadores&categoria=1"><div class="modal-btn-cta-home"><span><img src="static/img/unha.svg" alt=""></span><h2>Unhas</h2></div></a>
+							<a href="BemVindo?action=getServicosPrestadores&categoria=2"><div class="modal-btn-cta-home"><span><img src="static/img/cabelo.svg" alt=""></span><h2>Cabelos</h2></div></a>
+							<a href="BemVindo?action=getServicosPrestadores&categoria=3"><div class="modal-btn-cta-home"><span><img src="static/img/sombrancelha.svg" alt=""></span><h2>Sobrancelhas</h2></div></a>
+							<a href="BemVindo?action=getServicosPrestadores&categoria=4"><div class="modal-btn-cta-home"><span><img src="static/img/massagem.svg" alt=""></span><h2>Massagem</h2></div></a>
+							<a href="BemVindo?action=getServicosPrestadores&categoria=5"><div class="modal-btn-cta-home"><span><img src="static/img/depilacao.png" alt=""></span><h2>Depilação</h2></div></a>
+							<a href="BemVindo?action=getServicosPrestadores&categoria=6"><div class="modal-btn-cta-home"><span><img src="static/img/maquiagem.png" alt=""></span><h2>Maquiagem</h2></div></a>
+						</div>
+				</div>
+			</div>
+		<!-- Fim Modal -->
+
+
 	</div>
 	<!-- Fim -->
 	<script src="static/js/scripts.js"></script>

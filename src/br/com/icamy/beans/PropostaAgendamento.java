@@ -8,7 +8,8 @@ public class PropostaAgendamento {
 	private String mensagem;
 	private char status;
 	
-	public PropostaAgendamento(int codigo, char proponente, String dataPostaqem, String dataSugerida, String mensagem, char status) {
+	public PropostaAgendamento(int codigo, char proponente, String dataPostagem, 
+			String dataSugerida, String mensagem, char status) {
 		this.codigo = codigo;
 		this.proponente = proponente;
 		this.dataPostagem = dataPostagem;

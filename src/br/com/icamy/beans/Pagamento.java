@@ -1,5 +1,7 @@
 package br.com.icamy.beans;
 
+import java.util.List;
+
 public class Pagamento {
 	private int codigo;
 	private Contratacao contratacao;
@@ -11,7 +13,7 @@ public class Pagamento {
 	private List<RepasseComissao> listaRepasseComissoes;
 
 	public Pagamento(int codigo, Contratacao contratacao, ModalidadePgto modalidadePgto,
-			String data, double valor, char status, String codigoIdentificador, Lis<RepasseComissao> listaRepasseComissoes) {
+			String data, double valor, char status, String codigoIdentificador, List<RepasseComissao> listaRepasseComissoes) {
 		this.codigo = codigo;
 		this.contratacao = contratacao;
 		this.modalidadePgto = modalidadePgto;

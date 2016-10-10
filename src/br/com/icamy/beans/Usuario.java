@@ -7,14 +7,16 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nascimento;
+	private String urlFoto;
 	
-	public Usuario(int codigo, String nome, long telefone, String email, String senha, String nascimento) {
+	public Usuario(int codigo, String nome, long telefone, String email, String senha, String nascimento, String urlFoto) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
 		this.senha = senha;
 		this.nascimento = nascimento;
+		this.urlFoto = urlFoto;
 	}
 	
 	public Usuario() {}
@@ -65,6 +67,14 @@ public class Usuario {
 
 	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
+	}
+
+	public String getUrlFoto() {
+		return urlFoto;
+	}
+
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
 	}
 	
 }
