@@ -82,8 +82,8 @@ public class IntegraPagSeguro {
 	    resultado.put("descricao", descricao);
 	    resultado.put("prestador", detalhes[0]);
 	    resultado.put("servico", detalhes[1]);
-	    resultado.put("cliente", doc.getElementsByTagName("name").item(0).getTextContent());
-	    resultado.put("email", doc.getElementsByTagName("email").item(0).getTextContent());
+	    //resultado.put("cliente", doc.getElementsByTagName("name").item(0).getTextContent());
+	    //resultado.put("email", doc.getElementsByTagName("email").item(0).getTextContent());
 	    
 	    return resultado;
 	}

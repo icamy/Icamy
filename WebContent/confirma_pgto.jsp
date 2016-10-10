@@ -18,14 +18,14 @@
 	<hr/>
 	<h3>Dados da sua compra:</h3>
 	<p>Data: <c:out value="${dadosPgto.data}" /></p>
-	<p>Data: <c:out value="${dadosPgto.cdPgto}" /></p>
-	<p>Data: <c:out value="${dadosPgto.referencia}" /></p>
-	<p>Data: <c:out value="${dadosPgto.valor}" /></p>
-	<p>Data: <c:out value="${dadosPgto.cdOferta}" /></p>
-	<p>Data: <c:out value="${dadosPgto.prestador}" /></p>
-	<p>Data: <c:out value="${dadosPgto.servico}" /></p>
-	<p>Data: <c:out value="${dadosPgto.cliente}" /></p>
-	<p>Data: <c:out value="${dadosPgto.email}" /></p>
+	<p>Código: <c:out value="${dadosPgto.cdPgto}" /></p>
+	<p>Referência: <c:out value="${dadosPgto.referencia}" /></p>
+	<p>Valor: <c:out value="${dadosPgto.valor}" /></p>
+	<p>Cód. Oferta: <c:out value="${dadosPgto.cdOferta}" /></p>
+	<p>Prestador: <c:out value="${dadosPgto.prestador}" /></p>
+	<p>Serviço: <c:out value="${dadosPgto.servico}" /></p>
+	<p>Cliente: <c:out value="${dadosPgto.clienteNome}" /></p>
+	<p>E-mail: <c:out value="${dadosPgto.clienteEmail}" /></p>
 	
 	<a href="BemVindo"><button>Voltar para a home Icamy</button></a>
 </body>
