@@ -360,7 +360,7 @@ a {
 }
 
 .modal-content-home {
-  width: 200px;
+  width: 30%;
   height: 20%;
   border-radius: 7px;
   padding: 10px;
@@ -514,6 +514,9 @@ a .modal-btn-cta-home {
   .footer-container1 { text-align: center; }
   .footer .section-container hr { display: block; }
   .modal-btn-cta-home img { width: 40px;}
+  .modal-content-home {
+    width: 90%;
+  }
   a .modal-btn-cta-home { height: 70px;}
 }
 @media (max-width: 320px) {

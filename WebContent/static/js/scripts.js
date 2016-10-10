@@ -13,6 +13,12 @@ function changeToggleState() {
 
 // EventListener para Abrir modal no botao (Encontre o profissional ideal)
 
+	document.onresize = function() {
+		if (document.querySelector(".modal-container-home").classList.contains("_modal-visible")) {
+			openModal();
+			console.log("Churros");
+		}
+	}
 
 	document.querySelector(".conteudo-hero span").addEventListener("click", openModal, false)
 
@@ -21,19 +27,20 @@ function changeToggleState() {
 			document.querySelector(".modal-container-home").style.display = "flex";
 			setTimeout(function() {
 				document.querySelector(".modal-content-home").style.opacity = "1";
-				document.querySelector(".modal-content-home").style.width = "90%";
+				//document.querySelector(".modal-content-home").style.width = "90%";
 				document.querySelector(".modal-content-home").style.height = "80%";
 				document.querySelector(".modal-content-home").style.backgroundColor = "rgba(255,255,255,1)";
 			}, 20)
 		} else {
 			document.querySelector(".modal-container-home").style.display = "flex";
 			setTimeout(function() {
-					document.querySelector(".modal-content-home").style.opacity = "1";
-				document.querySelector(".modal-content-home").style.width = "30%";
+				document.querySelector(".modal-content-home").style.opacity = "1";
+				//document.querySelector(".modal-content-home").style.width = "30%";
 				document.querySelector(".modal-content-home").style.height = "80%";
 				document.querySelector(".modal-content-home").style.backgroundColor = "rgba(255,255,255,1)"
 			}, 20)
 		}
+		document.querySelector(".modal-container-home").classList.add("_modal-visible");
 	}
 
 // EventListener para Fechar modal no botao (Encontre o profissional ideal)
