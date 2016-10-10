@@ -59,7 +59,7 @@
 				</div>
 			</div>
 		</section>
-
+		<a name="prestadores" style="float:left;margin-top:-100px"></a>
 		<!-- container busca -->
 		<section class="content">
 			<div class="section-container">
@@ -218,5 +218,8 @@
 	</div>
 	<!-- Fim -->
 	<script src="static/js/scripts.js"></script>
+	<script>
+		window.location.href='#prestadores';
+	</script>
 </body>
 </html>

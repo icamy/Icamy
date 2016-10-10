@@ -48,7 +48,7 @@
 						<h1 class="titulo-hero">Mariana fez limpeza de pele</h1>
 						<p>
 							Adorei a limpeza de pele, meu rosto parece mais claro.
-							Achei ótima a ideia de poder contratar um profissional e ele vir at� mim.
+							Achei ótima a ideia de poder contratar um profissional e ele vir até mim.
 							Agora eu sei como cuidar da minha beleza sem me preocupar!
 						</p>
 						<span onclick="openModal()">Encontre o profissional ideal</span>

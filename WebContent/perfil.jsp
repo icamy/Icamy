@@ -121,67 +121,33 @@
 										<fmt:formatNumber value="${oferta.valor}" type="currency"/>
 									</strong></span>
 								</div>
-								<div class="servico-btns">
-									<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
-									<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
+								<form id="<c:out value="${oferta.codigo}" />" method="post" target="pagseguro" action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html">
+								<!-- Campos obrigatórios -->  
+					            <input name="receiverEmail" value="icamy.contato@gmail.com" type="hidden">  
+					            <input name="currency" value="BRL" type="hidden"> <div class="servico-btns">
+					            <!-- Itens do pagamento (ao menos um item é obrigatório) -->  
+					            <input name="itemId1" value="<c:out value="${oferta.codigo}" />" type="hidden">  
+					            <input name="itemDescription1" value="<c:out value="${prestador.nome}" /> - <c:out value="${oferta.titulo}" />" type="hidden">  
+					            <input name="itemAmount1" value="<c:out value="${oferta.valor}" />0" type="hidden">  
+					            <input name="itemQuantity1" value="1" type="hidden">  
+					            <input name="itemWeight1" value="1" type="hidden">  
+					            <!-- Dados do comprador (opcionais) -->  
+					            <input name="senderName" value="Mariana de Azevedo" type="hidden">  
+					            <input name="senderAreaCode" value="11" type="hidden">  
+					            <input name="senderPhone" value="56273440" type="hidden">  
+					            <input name="senderEmail" value="c37018784015287975562@sandbox.pagseguro.com.br" type="hidden">  
+					            <!-- submit do form (obrigatório) -->  
+					            <input style="display:none" alt="Pague com PagSeguro" name="submit"  type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar.gif"/>
+								<!-- Código de referência do pagamento no seu sistema (opcional) -->  
+					            <input name="reference" value="REF1234" type="hidden">
+									<span class="cta modal"><img class="cta-img" src="static/img/eye.svg" /></span>
+									<span class="cta" onclick="document.getElementById(<c:out value="${oferta.codigo}" />).submit();">
+										<img class="cta-img" src="static/img/cart.svg" />
+									</span>
 								</div>
+								</form>
 							</div>
 						</c:forEach>
-						
-					<!--
-						<div class="servico">
-							<span class="servico-icone"><img src="static/img/cabelo.png" /></span>
-							<div class="servico-body">
-								<h2>Corte de Cabelo</h2>
-								<span><img src="static/img/calendar.svg" width="15px" /> At� 1 semana</span>
-								<span class="servicos-icone-rating"><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
-							</div>
-							<div class="servico-btns">
-								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
-							</div>
-						</div>
-						<div class="servico">
-							<span class="servico-icone"><img src="static/img/depilacao.gif" /></span>
-							<div class="servico-body">
-								<h2>Corte de Cabelo</h2>
-								<span><img src="static/img/calendar.svg" width="15px" /> At� 1 semana</span>
-								<span><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
-							</div>
-							<div class="servico-btns">
-								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
-							</div>
-						</div>
-						<div class="servico">
-							<span class="servico-icone"><img src="static/img/maquiagem.gif" /></span>
-							<div class="servico-body">
-								<h2>Corte de Cabelo</h2>
-								<span><img src="static/img/calendar.svg" width="15px" /> At� 1 semana</span>
-								<span class="servicos-icone-rating"><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
-							</div>
-							<div class="servico-btns">
-								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
-							</div>
-						</div>
-						<div class="servico">
-							<span class="servico-icone"><img src="static/img/massagem.png" /></span>
-							<div class="servico-body">
-								<h2>Corte de Cabelo</h2>
-								<span><img src="static/img/calendar.svg" width="15px" /> At� 1 semana</span>
-								<span class="servicos-icone-rating"><img src="static/img/rating.svg" width="15px" /> 9.2/10</span>
-								<span><img src="static/img/dollar.svg" width="15px" /><strong>R$70,00</strong></span>
-							</div>
-							<div class="servico-btns">
-								<span class="cta modal"><img class="cta-img" src="static/img/cart.svg" /></span>
-								<span class="cta"><img class="cta-img" src="static/img/eye.svg" /></span>
-							</div>
-						</div>
-					-->
 					</div>
 				</div>
 			</div>	
@@ -235,6 +201,9 @@
 		
 	</div>
 	<!-- Fim -->
+	
+	<!-- scripts -->
 	<script src="static/js/scripts - perfil.js"></script>
+	
 </body>
 </html>
