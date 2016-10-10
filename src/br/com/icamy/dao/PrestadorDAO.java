@@ -9,7 +9,9 @@ import java.util.List;
 
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.bo.BairroBO;
-import br.com.icamy.bo.PrestadorBO;
+import br.com.icamy.bo.CategoriaServicoBO;
+import br.com.icamy.bo.OfertaBO;
+import br.com.icamy.bo.PortfolioBO;
 import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 import br.com.icamy.factory.ConnectionFactory;
 
@@ -25,7 +27,7 @@ public class PrestadorDAO {
 	}
 	
 	public List<Prestador> selectAll() throws Exception {
-		List<Prestador> prestadores = new ArrayList<Prestador>();
+		List<Prestador> lstPrestadores = new ArrayList<Prestador>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		String sql = "SELECT * FROM t_icm_prestador";
@@ -47,10 +49,12 @@ public class PrestadorDAO {
 				p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
-    			prestadores.add(p);
+				p.setPortfolio(new PortfolioBO().getByPrestador(p));
+				p.setCategoria(new CategoriaServicoBO().getByPrestador(p));
+    			lstPrestadores.add(p);
     		}
     		
-    		return prestadores;
+    		return lstPrestadores;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new Exception(e);
@@ -66,7 +70,7 @@ public class PrestadorDAO {
 		}
 	}
 	
-	public Prestador selectWherePrestador(int codigo) throws Exception {
+	public Prestador selectWherePrestador(int cdPrestador) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		
@@ -74,12 +78,12 @@ public class PrestadorDAO {
 			String sql = "SELECT * FROM  t_icm_prestador "
 						+ "WHERE cd_prestador = ?";
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1, codigo);
+			statement.setInt(1, cdPrestador);
 			result = statement.executeQuery();
 			
 			if (result.next()) {
 				Prestador p = new Prestador();
-				p.setCodigo(result.getInt("cd_prestador"));
+    			p.setCodigo(result.getInt("cd_prestador"));
 				p.setNome(result.getString("nm_prestador"));
 				p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
 				p.setDocumento(result.getLong("nr_documento"));
@@ -90,6 +94,8 @@ public class PrestadorDAO {
 				p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
+				p.setPortfolio(new PortfolioBO().getByPrestador(p));
+				p.setCategoria(new CategoriaServicoBO().getByPrestador(p));
 
 				return p;
 			} else {
@@ -109,7 +115,7 @@ public class PrestadorDAO {
 	}
 	
 	public List<Prestador> selectWhereCategoria(int cdCategoria) throws Exception {
-		List<Prestador> prestadores = new ArrayList<Prestador>();
+		List<Prestador> lstPrestadores = new ArrayList<Prestador>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		String sql = "SELECT DISTINCT cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto "
@@ -129,19 +135,21 @@ public class PrestadorDAO {
     			Prestador p = new Prestador();
     			p.setCodigo(result.getInt("cd_prestador"));
 				p.setNome(result.getString("nm_prestador"));
-//				p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-//				p.setDocumento(result.getLong("nr_documento"));
-//				p.setTelefone(result.getLong("nr_telefone"));
-//				p.setEmail(result.getString("ds_email"));
-//				p.setSenha(result.getString("ds_senha"));
+				//p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
+				//p.setDocumento(result.getLong("nr_documento"));
+				//p.setTelefone(result.getLong("nr_telefone"));
+				//p.setEmail(result.getString("ds_email"));
+				//p.setSenha(result.getString("ds_senha"));
 				p.setApresentacao(result.getString("tx_apresentacao"));
-//				p.setNascimento(result.getString("dt_nascimento"));
+				//p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
-				//p.setPortfolio(new PortfolioDAO().selectWherePrestador(p));
-    			prestadores.add(p);
+				p.setPortfolio(new PortfolioBO().getByPrestador(p));
+				p.setCategoria(new CategoriaServicoBO().getByPrestador(p));
+				
+    			lstPrestadores.add(p);
     		}
-    		return prestadores;
+    		return lstPrestadores;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new Exception(e);
@@ -165,7 +173,7 @@ public class PrestadorDAO {
 					+ "FROM t_icm_prestador "
 					+ "INNER JOIN t_icm_oferta USING (cd_prestador) "
 					+ "INNER JOIN t_icm_servico USING (cd_servico) "
-					//+ "INNER JOIN t_icm_categoria_servico USING (cd_categoria) "
+					+ "INNER JOIN t_icm_categoria_servico USING (cd_categoria) "
 					+ "WHERE cd_servico=?";
 		
 		try {

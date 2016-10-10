@@ -1,19 +1,24 @@
 package br.com.icamy.beans;
 
+import java.util.List;
+
 public class Servico {
     private int codigo;
-    private CategoriaServico categoriaServico;
     private String nome;
     private char status;
-    
-    public Servico(int codigo, CategoriaServico categoriaServico, String nome, char status) {
-    	this.codigo = codigo;
-    	this.categoriaServico = categoriaServico;
-    	this.nome = nome;
-    	this.status = status;
-    }
-    
-    public Servico() {}
+    private List<Oferta> oferta;
+	
+    public Servico(int codigo, String nome, char status, List<Oferta> oferta) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.status = status;
+		this.oferta = oferta;
+	}
+
+	public Servico() {
+		super();
+	}
 
 	public int getCodigo() {
 		return codigo;
@@ -21,14 +26,6 @@ public class Servico {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
-
-	public CategoriaServico getCategoriaServico() {
-		return categoriaServico;
-	}
-
-	public void setCategoriaServico(CategoriaServico categoriaServico) {
-		this.categoriaServico = categoriaServico;
 	}
 
 	public String getNome() {
@@ -46,5 +43,13 @@ public class Servico {
 	public void setStatus(char status) {
 		this.status = status;
 	}
-  
+
+	public List<Oferta> getOferta() {
+		return oferta;
+	}
+
+	public void setOferta(List<Oferta> oferta) {
+		this.oferta = oferta;
+	}
+	
 }

@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:if test="${categorias == null && prestadores == null}" >
-	<c:redirect url="/BemVindo"/>
-</c:if>
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -101,12 +97,12 @@
 				<div class="modal-content-home">
 						<div class="modal-close-btn-home" onclick="closeModal()"><span></span></div>
 						<div class="modal-content-inner-home">
-							<a href="BemVindo?action=getServicosPrestadores&categoria=1"><div class="modal-btn-cta-home"><span><img src="static/img/unha.svg" alt=""></span><h2>Unhas</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=2"><div class="modal-btn-cta-home"><span><img src="static/img/cabelo.svg" alt=""></span><h2>Cabelos</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=3"><div class="modal-btn-cta-home"><span><img src="static/img/sombrancelha.svg" alt=""></span><h2>Sobrancelhas</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=4"><div class="modal-btn-cta-home"><span><img src="static/img/massagem.svg" alt=""></span><h2>Massagem</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=5"><div class="modal-btn-cta-home"><span><img src="static/img/depilacao.png" alt=""></span><h2>Depilação</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=6"><div class="modal-btn-cta-home"><span><img src="static/img/maquiagem.png" alt=""></span><h2>Maquiagem</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=1"><div class="modal-btn-cta-home"><span><img src="static/img/unha.svg" alt=""></span><h2>Unhas</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=2"><div class="modal-btn-cta-home"><span><img src="static/img/cabelo.svg" alt=""></span><h2>Cabelos</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=3"><div class="modal-btn-cta-home"><span><img src="static/img/sombrancelha.svg" alt=""></span><h2>Sobrancelhas</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=4"><div class="modal-btn-cta-home"><span><img src="static/img/massagem.svg" alt=""></span><h2>Massagem</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=5"><div class="modal-btn-cta-home"><span><img src="static/img/depilacao.png" alt=""></span><h2>Depilação</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=6"><div class="modal-btn-cta-home"><span><img src="static/img/maquiagem.png" alt=""></span><h2>Maquiagem</h2></div></a>
 						</div>
 				</div>
 			</div>

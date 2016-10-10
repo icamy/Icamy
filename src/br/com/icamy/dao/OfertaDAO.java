@@ -26,17 +26,17 @@ public class OfertaDAO {
 		}
 	}
 
-	public int insert(Oferta oferta) throws Exception {
+	public int insert(int cdPrestador, int cdServico, Oferta oferta) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
+		String sql = "INSERT INTO t_icm_oferta ("
+					+ "cd_servico, cd_prestador, tx_oferta, vl_oferta, nr_minutos_execucao, nr_dias_validade"
+					+ ") values (?, ?, ?, ?, ?, ?)";
 
 		try {
-			String sql = "INSERT INTO t_icm_oferta ("
-						+ "cd_servico, cd_prestador, tx_oferta, vl_oferta, nr_minutos_execucao, nr_dias_validade"
-						+ ") values (?, ?, ?, ?, ?, ?)";
 			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			statement.setInt(1, oferta.getServico().getCodigo());
-			statement.setInt(2, oferta.getPrestador().getCodigo());
+			statement.setInt(1, cdServico);
+			statement.setInt(2, cdPrestador);
 			statement.setString(3, oferta.getDescricao());
 			statement.setDouble(4, oferta.getValor());
 			statement.setInt(5, oferta.getExecucaoEmMinutos());
@@ -61,21 +61,17 @@ public class OfertaDAO {
 		}
 	}
 	
-	public Oferta selectWhereOferta(int codigo) throws Exception {
+	public List<Oferta> selectAll() throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
+		String sql = "SELECT * FROM  t_icm_oferta ";
 		
 		try {
-			String sql = "SELECT * FROM  t_icm_oferta "
-						+ "NATURAL JOIN t_icm_servico "
-						+ "NATURAL JOIN t_icm_categoria_servico "
-						+ "NATURAL JOIN t_icm_prestador "
-						+ "WHERE cd_oferta = ?;";
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1, codigo);
 			result = statement.executeQuery();
-			
-			if (result.next()) {
+			List<Oferta> lstOfertas = new ArrayList<Oferta>();
+
+			while (result.next()) {
 				Oferta oferta = new Oferta();
 				oferta.setCodigo(result.getInt("cd_oferta"));
 				oferta.setDescricao(result.getString("tx_oferta"));
@@ -83,24 +79,39 @@ public class OfertaDAO {
 				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
 				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
 
-				oferta.setServico(new Servico());
-				oferta.getServico().setCodigo(result.getInt("cd_servico"));
-				oferta.getServico().setCategoriaServico(new CategoriaServico());
-				oferta.getServico().getCategoriaServico().setCodigo(result.getInt("cd_categoria"));
-				oferta.getServico().getCategoriaServico().setNome(result.getString("nm_categoria"));
-				oferta.getServico().setNome(result.getString("nm_servico"));
-				oferta.getServico().setStatus(result.getString("st_servico").charAt(0));
-
-				oferta.setPrestador(new Prestador());
-				oferta.getPrestador().setCodigo(result.getInt("cd_prestador"));
-				oferta.getPrestador().setNome(result.getString("nm_prestador"));
-				oferta.getPrestador().setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-				oferta.getPrestador().setDocumento(result.getLong("nr_documento"));
-				oferta.getPrestador().setTelefone(result.getLong("nr_telefone"));
-				oferta.getPrestador().setEmail(result.getString("ds_email"));
-				oferta.getPrestador().setApresentacao(result.getString("tx_apresentacao"));
-				oferta.getPrestador().setNascimento(result.getString("dt_nascimento"));
-				oferta.getPrestador().setUrlFoto(result.getString("ds_url_foto"));
+			}
+			return lstOfertas;
+		} catch (SQLException e) {
+			throw new Exception(e);
+		} finally {
+			try {
+				result.close();
+				statement.close();
+				connection.close();
+			} catch (RuntimeException e) {
+				throw new Exception(e);
+			}
+		}
+	}
+	
+	public Oferta selectWhereOferta(int cdOferta) throws Exception {
+		PreparedStatement statement = null;
+		ResultSet result = null;
+		String sql = "SELECT * FROM  t_icm_oferta WHERE cd_oferta=?";
+		
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, cdOferta);
+			result = statement.executeQuery();
+			
+			if (result.next()) {
+				
+				Oferta oferta = new Oferta();
+				oferta.setCodigo(result.getInt("cd_oferta"));
+				oferta.setDescricao(result.getString("tx_oferta"));
+				oferta.setValor(result.getDouble("vl_oferta"));
+				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
+				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
 
 				return oferta;
 			} else {
@@ -118,121 +129,94 @@ public class OfertaDAO {
 			}
 		}
 	}
-
-	public List<Oferta> selectAll() throws Exception {
-		PreparedStatement statement = null;
-		ResultSet result = null;
-
-		try {
-			String sql = "SELECT * FROM  t_icm_oferta "
-					+ "NATURAL JOIN t_icm_servico "
-					+ "NATURAL JOIN t_icm_categoria_servico "
-					+ "NATURAL JOIN t_icm_prestador ";
-			statement = connection.prepareStatement(sql);
-			result = statement.executeQuery();
-			List<Oferta> lstOfertas = new ArrayList<Oferta>();
-
-			while (result.next()) {
-				Oferta oferta = new Oferta();
-				oferta.setCodigo(result.getInt("cd_oferta"));
-				oferta.setDescricao(result.getString("tx_oferta"));
-				oferta.setValor(result.getDouble("vl_oferta"));
-				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
-				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
-
-				oferta.setServico(new Servico());
-				oferta.getServico().setCodigo(result.getInt("cd_servico"));
-				oferta.getServico().setCategoriaServico(new CategoriaServico());
-				oferta.getServico().getCategoriaServico().setCodigo(result.getInt("cd_categoria"));
-				oferta.getServico().getCategoriaServico().setNome(result.getString("nm_categoria"));
-				oferta.getServico().setNome(result.getString("nm_servico"));
-				oferta.getServico().setStatus(result.getString("st_servico").charAt(0));
-
-				oferta.setPrestador(new Prestador());
-				oferta.getPrestador().setCodigo(result.getInt("cd_prestador"));
-				oferta.getPrestador().setNome(result.getString("nm_prestador"));
-				oferta.getPrestador().setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-				oferta.getPrestador().setDocumento(result.getLong("nr_documento"));
-				oferta.getPrestador().setTelefone(result.getLong("nr_telefone"));
-				oferta.getPrestador().setEmail(result.getString("ds_email"));
-				oferta.getPrestador().setApresentacao(result.getString("tx_apresentacao"));
-				oferta.getPrestador().setNascimento(result.getString("dt_nascimento"));
-				oferta.getPrestador().setUrlFoto(result.getString("ds_url_foto"));
-
-				lstOfertas.add(oferta);
-			}
-
-			return lstOfertas;
-		} catch (SQLException e) {
-			throw new Exception(e);
-		} finally {
-			try {
-				result.close();
-				statement.close();
-				connection.close();
-			} catch (RuntimeException e) {
-				throw new Exception(e);
-			}
-		}
-	}
 	
-	public List<Oferta> selectWherePrestador(Prestador p) throws Exception {
-		PreparedStatement statement = null;
-		ResultSet result = null;
-
-		try {
-			String sql = "SELECT * FROM  t_icm_oferta "
-						+ "NATURAL JOIN t_icm_servico "
-						+ "NATURAL JOIN t_icm_categoria_servico "
-						+ "NATURAL JOIN t_icm_prestador "
-						+ "WHERE cd_prestador = ?";
-			statement = connection.prepareStatement(sql);
-			statement.setInt(1, p.getCodigo());
-			result = statement.executeQuery();
-			List<Oferta> lstOfertas = new ArrayList<Oferta>();
-
-			while (result.next()) {
-				Oferta oferta = new Oferta();
-				oferta.setCodigo(result.getInt("cd_oferta"));
-				oferta.setDescricao(result.getString("tx_oferta"));
-				oferta.setValor(result.getDouble("vl_oferta"));
-				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
-				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
-
-				oferta.setServico(new Servico());
-				oferta.getServico().setCodigo(result.getInt("cd_servico"));
-				oferta.getServico().setCategoriaServico(new CategoriaServico());
-				oferta.getServico().getCategoriaServico().setCodigo(result.getInt("cd_categoria"));
-				oferta.getServico().getCategoriaServico().setNome(result.getString("nm_categoria"));
-				oferta.getServico().setNome(result.getString("nm_servico"));
-				oferta.getServico().setStatus(result.getString("st_servico").charAt(0));
-
-				oferta.setPrestador(p);
-//				oferta.getPrestador().setCodigo(result.getInt("cd_prestador"));
-//				oferta.getPrestador().setNome(result.getString("nm_prestador"));
-//				oferta.getPrestador().setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-//				oferta.getPrestador().setDocumento(result.getLong("nr_documento"));
-//				oferta.getPrestador().setTelefone(result.getLong("nr_telefone"));
-//				oferta.getPrestador().setEmail(result.getString("ds_email"));
-//				oferta.getPrestador().setApresentacao(result.getString("tx_apresentacao"));
-//				oferta.getPrestador().setNascimento(result.getString("dt_nascimento"));
-//				oferta.getPrestador().setUrlFoto(result.getString("ds_url_foto"));
-
-				lstOfertas.add(oferta);
-			}
-
-			return lstOfertas;
-		} catch (SQLException e) {
-			throw new Exception(e);
-		} finally {
-			try {
-				result.close();
-				statement.close();
-				connection.close();
-			} catch (RuntimeException e) {
-				throw new Exception(e);
-			}
-		}
-	}
+//	public Oferta selectWhereServico(int cdServico) throws Exception {
+//		PreparedStatement statement = null;
+//		ResultSet result = null;
+//		String sql = "SELECT * FROM  t_icm_oferta "
+//					+ "NATURAL JOIN t_icm_servico "
+//					+ "WHERE cd_servico = ?";
+//		
+//		try {
+//			statement = connection.prepareStatement(sql);
+//			statement.setInt(1, cdServico);
+//			result = statement.executeQuery();
+//			
+//			if (result.next()) {
+//				
+//				Oferta oferta = new Oferta();
+//				oferta.setCodigo(result.getInt("cd_oferta"));
+//				oferta.setDescricao(result.getString("tx_oferta"));
+//				oferta.setValor(result.getDouble("vl_oferta"));
+//				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
+//				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
+//
+//				return oferta;
+//			} else {
+//				throw new RegistroNaoEncontradoException("Registro não encontrado");
+//			}
+//		} catch (SQLException e) {
+//			throw new Exception(e);
+//		} finally {
+//			try {
+//				result.close();
+//				statement.close();
+//				connection.close();
+//			} catch(RuntimeException e) {
+//				throw new Exception(e);
+//			}
+//		}
+//	}
+	
+//	public List<Oferta> selectWherePrestador(int cdPrestador) throws Exception {
+//		PreparedStatement statement = null;
+//		ResultSet result = null;
+//
+//		try {
+//			String sql = "SELECT * FROM  t_icm_oferta "
+//						+ "NATURAL JOIN t_icm_servico "
+//						+ "NATURAL JOIN t_icm_categoria_servico "
+//						+ "NATURAL JOIN t_icm_prestador "
+//						+ "WHERE cd_prestador = ?";
+//			statement = connection.prepareStatement(sql);
+//			statement.setInt(1, p.getCodigo());
+//			result = statement.executeQuery();
+//			List<Oferta> lstOfertas = new ArrayList<Oferta>();
+//
+//			while (result.next()) {
+//				
+//				CategoriaServico categoria = new CategoriaServico();
+//				categoria.setCodigo(result.getInt("cd_categoria"));
+//				categoria.setNome(result.getString("nm_categoria"));
+//				
+//				Servico servico = new Servico();
+//				servico.setCodigo(result.getInt("cd_servico"));
+//				servico.setNome(result.getString("nm_servico"));
+//				servico.setCategoriaServico(categoria);
+//				
+//				Oferta oferta = new Oferta();
+//				oferta.setCodigo(result.getInt("cd_oferta"));
+//				oferta.setServico(servico);
+//				oferta.setDescricao(result.getString("tx_oferta"));
+//				oferta.setValor(result.getDouble("vl_oferta"));
+//				oferta.setExecucaoEmMinutos(result.getInt("nr_minutos_execucao"));
+//				oferta.setValidadeEmDias(result.getInt("nr_dias_validade"));
+//				
+//				lstOfertas.add(oferta);
+//			}
+//
+//			return lstOfertas;
+//		} catch (SQLException e) {
+//			throw new Exception(e);
+//		} finally {
+//			try {
+//				result.close();
+//				statement.close();
+//				connection.close();
+//			} catch (RuntimeException e) {
+//				throw new Exception(e);
+//			}
+//		}
+//	}
 
 }

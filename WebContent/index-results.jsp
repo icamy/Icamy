@@ -67,7 +67,7 @@
 				<div class="search-bar">
 					<!-- formulário -->
 					<form action="BemVindo" method="get">
-						<input type="hidden" name="action" value="getPrestadoresServicoBairro" />
+						<input type="hidden" name="filtro" value="ServicosBairros" />
 						<input type="hidden" name="categoria" value="<c:out value="${categoria.codigo}" />" />
 						<!-- caixa de seleção de serviços -->
 						<select class="search-select" name="servico">
@@ -106,7 +106,7 @@
 								<div class="row">
 									<c:forEach items="${categorias }" var="cat">
 										<div class="col-half-lg">
-											<a href="/Icamy/BemVindo?action=getServicosPrestadores&categoria=<c:out value="${categoria.codigo}"/>">
+											<a href="/Icamy/BemVindo?filtro=ServicosBairros&categoria=<c:out value="${categoria.codigo}"/>">
 												<c:out value="${categoria.nome}"/>
 											</a>
 										</div>
@@ -119,19 +119,31 @@
 								<c:forEach items="${prestadores}" var="prestador">
 									<div class="result">
 										<div class="result-img">
-											<img src="static/img/kravitz.jpg" width="200">
+											<a href="/Prestador&prestador=<c:out value="${prestador.codigo }" />">
+												<img src="static/img/profile/<c:out value="${prestador.urlFoto}" />" width="200">
+											</a>
 										</div>
 										<div class="result-body">
-											<h2><c:out value="${prestador.nome}"/></h2>
+											<h2>
+												<a href="/Prestador&prestador=<c:out value="${prestador.codigo }" />">
+													<c:out value="${prestador.nome}"/>
+												</a>
+											</h2>
 											<p><c:out value="${prestador.apresentacao}"/></p>
 											    <div class="categorias">
-												<span class="categoria">Categoria1</span>
-												<span class="categoria">Categoria2</span>
-												<span class="categoria">Categoria3</span>
-											</div> -->
+											    <c:forEach items="${prestador.categoria}" var="categoriaPrestador">
+											    	<span class="categoria">
+											    		<c:out value="${categoriaPrestador.nome}" />
+											    	</span>
+											    </c:forEach>
+											</div>
 											<div class="detalhes">
 												<img src="static/img/location.svg" width="15px">
-												<span>Endere�o</span>
+												<c:forEach items="${prestador.bairro}" var="bairroPrestador">
+											    	<span>
+											    		&nbsp;<c:out value="${bairroPrestador.nome}" />&nbsp;| 
+											    	</span>
+											    </c:forEach>
 											</div>
 											<div class="detalhes">
 												<img src="static/img/rating.svg" width="15px">
@@ -192,12 +204,12 @@
 				<div class="modal-content-home">
 						<div class="modal-close-btn-home" onclick="closeModal()"><span></span></div>
 						<div class="modal-content-inner-home">
-							<a href="BemVindo?action=getServicosPrestadores&categoria=1"><div class="modal-btn-cta-home"><span><img src="static/img/unha.svg" alt=""></span><h2>Unhas</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=2"><div class="modal-btn-cta-home"><span><img src="static/img/cabelo.svg" alt=""></span><h2>Cabelos</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=3"><div class="modal-btn-cta-home"><span><img src="static/img/sombrancelha.svg" alt=""></span><h2>Sobrancelhas</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=4"><div class="modal-btn-cta-home"><span><img src="static/img/massagem.svg" alt=""></span><h2>Massagem</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=5"><div class="modal-btn-cta-home"><span><img src="static/img/depilacao.png" alt=""></span><h2>Depilação</h2></div></a>
-							<a href="BemVindo?action=getServicosPrestadores&categoria=6"><div class="modal-btn-cta-home"><span><img src="static/img/maquiagem.png" alt=""></span><h2>Maquiagem</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=1"><div class="modal-btn-cta-home"><span><img src="static/img/unha.svg" alt=""></span><h2>Unhas</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=2"><div class="modal-btn-cta-home"><span><img src="static/img/cabelo.svg" alt=""></span><h2>Cabelos</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=3"><div class="modal-btn-cta-home"><span><img src="static/img/sombrancelha.svg" alt=""></span><h2>Sobrancelhas</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=4"><div class="modal-btn-cta-home"><span><img src="static/img/massagem.svg" alt=""></span><h2>Massagem</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=5"><div class="modal-btn-cta-home"><span><img src="static/img/depilacao.png" alt=""></span><h2>Depilação</h2></div></a>
+							<a href="BemVindo?filtro=Categorias&categoria=6"><div class="modal-btn-cta-home"><span><img src="static/img/maquiagem.png" alt=""></span><h2>Maquiagem</h2></div></a>
 						</div>
 				</div>
 			</div>

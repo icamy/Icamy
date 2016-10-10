@@ -2,25 +2,23 @@ package br.com.icamy.beans;
 
 public class Oferta {
 	private int codigo;
-	private Servico servico;
-	private Prestador prestador;
 	private String descricao;
 	private double valor;
 	private int execucaoEmMinutos;
 	private int validadeEmDias;
-
-	public Oferta(int codigo, Prestador prestador, Servico servico, String descricao,
-			double valor, int execucaoEmMinutos, int validadeEmDias) {
+	
+	public Oferta(int codigo, String descricao, double valor, int execucaoEmMinutos, int validadeEmDias) {
+		super();
 		this.codigo = codigo;
-		this.prestador = prestador;
-		this.servico = servico;
 		this.descricao = descricao;
 		this.valor = valor;
 		this.execucaoEmMinutos = execucaoEmMinutos;
 		this.validadeEmDias = validadeEmDias;
 	}
-	
-	public Oferta() {}
+
+	public Oferta() {
+		super();
+	}
 
 	public int getCodigo() {
 		return codigo;
@@ -28,22 +26,6 @@ public class Oferta {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
-
-	public Prestador getPrestador() {
-		return prestador;
-	}
-
-	public void setPrestador(Prestador prestador) {
-		this.prestador = prestador;
-	}
-
-	public Servico getServico() {
-		return servico;
-	}
-
-	public void setServico(Servico servico) {
-		this.servico = servico;
 	}
 
 	public String getDescricao() {

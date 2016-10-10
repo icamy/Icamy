@@ -15,12 +15,9 @@ public class OfertaBO {
 	public OfertaBO() throws Exception {
 		ofertaDAO = new OfertaDAO();
 	}
-
-	public Oferta get(int codigo) throws Exception {
-		if (codigo < 1)
-			throw new CodigoNuloException("Código inválido");
-
-		return ofertaDAO.selectWhereOferta(codigo);
+	
+	public int put(int cdPrestador, int cdServico, Oferta oferta) throws Exception {
+		return ofertaDAO.insert(cdPrestador, cdServico, oferta);
 	}
 
 	public List<Oferta> getAll() throws Exception {
@@ -32,14 +29,21 @@ public class OfertaBO {
 		return lstOfertas;
 	}
 	
-	public List<Oferta> getByPrestador(int codigo) throws Exception {
-		
-		Prestador p = new PrestadorDAO().selectWherePrestador(codigo);
-		List<Oferta> lstOfertas = ofertaDAO.selectWherePrestador(p);
+	public Oferta get(int codigo) throws Exception {
+		if (codigo < 1)
+			throw new CodigoNuloException("Código inválido");
 
-		if (lstOfertas.size() == 0)
-			throw new RegistroNaoEncontradoException("Nenhum registro encontrado");
-
-		return lstOfertas;
+		return ofertaDAO.selectWhereOferta(codigo);
 	}
+
+//	public List<Oferta> getByPrestador(Prestador p) throws Exception {
+//		
+//		//Prestador p = new PrestadorDAO().selectWherePrestador(codigo);
+//		List<Oferta> lstOfertas = ofertaDAO.selectWherePrestador(p);
+//
+//		if (lstOfertas.size() == 0)
+//			throw new RegistroNaoEncontradoException("Nenhum registro encontrado");
+//
+//		return lstOfertas;
+//	}
 }

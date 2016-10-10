@@ -8,15 +8,18 @@ public class Prestador extends Usuario {
 	private String apresentacao;
 	private List<Bairro> bairro;
 	private List<Portfolio> portfolio;
+	private List<CategoriaServico> categoria;
 	
 	public Prestador(int codigo, String nome, long telefone, String email, String senha, String nascimento,
-			String urlFoto, char tipoPessoa, long documento, String apresentacao, List<Bairro> bairro, List<Portfolio> portfolio) {
+			String urlFoto, char tipoPessoa, long documento, String apresentacao, List<Bairro> bairro,
+			List<Portfolio> portfolio, List<CategoriaServico> categoria) {
 		super(codigo, nome, telefone, email, senha, nascimento, urlFoto);
 		this.tipoPessoa = tipoPessoa;
 		this.documento = documento;
 		this.apresentacao = apresentacao;
 		this.bairro = bairro;
 		this.portfolio = portfolio;
+		this.categoria = categoria;
 	}
 
 	public Prestador() {
@@ -46,7 +49,7 @@ public class Prestador extends Usuario {
 	public void setApresentacao(String apresentacao) {
 		this.apresentacao = apresentacao;
 	}
-	
+
 	public List<Bairro> getBairro() {
 		return bairro;
 	}
@@ -63,4 +66,12 @@ public class Prestador extends Usuario {
 		this.portfolio = portfolio;
 	}
 
+	public List<CategoriaServico> getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(List<CategoriaServico> categoria) {
+		this.categoria = categoria;
+	}
+	
 }
