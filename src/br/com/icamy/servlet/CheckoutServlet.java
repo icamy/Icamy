@@ -24,6 +24,7 @@ public class CheckoutServlet extends HttpServlet {
 	   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+//		String idPgto = "5FFC7F6F-2D92-42B3-B0D0-202AFA626B3C";
 		String idPgto = request.getParameter("id_pagseguro");
 		IntegraPagSeguro ips = new IntegraPagSeguro(idPgto);
 		Map<String, String> dadosPgto = null;
@@ -45,25 +46,30 @@ public class CheckoutServlet extends HttpServlet {
 			int cdContratacao = new ContratacaoBO().getUltimoCodigo();
 			contratacao.setCodigo(cdContratacao);
 			out.println("chamou ContratacaoBO().getUltimoCodigo()");
-//			
-//			ModalidadePgto modalidade = new ModalidadePgto();
-//			out.println("instanciando modalidade");
-//			modalidade.setCodigo(3);
-//			Pagamento pagamento = new Pagamento();
-//			out.println("instanciando pagamento");
-//			pagamento.setContratacao(contratacao);
-//			pagamento.setModalidadePgto(modalidade);
-//			pagamento.setValor(Double.parseDouble(dadosPgto.get("valor")));
-//			pagamento.setCodigoIdentificador(dadosPgto.get("cdPgto"));
-//			
-//			new PagamentoBO().put(pagamento);
-//			out.println("chamou PagamentoBO()");
-//			
+			
+			ModalidadePgto modalidade = new ModalidadePgto();
+			out.println("instanciando modalidade");
+			modalidade.setCodigo(3);
+			Pagamento pagamento = new Pagamento();
+			out.println("instanciando pagamento");
+			pagamento.setContratacao(contratacao);
+			pagamento.setModalidadePgto(modalidade);
+			pagamento.setValor(Double.parseDouble(dadosPgto.get("valor")));
+			pagamento.setCodigoIdentificador(dadosPgto.get("cdPgto"));
+			
+			out.println("vai chamar PagamentoBO().put()");
+			new PagamentoBO().put(pagamento);
+//			new PagamentoDAO().insert(pagamento);
+			out.println("chamou PagamentoBO()");
+			
 			dadosPgto.put("clienteNome", contratacao.getCliente().getNome());
+			out.println("setou clienteNome");
 			dadosPgto.put("clienteEmail", contratacao.getCliente().getEmail());
+			out.println("setou clienteEmail");
 			request.setAttribute("dadosPgto", dadosPgto);
 		} catch (Exception e) {
 			e.getMessage();
+			out.println("caiu no catch");
 		}
 		request.getRequestDispatcher("/confirma_pgto.jsp").forward(request, response);
 	}

@@ -10,8 +10,8 @@ public class PagamentoBO {
 		pagamentoDAO = new PagamentoDAO();
 	}
 	
-	public int put(Pagamento pagamento) throws Exception {
-		return pagamentoDAO.insert(pagamento);
+	public void put(Pagamento pagamento) throws Exception {
+		pagamentoDAO.insert(pagamento);
 	}
 
 }

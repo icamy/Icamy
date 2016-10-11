@@ -219,10 +219,10 @@ public class PrestadorDAO {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		String sql = "SELECT DISTINCT "
-				+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto, "
-				+ "cd_bairro, nm_bairro, "
-				+ "cd_servico, nm_servico,"
-				+ "cd_oferta, tx_oferta "
+				+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto "
+//				+ "cd_bairro, nm_bairro, "
+//				+ "cd_servico, nm_servico,"
+//				+ "cd_oferta, tx_oferta "
 				+ "FROM t_icm_prestador "
 				+ "INNER JOIN t_icm_prestador_bairro USING (cd_prestador) "
 				+ "INNER JOIN t_icm_bairro USING (cd_bairro) "
@@ -273,10 +273,10 @@ public class PrestadorDAO {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		String sql = "SELECT DISTINCT "
-					+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto, "
-					+ "cd_bairro, nm_bairro, "
-					+ "cd_servico, nm_servico,"
-					+ "cd_oferta, tx_oferta "
+					+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto "
+//					+ "cd_bairro, nm_bairro, "
+//					+ "cd_servico, nm_servico,"
+//					+ "cd_oferta, tx_oferta "
 					+ "FROM t_icm_prestador "
 					+ "INNER JOIN t_icm_prestador_bairro USING (cd_prestador) "
 					+ "INNER JOIN t_icm_bairro USING (cd_bairro) "
