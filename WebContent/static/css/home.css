@@ -38,6 +38,13 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:visited, a:focus, a:hover {
+  color: #999;
+}
 /************************************* Blocos *************************************/
 .container {
     position: relative;
