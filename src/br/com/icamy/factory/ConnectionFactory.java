@@ -19,10 +19,10 @@ public class ConnectionFactory {
          * CONEXAO: (DEMAIS - USANDO WAMP/XAMPP S/ SENHA): Connection conexao = DriverManager.getConnection (url,"root","");
          * 
          * AMBIENTE DE PRODUÇÃO:
-         * URL: String url = "jdbc:mysql://icamydb.mysql.uhserver.com";
+         * URL: String url = "jdbc:mysql://icamydb.mysql.uhserver.com/icamybd";
          * CONEXAO: Connection conexao = DriverManager.getConnection (url,"icamydbuser","icamy@2016");
          */
-        String url = "jdbc:mysql://icamydb.mysql.uhserver.com";
+        String url = "jdbc:mysql://icamydb.mysql.uhserver.com/icamydb";
         Connection conexao = DriverManager.getConnection (url,"icamydbuser","icamy@2016");
         return conexao;
     }
