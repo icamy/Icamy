@@ -14,8 +14,8 @@
 </head>
 <body>
 	<!--Inicio-->
-	
-	
+
+
 	<div class="container">
 		<nav class="header">
 			<div class="nav-container">
@@ -44,7 +44,7 @@
 		<!-- início perfil -->
 		<!-- container busca -->
 		<section class="search">
-			<div class="section-container">	
+			<div class="section-container">
 				<div class="search-results">
 					<div class="results">
 						<div class="result">
@@ -78,34 +78,26 @@
 		<!-- fim container busca -->
 
 
-			<!--Inicio Portifólio-->			
+			<!--Inicio Portifólio-->
 			<div class="section-container">
 				<div class="portifolio">
 					<h2>Portfólio</h2>
 					<hr>
 					<div class="portifolio-itens">
-						<div class="portifolio-item folio-1"></div>						
-						<div class="portifolio-item folio-2"></div>						
-						<div class="portifolio-item folio-3"></div>						
+						<div class="portifolio-item folio-1"></div>
+						<div class="portifolio-item folio-2"></div>
+						<div class="portifolio-item folio-3"></div>
 					</div>
 				</div>
-			</div>			
+			</div>
 			<!--fim portifólio-->
 
 			<!-- in�cio serviço -->
-			
-			<div class="section-container">			
+
+			<div class="section-container">
 				<div class="servicos">
 					<div class="servicos-header">
 						<h2 class="servicos-header-title">Serviços</h2>
-						<h2 class="servicos-header-filter">Filtrar:</h2>
-						<select class="servicos-header-filter">
-							<c:forEach items="${servicos}" var="servico">
-								<option value="<c:out value="${servico.codigo}" />">
-									<c:out value="${servico.nome}" />
-								</option>
-							</c:forEach>
-						</select>
 					</div>
 					<hr/>
 					<div class="servicos-body">
@@ -122,23 +114,23 @@
 									</strong></span>
 								</div>
 								<form id="<c:out value="${oferta.codigo}" />" method="post" target="pagseguro" action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html">
-								<!-- Campos obrigatórios -->  
-					            <input name="receiverEmail" value="icamy.contato@gmail.com" type="hidden">  
+								<!-- Campos obrigatórios -->
+					            <input name="receiverEmail" value="icamy.contato@gmail.com" type="hidden">
 					            <input name="currency" value="BRL" type="hidden"> <div class="servico-btns">
-					            <!-- Itens do pagamento (ao menos um item é obrigatório) -->  
-					            <input name="itemId1" value="<c:out value="${oferta.codigo}" />" type="hidden">  
-					            <input name="itemDescription1" value="<c:out value="${prestador.nome}" /> - <c:out value="${oferta.titulo}" />" type="hidden">  
-					            <input name="itemAmount1" value="<c:out value="${oferta.valor}" />0" type="hidden">  
-					            <input name="itemQuantity1" value="1" type="hidden">  
-					            <input name="itemWeight1" value="1" type="hidden">  
-					            <!-- Dados do comprador (opcionais) -->  
-					            <input name="senderName" value="Mariana de Azevedo" type="hidden">  
-					            <input name="senderAreaCode" value="11" type="hidden">  
-					            <input name="senderPhone" value="56273440" type="hidden">  
-					            <input name="senderEmail" value="c37018784015287975562@sandbox.pagseguro.com.br" type="hidden">  
-					            <!-- submit do form (obrigatório) -->  
+					            <!-- Itens do pagamento (ao menos um item é obrigatório) -->
+					            <input name="itemId1" value="<c:out value="${oferta.codigo}" />" type="hidden">
+					            <input name="itemDescription1" value="<c:out value="${prestador.nome}" /> - <c:out value="${oferta.titulo}" />" type="hidden">
+					            <input name="itemAmount1" value="<c:out value="${oferta.valor}" />0" type="hidden">
+					            <input name="itemQuantity1" value="1" type="hidden">
+					            <input name="itemWeight1" value="1" type="hidden">
+					            <!-- Dados do comprador (opcionais) -->
+					            <input name="senderName" value="Mariana de Azevedo" type="hidden">
+					            <input name="senderAreaCode" value="11" type="hidden">
+					            <input name="senderPhone" value="56273440" type="hidden">
+					            <input name="senderEmail" value="c37018784015287975562@sandbox.pagseguro.com.br" type="hidden">
+					            <!-- submit do form (obrigatório) -->
 					            <input style="display:none" alt="Pague com PagSeguro" name="submit"  type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar.gif"/>
-								<!-- Código de referência do pagamento no seu sistema (opcional) -->  
+								<!-- Código de referência do pagamento no seu sistema (opcional) -->
 					            <input name="reference" value="REF1234" type="hidden">
 									<span class="cta modal"><img class="cta-img" src="static/img/eye.svg" /></span>
 									<span class="cta" onclick="document.getElementById(<c:out value="${oferta.codigo}" />).submit();">
@@ -150,7 +142,7 @@
 						</c:forEach>
 					</div>
 				</div>
-			</div>	
+			</div>
 			<!--fim servico-->
 
 		<!--Inicio Footer-->
@@ -188,22 +180,22 @@
 			</div>
 		</section>
 		<!-- Fim Footer -->
-		
+
 		<!-- Inicio Modal -->
-		
+
 	<div class="modal-container">
 		<div class="modal-content">
 			<div class="modal-close-btn"><span></span></div>
 		</div>
-	</div>	
-		
+	</div>
+
 		<!-- Fim Modal -->
-		
+
 	</div>
 	<!-- Fim -->
-	
+
 	<!-- scripts -->
 	<script src="static/js/scripts - perfil.js"></script>
-	
+
 </body>
 </html>

@@ -130,13 +130,13 @@
 												</a>
 											</h2>
 											<p><c:out value="${prestador.apresentacao}"/></p>
-											    <div class="categorias">
+											    <!-- <div class="categorias">
 											    <c:forEach items="${prestador.categoria}" var="categoriaPrestador">
 											    	<span class="categoria">
 											    		<c:out value="${categoriaPrestador.nome}" />
 											    	</span>
 											    </c:forEach>
-											</div>
+											</div>-->
 											<div class="detalhes">
 												<img src="static/img/location.svg" width="15px">
 												<c:forEach items="${prestador.bairro}" var="bairroPrestador">
