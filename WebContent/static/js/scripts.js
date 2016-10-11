@@ -13,13 +13,6 @@ function changeToggleState() {
 
 // EventListener para Abrir modal no botao (Encontre o profissional ideal)
 
-	document.onresize = function() {
-		if (document.querySelector(".modal-container-home").classList.contains("_modal-visible")) {
-			openModal();
-			console.log("Churros");
-		}
-	}
-
 	document.querySelector(".conteudo-hero span").addEventListener("click", openModal, false)
 
 	function openModal () {

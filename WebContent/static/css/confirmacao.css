@@ -1,0 +1,17 @@
+/**
+* Churros
+*/
+#container, .header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+.section-container {
+	position: relative;
+	top: 125px;
+}
+
+.text-success {
+	color: green;
+}
