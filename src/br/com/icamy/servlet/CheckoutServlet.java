@@ -61,7 +61,8 @@ public class CheckoutServlet extends HttpServlet {
 			e.getMessage();
 		}
 		// redireciona para a página confirma_pgto.jsp, que exiibe os dados do pagamento realizado
-		request.getRequestDispatcher("/confirma_pgto.jsp").forward(request, response);
+		//request.getRequestDispatcher("/confirma_pgto.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/confirma_pgto.jsp").forward(request, response);
 	}
 
     // não houve implementação para as requisições do tipo POST

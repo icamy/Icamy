@@ -69,7 +69,7 @@ public class IndexServlet extends HttpServlet {
 					e.getMessage();
 				}
 				// redirecionar os atributos setados pare serem exibidos pelo arquivo index-results:
-				request.getRequestDispatcher("/index-results.jsp").forward(request, response);
+				request.getRequestDispatcher("WEB-INF/views/index-results.jsp").forward(request, response);
 			/*
 			 * Se houver somente filtro de serviço (caso 1), recupera a lista de prestadores que prestam o serviço setado
 			 * Se houver somente filtro de bairro (caso 2), recupera a lista de prestadores que atendem no bairro setado
@@ -99,14 +99,14 @@ public class IndexServlet extends HttpServlet {
 					e.getMessage();
 				}
 				// redirecionar os atributos setados pare serem exibidos pelo arquivo index-results:
-				request.getRequestDispatcher("/index-results.jsp").forward(request, response);
+				request.getRequestDispatcher("WEB-INF/views/index-results.jsp").forward(request, response);
 			} else {
 				//redirecionar para a index
-				request.getRequestDispatcher("/index.jsp").forward(request, response);
+				request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
 			}
 		} else { // caso não haja nenhum filtro setado...
 			// ...redireciona para o arquivo index.jsp
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
 		}
 	}
 

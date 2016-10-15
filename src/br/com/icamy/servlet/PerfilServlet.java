@@ -47,7 +47,7 @@ public class PerfilServlet extends HttpServlet {
 				e.getMessage();
 			}
 			// redirecionar os atributos setados para serem exibidos pelo arquivo perfil.jsp:
-			request.getRequestDispatcher("/perfil.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/views/perfil.jsp").forward(request, response);
 		} else { // se não houver parâmetro que identifique o código numérico do prestador, redireciona para a servlet IndexServlet
 			response.sendRedirect("BemVindo");
 		}
