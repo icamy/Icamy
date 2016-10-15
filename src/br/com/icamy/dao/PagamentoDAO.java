@@ -2,9 +2,7 @@ package br.com.icamy.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import br.com.icamy.beans.Pagamento;
 import br.com.icamy.factory.ConnectionFactory;

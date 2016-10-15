@@ -26,8 +26,9 @@ public class BairroDAO {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		List<Bairro> lstBairros = new ArrayList<Bairro>();
-		String sql = "SELECT * FROM t_icm_prestador_bairro "
-					+ "INNER JOIN t_icm_bairro USING (cd_bairro)"
+		String sql = "SELECT cd_bairro, nm_bairro, ds_regiao "
+					+ "FROM t_icm_prestador_bairro "
+					+ "NATURAL JOIN t_icm_bairro "
 					+ "WHERE cd_prestador=?";
 		try {
 			statement = connection.prepareStatement(sql);

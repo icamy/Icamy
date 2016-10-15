@@ -11,12 +11,9 @@ public class ConnectionFactory {
 
         Class.forName ("com.mysql.jdbc.Driver");
         /*
-         * Alternar url, usuï¿½rio e senha conforme ambiente (desenvolvimento ou produï¿½ï¿½o:
-         * 
          * AMBIENTE DE DESENVOLVIMENTO:
          * URL: String url = "jdbc:mysql://localhost:3306/icamydb";
-         * CONEXAO: (LUCAS - USANDO MAMP C/SENHA): Connection conexao = DriverManager.getConnection (url,"root","root");
-         * CONEXAO: (DEMAIS - USANDO WAMP/XAMPP S/ SENHA): Connection conexao = DriverManager.getConnection (url,"root","");
+         * CONEXAO: Connection conexao = DriverManager.getConnection (url,"{user}","{pw}");
          * 
          * AMBIENTE DE PRODUÇÃO:
          * URL: String url = "jdbc:mysql://icamydb.mysql.uhserver.com/icamybd";

@@ -64,7 +64,8 @@ public class CategoriaServicoDAO {
 		ResultSet result = null;
 		
 		try {
-			String sql = "SELECT * FROM  t_icm_categoria_servico "
+			String sql = "SELECT cd_categoria, nm_categoria "
+						+ "FROM  t_icm_categoria_servico "
 						+ "WHERE cd_categoria = ?";
 			statement = conexao.prepareStatement(sql);
 			statement.setInt(1, cdCategoria);
@@ -96,7 +97,7 @@ public class CategoriaServicoDAO {
 		List<CategoriaServico> lstCategorias = new ArrayList<CategoriaServico>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
-		String sql = "SELECT DISTINCT cd_categoria, nm_categoria, cd_prestador, nm_prestador "
+		String sql = "SELECT DISTINCT cd_categoria, nm_categoria "
 					+ "FROM t_icm_categoria_servico "
 					+ "INNER JOIN t_icm_servico USING (cd_categoria) "
 					+ "INNER JOIN t_icm_oferta USING (cd_servico) "

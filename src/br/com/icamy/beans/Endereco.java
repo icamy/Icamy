@@ -8,8 +8,6 @@ public class Endereco {
 	private int numero;
 	private String complemento;
 	
-	
-
 	public Endereco(int codigo, Bairro bairro, int cep, String logradouro, int numero, String complemento) {
 		super();
 		this.codigo = codigo;

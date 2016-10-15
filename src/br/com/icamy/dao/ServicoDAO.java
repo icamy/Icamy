@@ -8,9 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.icamy.beans.CategoriaServico;
 import br.com.icamy.beans.Servico;
-import br.com.icamy.bo.OfertaBO;
 import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 import br.com.icamy.factory.ConnectionFactory;
 
@@ -102,7 +100,7 @@ public class ServicoDAO {
 		List<Servico> lstServicos = new ArrayList<Servico>();
 
 		try {
-			String sql = "SELECT * FROM t_icm_servico";
+			String sql = "SELECT cd_servico, nm_servico, st_servico FROM t_icm_servico";
 			statement = connection.prepareStatement(sql);
 			result = statement.executeQuery();
 
@@ -132,7 +130,7 @@ public class ServicoDAO {
  	public Servico selectWhereServico(int cdServico) throws Exception {
 		PreparedStatement statement = null;
 		ResultSet result = null;
-		String sql = "SELECT * FROM t_icm_servico "
+		String sql = "SELECT cd_servico, nm_servico, st_servico FROM t_icm_servico "
 					+ "NATURAL JOIN t_icm_categoria_servico "
 					+ "WHERE cd_servico=?";
 
@@ -168,7 +166,7 @@ public class ServicoDAO {
  		List<Servico> servicos = new ArrayList<Servico>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
-		String sql = "SELECT * FROM t_icm_servico "
+		String sql = "SELECT cd_servico, nm_servico FROM t_icm_servico "
 					+ "NATURAL JOIN t_icm_categoria_servico "
 					+ "WHERE cd_categoria=?";
 		
@@ -182,7 +180,6 @@ public class ServicoDAO {
 				Servico servico = new Servico();
 				servico.setCodigo(result.getInt("cd_servico"));
 				servico.setNome(result.getString("nm_servico"));
-//				servico.setOferta(new OfertaBO().getByServico());
 				servicos.add(servico);
 			}
 			

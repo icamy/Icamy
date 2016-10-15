@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.icamy.beans.AvaliacaoContratacao;
-import br.com.icamy.beans.CategoriaServico;
 import br.com.icamy.factory.ConnectionFactory;
 
 public class AvaliacaoContratacaoDAO {
@@ -28,7 +27,7 @@ public class AvaliacaoContratacaoDAO {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		try {
-			String sql = "SELECT * FROM t_icm_avaliacao_contratacao";
+			String sql = "SELECT cd_avaliacao, dt_avaliacao, tx_comentario FROM t_icm_avaliacao_contratacao";
 			statement = conexao.prepareStatement(sql);
 			result = statement.executeQuery();
 			

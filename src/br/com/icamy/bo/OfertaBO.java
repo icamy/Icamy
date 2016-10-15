@@ -3,9 +3,7 @@ package br.com.icamy.bo;
 import java.util.List;
 
 import br.com.icamy.beans.Oferta;
-import br.com.icamy.beans.Prestador;
 import br.com.icamy.dao.OfertaDAO;
-import br.com.icamy.dao.PrestadorDAO;
 import br.com.icamy.exceptions.CodigoNuloException;
 import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 

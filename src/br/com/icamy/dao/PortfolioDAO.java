@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.icamy.beans.Bairro;
 import br.com.icamy.beans.Portfolio;
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.factory.ConnectionFactory;
@@ -27,7 +26,7 @@ public class PortfolioDAO {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		List<Portfolio> lstPortfolio = new ArrayList<Portfolio>();
-		String sql = "SELECT * FROM t_icm_portfolio "
+		String sql = "SELECT cd_arquivo, ds_url_arquivo, nm_arquivo FROM t_icm_portfolio "
 					+ "WHERE cd_prestador=?";
 		try {
 			statement = connection.prepareStatement(sql);

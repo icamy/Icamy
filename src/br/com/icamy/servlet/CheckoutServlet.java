@@ -1,7 +1,6 @@
 package br.com.icamy.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -19,62 +18,54 @@ import br.com.icamy.bo.ContratacaoBO;
 import br.com.icamy.bo.PagamentoBO;
 import br.com.icamy.pgto.IntegraPagSeguro;
 
+/*
+ * Servlet mapeada para tratar o retorno do usuário ao site após realizar o pagamento no ambiente do PagSeguro
+ */
 @WebServlet("/Checkout")
 public class CheckoutServlet extends HttpServlet {
 	   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-//		String idPgto = "5FFC7F6F-2D92-42B3-B0D0-202AFA626B3C";
-		String idPgto = request.getParameter("id_pagseguro");
-		IntegraPagSeguro ips = new IntegraPagSeguro(idPgto);
+		String idPgto = request.getParameter("id_pagseguro"); // lê o ID do pagamento retornado pelo PagSeguro na própria url
+		IntegraPagSeguro ips = new IntegraPagSeguro(idPgto); // instancia um novo objeto do tipo IntegraPagSeguro
 		Map<String, String> dadosPgto = null;
-		String xml = ips.getXML();
+		String xml = ips.getXML(); // chama o método getXML(), que recupera do servidor do PagSeguro uma string com os dados do pgto
 		try {
-			dadosPgto = ips.parseXML(xml);
+			dadosPgto = ips.parseXML(xml); // faz parse dos dados da String para a notação XML
 			
+			// os dados contidos no XML são recuperados através do método .get() e gravados no BD
 			Oferta oferta = new Oferta();
-			out.println("instanciando oferta");
 			oferta.setCodigo(Integer.parseInt(dadosPgto.get("cdOferta")));
 			Contratacao contratacao = new Contratacao();
 			contratacao.setOferta(oferta);
 			contratacao.setCliente(new ClienteBO().getRandom());
-			out.println("chamou ClienteBO()");
 			contratacao.setValor(Double.parseDouble(dadosPgto.get("valor")));
 			ContratacaoBO contratacaoBO = new ContratacaoBO();
-			contratacaoBO.put(contratacao);
-			out.println("chamou ContratacaoBO().put()");
+			contratacaoBO.put(contratacao); // gravando dados da contratação
+
 			int cdContratacao = new ContratacaoBO().getUltimoCodigo();
 			contratacao.setCodigo(cdContratacao);
-			out.println("chamou ContratacaoBO().getUltimoCodigo()");
 			
 			ModalidadePgto modalidade = new ModalidadePgto();
-			out.println("instanciando modalidade");
 			modalidade.setCodigo(3);
 			Pagamento pagamento = new Pagamento();
-			out.println("instanciando pagamento");
 			pagamento.setContratacao(contratacao);
 			pagamento.setModalidadePgto(modalidade);
 			pagamento.setValor(Double.parseDouble(dadosPgto.get("valor")));
 			pagamento.setCodigoIdentificador(dadosPgto.get("cdPgto"));
-			
-			out.println("vai chamar PagamentoBO().put()");
-			new PagamentoBO().put(pagamento);
-//			new PagamentoDAO().insert(pagamento);
-			out.println("chamou PagamentoBO()");
+			new PagamentoBO().put(pagamento); // gravando dados do pagamento
 			
 			dadosPgto.put("clienteNome", contratacao.getCliente().getNome());
-			out.println("setou clienteNome");
 			dadosPgto.put("clienteEmail", contratacao.getCliente().getEmail());
-			out.println("setou clienteEmail");
 			request.setAttribute("dadosPgto", dadosPgto);
 		} catch (Exception e) {
 			e.getMessage();
-			out.println("caiu no catch");
 		}
+		// redireciona para a página confirma_pgto.jsp, que exiibe os dados do pagamento realizado
 		request.getRequestDispatcher("/confirma_pgto.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // não houve implementação para as requisições do tipo POST
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

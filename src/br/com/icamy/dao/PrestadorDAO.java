@@ -10,7 +10,6 @@ import java.util.List;
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.bo.BairroBO;
 import br.com.icamy.bo.CategoriaServicoBO;
-import br.com.icamy.bo.OfertaBO;
 import br.com.icamy.bo.PortfolioBO;
 import br.com.icamy.exceptions.RegistroNaoEncontradoException;
 import br.com.icamy.factory.ConnectionFactory;
@@ -30,7 +29,10 @@ public class PrestadorDAO {
 		List<Prestador> lstPrestadores = new ArrayList<Prestador>();
 		PreparedStatement statement = null;
 		ResultSet result = null;
-		String sql = "SELECT * FROM t_icm_prestador";
+		String sql = "SELECT "
+					+ "cd_prestador, nm_prestador, ds_tipo_pessoa, nr_documento, nr_telefone, "
+					+ "ds_email, ds_senha, tx_apresentacao, dt_nascimento, ds_url_foto "
+					+ "FROM t_icm_prestador";
 		
 		try {
     		statement = connection.prepareStatement(sql);
@@ -75,7 +77,9 @@ public class PrestadorDAO {
 		ResultSet result = null;
 		
 		try {
-			String sql = "SELECT * FROM  t_icm_prestador "
+			String sql = "SELECT cd_prestador, nm_prestador, ds_tipo_pessoa, nr_documento, nr_telefone, "
+						+ "ds_email, ds_senha, tx_apresentacao, dt_nascimento, ds_url_foto "
+						+ "FROM  t_icm_prestador "
 						+ "WHERE cd_prestador = ?";
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, cdPrestador);
@@ -135,13 +139,7 @@ public class PrestadorDAO {
     			Prestador p = new Prestador();
     			p.setCodigo(result.getInt("cd_prestador"));
 				p.setNome(result.getString("nm_prestador"));
-				//p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-				//p.setDocumento(result.getLong("nr_documento"));
-				//p.setTelefone(result.getLong("nr_telefone"));
-				//p.setEmail(result.getString("ds_email"));
-				//p.setSenha(result.getString("ds_senha"));
 				p.setApresentacao(result.getString("tx_apresentacao"));
-				//p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
 				p.setPortfolio(new PortfolioBO().getByPrestador(p));
@@ -186,17 +184,10 @@ public class PrestadorDAO {
     			Prestador p = new Prestador();
     			p.setCodigo(result.getInt("cd_prestador"));
 				p.setNome(result.getString("nm_prestador"));
-//				p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-//				p.setDocumento(result.getLong("nr_documento"));
-//				p.setTelefone(result.getLong("nr_telefone"));
-//				p.setEmail(result.getString("ds_email"));
-//				p.setSenha(result.getString("ds_senha"));
 				p.setApresentacao(result.getString("tx_apresentacao"));
-//				p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
-				//p.setPortfolio(new PortfolioDAO().selectWherePrestador(p));
-    			prestadores.add(p);
+				prestadores.add(p);
     		}
     		return prestadores;
 		} catch (SQLException e) {
@@ -219,16 +210,13 @@ public class PrestadorDAO {
 		PreparedStatement statement = null;
 		ResultSet result = null;
 		String sql = "SELECT DISTINCT "
-				+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto "
-//				+ "cd_bairro, nm_bairro, "
-//				+ "cd_servico, nm_servico,"
-//				+ "cd_oferta, tx_oferta "
-				+ "FROM t_icm_prestador "
-				+ "INNER JOIN t_icm_prestador_bairro USING (cd_prestador) "
-				+ "INNER JOIN t_icm_bairro USING (cd_bairro) "
-				+ "INNER JOIN t_icm_oferta USING (cd_prestador) "
-				+ "INNER JOIN t_icm_servico USING (cd_servico) "
-				+ "WHERE nm_bairro = ?";
+					+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto "
+					+ "FROM t_icm_prestador "
+					+ "INNER JOIN t_icm_prestador_bairro USING (cd_prestador) "
+					+ "INNER JOIN t_icm_bairro USING (cd_bairro) "
+					+ "INNER JOIN t_icm_oferta USING (cd_prestador) "
+					+ "INNER JOIN t_icm_servico USING (cd_servico) "
+					+ "WHERE nm_bairro = ?";
 		
 		try {
     		statement = connection.prepareStatement(sql);
@@ -240,16 +228,9 @@ public class PrestadorDAO {
     			Prestador p = new Prestador();
     			p.setCodigo(result.getInt("cd_prestador"));
 				p.setNome(result.getString("nm_prestador"));
-//				p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-//				p.setDocumento(result.getLong("nr_documento"));
-//				p.setTelefone(result.getLong("nr_telefone"));
-//				p.setEmail(result.getString("ds_email"));
-//				p.setSenha(result.getString("ds_senha"));
 				p.setApresentacao(result.getString("tx_apresentacao"));
-//				p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
-				//p.setPortfolio(new PortfolioDAO().selectWherePrestador(p));
     			prestadores.add(p);
     		}
     		return prestadores;
@@ -274,9 +255,6 @@ public class PrestadorDAO {
 		ResultSet result = null;
 		String sql = "SELECT DISTINCT "
 					+ "cd_prestador, nm_prestador, tx_apresentacao, ds_url_foto "
-//					+ "cd_bairro, nm_bairro, "
-//					+ "cd_servico, nm_servico,"
-//					+ "cd_oferta, tx_oferta "
 					+ "FROM t_icm_prestador "
 					+ "INNER JOIN t_icm_prestador_bairro USING (cd_prestador) "
 					+ "INNER JOIN t_icm_bairro USING (cd_bairro) "
@@ -294,16 +272,9 @@ public class PrestadorDAO {
     			Prestador p = new Prestador();
     			p.setCodigo(result.getInt("cd_prestador"));
 				p.setNome(result.getString("nm_prestador"));
-//				p.setTipoPessoa(result.getString("ds_tipo_pessoa").charAt(0));
-//				p.setDocumento(result.getLong("nr_documento"));
-//				p.setTelefone(result.getLong("nr_telefone"));
-//				p.setEmail(result.getString("ds_email"));
-//				p.setSenha(result.getString("ds_senha"));
 				p.setApresentacao(result.getString("tx_apresentacao"));
-//				p.setNascimento(result.getString("dt_nascimento"));
 				p.setUrlFoto(result.getString("ds_url_foto"));
 				p.setBairro(new BairroBO().getByPrestador(p));
-				//p.setPortfolio(new PortfolioDAO().selectWherePrestador(p));
     			prestadores.add(p);
     		}
     		return prestadores;

@@ -38,8 +38,4 @@ public class ServicoBO {
     	return servicoDAO.selectWhereCategoria(cdCategoria);
     }
     
-//    public List<Servico> getServicosDoTipo(int cdCategoria) throws Exception {
-//    	return servicoDAO.getServicosDoTipo(cdCategoria);
-//    }
-
 }
