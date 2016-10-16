@@ -20,7 +20,6 @@ public class PagamentoDAO {
 
 	public void insert(Pagamento pagamento) throws Exception {
 		PreparedStatement statement = null;
-//		ResultSet result = null;
 		String sql = "INSERT INTO t_icm_pagamento "
 					+ "(cd_contratacao, cd_modalidade, vl_operacao, st_pagamento, cd_identificador) "
 					+ "VALUES (?, ?, ?, ?, ?)";

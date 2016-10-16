@@ -20,7 +20,7 @@
 		<nav class="header">
 			<div class="nav-container">
 				<div class="logo-nav">
-					<a href="/Icamy/"><img src="static/img/logo-white.svg" alt="logo"/></a>
+					<a href="<c:url value="/"/>"><img src="static/img/logo-white.svg" alt="logo"/></a>
 				</div>
 				<input style="display: none" type="checkbox" id="menu" />
 <!-- 				<span class="cart-icon"><img src="static/img/cart.svg"/><span class="cart-counter">0</span></span> -->
@@ -56,7 +56,11 @@
 								<p><c:out value="${prestador.apresentacao}" /></p>
 								<div class="categorias">
 									<c:forEach items="${prestador.categoria}" var="categoriaPrestador">
-										<span class="categoria"><c:out value="${categoriaPrestador.nome}" /></span>
+										<a href="<c:url value="/BemVindo?filtro=Categorias&categoria="/><c:out value="${categoriaPrestador.codigo}"/>#prestadores/">
+											<span class="categoria">
+												<c:out value="${categoriaPrestador.nome}" />
+											</span>
+										</a>
 									</c:forEach>
 								</div>
 								<div class="detalhes">

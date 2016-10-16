@@ -1,0 +1,28 @@
+Entre as entidades de dados (ou objetos) mais importantes do projeto Icamy estão:
+a) Categorias de serviço
+b) Serviços
+c) Prestadores de serviço
+d) Ofertas
+e) Contratações
+f) Pagamentos
+
+As funcionalidades já implementadas incluem:
+
+- Listagem de Prestadores que ofertam serviços de uma determinada categoria 
+	(url: <endereço-base>/BemVindo?filtro=Categorias&categoria=C, 
+		em que C representa o código da categoria)
+
+- Filtragem dos prestadores por serviços prestados e/ou bairros atendidos
+	(url: <endereço-base>/BemVindo?filtro=ServicosBairros&categoria=C&servico=S&bairro=B
+		em que C representa o código da categoria, S representa o código do serviço e B representa o nome do bairro
+
+- Exibição do perfil do prestador, com as ofertas cadastradas por ele
+	(url: http:<endereço-base>/Perfil?prestador=P
+		em que P representa o código do prestador
+
+- Integração com o PagSeguro para pagamento da contratação
+	quando o usuário clica sobre o ícone do carrinho exibido na listagem das ofertas do prestador
+
+- Integração com o PagSeguro para retorno dos dados do pagamento
+	(url: https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/ZZZ?email=mmeuemail@teste.net&token=meutoken
+		em que ZZZ representa do código do pagamento retornado pelo PagSeguro

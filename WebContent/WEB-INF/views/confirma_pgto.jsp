@@ -20,7 +20,7 @@
 		<nav class="header">
 			<div class="nav-container">
 				<div class="logo-nav">
-					<a href="/Icamy/"><img src="static/img/logo-white.svg" alt="logo"/></a>
+					<a href="<c:url value="/"/>"><img src="static/img/logo-white.svg" alt="logo"/></a>
 				</div>
 				<input style="display: none" type="checkbox" id="menu" />
 <!-- 				<span class="cart-icon"><img src="static/img/cart.svg"/><span class="cart-counter">0</span></span> -->
@@ -54,7 +54,7 @@
 				<p>Cliente: <c:out value="${dadosPgto.clienteNome}" /></p>
 				<p>E-mail: <c:out value="${dadosPgto.clienteEmail}" /></p>
 				
-				<a href="BemVindo"><button>Voltar para a home Icamy</button></a>
+				<a href="<c:url value="/"/>"><button>Voltar para a home Icamy</button></a>
 			</div>
 		</section>
 	</div>

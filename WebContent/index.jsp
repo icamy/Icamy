@@ -22,7 +22,7 @@
 				<nav class="header">
 					<!-- logo -->
 					<div class="logo-nav">
-						<a href="/Icamy/"><img src="static/img/logo-white.svg" alt="logo"/></a>
+						<a href="<c:url value="/"/>"><img src="static/img/logo-white.svg" alt="logo"/></a>
 					</div>
 					<!-- fim_Logo -->
 					<!-- menu -->

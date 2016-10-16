@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="MODEL_DATA_MODELER_V3" id="773C50A1-2461-77A9-DC1D-87D4C69DFEC6" version="3.5">
-<createdBy>Renê</createdBy>
-<createdTime>2016-05-06 21:36:53 UTC</createdTime>
-<ownerDesignName>ICAMY</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>773C50A1-2461-77A9-DC1D-87D4C69DFEC6</designId>
-</OSDM_Design>

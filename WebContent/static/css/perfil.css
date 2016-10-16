@@ -211,6 +211,7 @@ button:focus {
 	text-align: center;
 	margin-right: 20px;
 	min-width: 200px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 .result h2 {
 	color: #3F3F3F;
@@ -224,6 +225,9 @@ button:focus {
 }
 .categorias {
 	margin-bottom: 20px;
+}
+.categorias a {
+	text-decoration: none;
 }
 .categoria {
 	background: #C1C7B9;

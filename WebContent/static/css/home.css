@@ -414,7 +414,8 @@ a .modal-btn-cta-home {
   margin-left: -7%;
   flex-grow: 2;
   color: white;
-  font-weight: 200;
+  font-weight: 201;
+  text-decoration: none;
 }
 .modal-btn-cta-home img {
   flex-grow: 1;

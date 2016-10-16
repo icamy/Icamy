@@ -19,8 +19,8 @@ public class ConnectionFactory {
          * URL: String url = "jdbc:mysql://icamydb.mysql.uhserver.com/icamybd";
          * CONEXAO: Connection conexao = DriverManager.getConnection (url,"icamydbuser","icamy@2016");
          */
-        String url = "jdbc:mysql://icamydb.mysql.uhserver.com/icamydb";
-        Connection conexao = DriverManager.getConnection (url,"icamydbuser","icamy@2016");
+        String url = "jdbc:mysql://localhost:3306/icamydb";
+        Connection conexao = DriverManager.getConnection (url,"root","");
         return conexao;
     }
 }
