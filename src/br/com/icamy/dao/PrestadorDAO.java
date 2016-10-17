@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.bo.BairroBO;
@@ -99,7 +100,7 @@ public class PrestadorDAO {
 
 				return p;
 			} else {
-				throw new RegistroNaoEncontradoException("Registro não encontrado");
+				throw new RegistroNaoEncontradoException("Registro nï¿½o encontrado");
 			}
 		} catch (SQLException e) {
 			throw new Exception(e);
@@ -320,5 +321,10 @@ public class PrestadorDAO {
 				throw new Exception(e);
 			}
 		}
+	}
+
+	public Prestador login(Map<String, String> usuario) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

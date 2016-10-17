@@ -1,10 +1,12 @@
 package br.com.icamy.bo;
 
 import java.util.List;
+import java.util.Map;
 
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.dao.PrestadorDAO;
 import br.com.icamy.exceptions.CodigoNuloException;
+import br.com.icamy.exceptions.UsuarioInvalidoException;
 
 public class PrestadorBO {
 	private PrestadorDAO prestadorDAO;
@@ -19,37 +21,46 @@ public class PrestadorBO {
 	
 	public Prestador get(int codigo) throws Exception {
 		if (codigo < 1)
-			throw new CodigoNuloException("Código inválido");
+			throw new CodigoNuloException("Cï¿½digo invï¿½lido");
 
 		return prestadorDAO.selectWherePrestador(codigo);
 	}
 	
 	public List<Prestador> getByCategoria(int cdCategoria) throws Exception {
 		if (cdCategoria < 1)
-			throw new CodigoNuloException("Categoria inválida");
+			throw new CodigoNuloException("Categoria invï¿½lida");
 
 		return prestadorDAO.selectWhereCategoria(cdCategoria);
 	}
 	
 	public List<Prestador> getByServico(int cdServico) throws Exception {
 		if (cdServico < 1)
-			throw new CodigoNuloException("Servioç inválido");
+			throw new CodigoNuloException("Servioï¿½ invï¿½lido");
 
 		return prestadorDAO.selectWhereServico(cdServico);
 	}
 	
 	public List<Prestador> getByBairro(String nmBairro) throws Exception {
 		if (nmBairro == "")
-			throw new CodigoNuloException("Bairro inválido");
+			throw new CodigoNuloException("Bairro invï¿½lido");
 
 		return prestadorDAO.selectWhereBairro(nmBairro);
 	}
 	
 	public List<Prestador> getByServicoBairro(int cdServico, String nmBairro) throws Exception {
 		if (cdServico < 1 || nmBairro.equals(""))
-			throw new CodigoNuloException("Parâmetros inválidos (serviço e/ou bairro)");
+			throw new CodigoNuloException("Parï¿½metros invï¿½lidos (serviï¿½o e/ou bairro)");
 
 		return prestadorDAO.selectWhereServicoBairro(cdServico, nmBairro);
+	}
+
+	public Prestador login(Map<String, String> usuario) throws Exception {
+		Prestador prestador = prestadorDAO.login(usuario);
+		
+		if (prestador != null)
+			return prestador;
+		else
+			throw new UsuarioInvalidoException();
 	}
 
 }
