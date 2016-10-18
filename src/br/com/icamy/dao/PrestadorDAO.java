@@ -336,7 +336,10 @@ public class PrestadorDAO {
 			result = stmt.executeQuery();
 			
 			if (result.next()) {
-				return new Prestador();
+				return new Prestador(result.getInt("cd_prestador"), result.getString("nm_prestador"), result.getLong("nr_telefone"),
+									result.getString("ds_email"), result.getString("ds_senha"), result.getString("dt_nascimento"),
+									result.getString("ds_url_foto"), result.getString("ds_tipo_pessoa").charAt(0), result.getLong("nr_documento"),
+									result.getString("tx_apresentacao"), null, null, null);
 			} else {
 				return null;
 			}

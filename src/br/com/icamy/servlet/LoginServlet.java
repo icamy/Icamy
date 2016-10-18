@@ -45,27 +45,24 @@ public class LoginServlet extends HttpServlet {
 
 				request.getSession().setAttribute("usuario", usuarioCliente);
 				request.getSession().setAttribute("perfil", "cliente");
+
+				request.getRequestDispatcher("/logado.jsp").forward(request, response);
 			} catch (UsuarioInvalidoException e) {
-				out.println(e.getMessage());
-				e.printStackTrace(out);
 				try {
 					usuarioPrestador = new PrestadorBO().login(usuario);
 
 					request.getSession().setAttribute("usuario", usuarioPrestador);
 					request.getSession().setAttribute("perfil", "prestador");
-					out.println("Churros");
+
+					request.getRequestDispatcher("/logado.jsp").forward(request, response);
 				} catch(UsuarioInvalidoException err) {
 					out.println(err.getMessage());
-					e.printStackTrace(out);
+					err.printStackTrace(out);
 				} catch(Exception err) {
 					out.println("Deu zebra como prestador");
-					out.println("");
-					e.printStackTrace(out);
 				}
   			} catch (Exception e) {
 				out.println("Deu zebra como cliente");
-				out.println("");
-				e.printStackTrace(out);
  			}
 		}
 	}

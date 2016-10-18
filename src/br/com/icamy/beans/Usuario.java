@@ -1,6 +1,6 @@
 package br.com.icamy.beans;
 
-public class Usuario {
+abstract public class Usuario {
 	private int codigo;
 	private String nome;
 	private long telefone;
