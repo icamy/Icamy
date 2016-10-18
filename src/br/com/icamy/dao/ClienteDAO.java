@@ -68,7 +68,7 @@ public class ClienteDAO {
 			result = stmt.executeQuery();
 			
 			if (result.next()) {
-				return new Cliente(result.getInt("cd_cliente"), result.getString("nm_cliente"), result.getLong("ds_telefone"),
+				return new Cliente(result.getInt("cd_cliente"), result.getString("nm_cliente"), result.getLong("nr_telefone"),
 						result.getString("ds_email"), result.getString("ds_senha"), result.getString("dt_nascimento"),
 						result.getString("ds_url_foto"), result.getLong("nr_cpf"), result.getString("ds_sexo").charAt(0), null);
 			} else {

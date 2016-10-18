@@ -17,7 +17,7 @@ import br.com.icamy.bo.ClienteBO;
 import br.com.icamy.bo.PrestadorBO;
 import br.com.icamy.exceptions.UsuarioInvalidoException;
 
-@WebServlet("/Usuario")
+@WebServlet("/Autenticar")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,8 +33,9 @@ public class LoginServlet extends HttpServlet {
 			
 			// Dados do usuário a ser autenticado
 			Map<String, String> usuario = new HashMap<String, String>();
-			usuario.put("email", request.getParameter("email"));
-			usuario.put("senha", request.getParameter("senha"));
+			usuario.put("email", request.getParameter("ds_email"));
+			usuario.put("senha", request.getParameter("ds_senha"));
+			out.println(usuario);
 			
 			out.println("Autenticando usuário...");
 			
@@ -44,21 +45,27 @@ public class LoginServlet extends HttpServlet {
 
 				request.getSession().setAttribute("usuario", usuarioCliente);
 				request.getSession().setAttribute("perfil", "cliente");
-				request.getRequestDispatcher("/perfil_cliente.jsp").forward(request, response);
 			} catch (UsuarioInvalidoException e) {
+				out.println(e.getMessage());
+				e.printStackTrace(out);
 				try {
 					usuarioPrestador = new PrestadorBO().login(usuario);
 
 					request.getSession().setAttribute("usuario", usuarioPrestador);
 					request.getSession().setAttribute("perfil", "prestador");
-					request.getRequestDispatcher("/perfil_prestador.jsp").forward(request, response);
+					out.println("Churros");
 				} catch(UsuarioInvalidoException err) {
-					out.println(e.getMessage());
+					out.println(err.getMessage());
+					e.printStackTrace(out);
 				} catch(Exception err) {
 					out.println("Deu zebra como prestador");
+					out.println("");
+					e.printStackTrace(out);
 				}
   			} catch (Exception e) {
 				out.println("Deu zebra como cliente");
+				out.println("");
+				e.printStackTrace(out);
  			}
 		}
 	}

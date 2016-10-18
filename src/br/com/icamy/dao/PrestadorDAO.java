@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import br.com.icamy.beans.Cliente;
 import br.com.icamy.beans.Prestador;
 import br.com.icamy.bo.BairroBO;
 import br.com.icamy.bo.CategoriaServicoBO;
@@ -324,7 +325,31 @@ public class PrestadorDAO {
 	}
 
 	public Prestador login(Map<String, String> usuario) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		PreparedStatement stmt = null;
+		ResultSet result = null;
+		
+		try {
+			String sql = "select * from t_icm_prestador where ds_email = ? and ds_senha = ? limit 1;";
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, usuario.get("email"));
+			stmt.setString(2, usuario.get("senha"));
+			result = stmt.executeQuery();
+			
+			if (result.next()) {
+				return new Prestador();
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			throw new Exception(e);
+		} finally {
+			try {
+				result.close();
+				stmt.close();
+				connection.close();
+			} catch(RuntimeException e) {
+				throw new Exception(e);
+			}
+		}
 	}
 }
